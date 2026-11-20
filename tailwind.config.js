@@ -1,19 +1,24 @@
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import animate from './animate';
+
+const rootDir = fileURLToPath(new URL('.', import.meta.url));
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ['class', "[class~='dark']"],
+  darkMode: ['selector', "[class~='dark']"],
   safelist: ['dark'],
   corePlugins: {
     preflight: false,
   },
   prefix: 'richtext-',
 
+  // Both demos consume the library's generated, namespaced utilities. Resolve
+  // against this file, not the build process cwd (Pages builds from playground/).
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    resolve(rootDir, 'src/**/*.{ts,tsx}'),
+    resolve(rootDir, 'playground/src/**/*.{ts,tsx}'),
   ],
 
   theme: {
@@ -25,8 +30,17 @@ export default {
       },
     },
     extend: {
-      spacing: { 1.25: '0.3125rem', 4.5: '1.125rem', 5.5: '1.375rem', 8.5: '2.125rem' },
+      transitionTimingFunction: { reui: 'cubic-bezier(0.16,1,0.3,1)' },
+      spacing: {
+        0.25: '0.0625rem',
+        1.25: '0.3125rem',
+        4.5: '1.125rem',
+        5.5: '1.375rem',
+        8.5: '2.125rem',
+      },
       colors: {
+        success: 'var(--color-success, #16a34a)',
+        info: 'var(--color-info, #7c3aed)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

@@ -1,10 +1,9 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { useCallback, useEffect, useState } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { useCallback, useEffect, useState } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { SizeSetter } from "@/components/SizeSetter/SizeSetter";
-import { Button, Input } from "@/components/reui";
+import { ActionButton } from '@/components/ActionButton';
+import { Button, Input } from '@/components/reui';
+import { Card } from '@/components/reui/card';
 import {
   Dialog,
   DialogContent,
@@ -12,14 +11,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/reui/dialog";
-import { Iframe } from "@/extensions/Iframe";
-import { getServiceSrc } from "@/extensions/Iframe/utils";
-import { useAttributes } from "@/hooks/useAttributes";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { deleteNode } from "@/utils/delete-node";
+} from '@/components/reui/dialog';
+import { SizeSetter } from '@/components/SizeSetter/SizeSetter';
+import { Iframe } from '@/extensions/Iframe';
+import { getServiceSrc } from '@/extensions/Iframe/utils';
+import { useAttributes } from '@/hooks/useAttributes';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { deleteNode } from '@/utils/delete-node';
 
 interface IIframeAttrs {
   width?: number | string;
@@ -31,20 +32,17 @@ interface IIframeAttrs {
 export function RichTextBubbleIframe() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const { t } = useLocale();
-  const { width, height, src } = useAttributes<IIframeAttrs>(
-    editor,
-    Iframe.name,
-    {
-      width: 0,
-      height: 0,
-      src: "",
-      defaultShowPicker: false,
-    },
-  );
+  const { width, height, src } = useAttributes<IIframeAttrs>(editor, Iframe.name, {
+    width: 0,
+    height: 0,
+    src: '',
+    defaultShowPicker: false,
+  });
   const [visible, toggleVisible] = useState(false);
-  const [formUrl, setFormUrl] = useState("");
+  const [formUrl, setFormUrl] = useState('');
 
   const handleCancel = useCallback(
     (e: React.SyntheticEvent) => {
@@ -52,11 +50,11 @@ export function RichTextBubbleIframe() {
 
       toggleVisible(false);
     },
-    [toggleVisible],
+    [toggleVisible]
   );
 
   useEffect(() => {
-    if (visible) setFormUrl(src ?? "");
+    if (visible) setFormUrl(src ?? '');
   }, [visible, src]);
 
   const handleOk = useCallback(
@@ -68,20 +66,18 @@ export function RichTextBubbleIframe() {
       editor
         .chain()
         .updateAttributes(Iframe.name, {
-          src:
-            (typeof urlFormat === "string" ? urlFormat : urlFormat.src) ||
-            formUrl,
+          src: (typeof urlFormat === 'string' ? urlFormat : urlFormat.src) || formUrl,
         })
         .setNodeSelection(editor.state.selection.from)
         .focus()
         .run();
       toggleVisible(false);
     },
-    [editor, formUrl, toggleVisible],
+    [editor, formUrl, toggleVisible]
   );
 
   const visitLink = useCallback(() => {
-    window.open(src, "_blank");
+    window.open(src, '_blank');
   }, [src]);
 
   const setSize = useCallback(
@@ -93,13 +89,10 @@ export function RichTextBubbleIframe() {
         .focus()
         .run();
     },
-    [editor],
+    [editor]
   );
 
-  const shouldShow = useCallback(
-    () => editor.isActive(Iframe.name) && !src,
-    [editor, src],
-  );
+  const shouldShow = useCallback(() => editor.isActive(Iframe.name) && !src, [editor, src]);
 
   const deleteMe = useCallback(() => deleteNode(Iframe.name, editor), [editor]);
 
@@ -111,19 +104,20 @@ export function RichTextBubbleIframe() {
     <>
       <BubbleMenu
         editor={editor}
-        options={{ placement: "bottom", offset: 8, flip: true }}
-        pluginKey={"RichTextBubbleIframe"}
+        appendTo={() => document.body}
+        options={bubbleOptions}
+        pluginKey={'RichTextBubbleIframe'}
         shouldShow={shouldShow}
       >
         <Card
           data-richtext-portal
-          className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+          className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
         >
-          <ActionButton action={visitLink} icon="Eye" tooltip="Visit Link" />
+          <ActionButton action={visitLink} icon='Eye' tooltip='Visit Link' />
 
           <Dialog onOpenChange={toggleVisible} open={visible}>
             <DialogTrigger asChild>
-              <ActionButton icon="Pencil" tooltip="Open Edit Link" />
+              <ActionButton icon='Pencil' tooltip='Open Edit Link' />
             </DialogTrigger>
 
             <DialogContent>
@@ -134,17 +128,17 @@ export function RichTextBubbleIframe() {
               <Input
                 autoFocus
                 onInput={(e) => setFormUrl(e.currentTarget.value)}
-                placeholder="Enter link"
-                type="url"
+                placeholder='Enter link'
+                type='url'
                 value={formUrl}
               />
 
               <DialogFooter>
-                <Button onClick={handleCancel} type="button">
+                <Button onClick={handleCancel} type='button'>
                   Cancel
                 </Button>
 
-                <Button onClick={handleOk} type="button">
+                <Button onClick={handleOk} type='button'>
                   OK
                 </Button>
               </DialogFooter>
@@ -152,14 +146,10 @@ export function RichTextBubbleIframe() {
           </Dialog>
 
           <SizeSetter height={height} onOk={setSize} width={width}>
-            <ActionButton icon="Settings" tooltip={t("editor.settings")} />
+            <ActionButton icon='Settings' tooltip={t('editor.settings')} />
           </SizeSetter>
 
-          <ActionButton
-            action={deleteMe}
-            icon="Trash2"
-            tooltip={t("editor.delete")}
-          />
+          <ActionButton action={deleteMe} icon='Trash2' tooltip={t('editor.delete')} />
         </Card>
       </BubbleMenu>
     </>

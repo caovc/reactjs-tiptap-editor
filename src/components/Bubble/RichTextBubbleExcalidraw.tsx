@@ -1,30 +1,32 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { useCallback, useEffect } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { useCallback, useEffect } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { emit } from "@/components/ReactBus";
-import { SizeSetter } from "@/components/SizeSetter/SizeSetter";
-import { Excalidraw } from "@/extensions/Excalidraw";
-import { useAttributes } from "@/hooks/useAttributes";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { EVENTS } from "@/utils/customEvents/events.constant";
-import { deleteNode } from "@/utils/delete-node";
-import { getEditorContainerDOMSize } from "@/utils/editor-container-size";
+import { ActionButton } from '@/components/ActionButton';
+import { emit } from '@/components/ReactBus';
+import { Card } from '@/components/reui/card';
+import { SizeSetter } from '@/components/SizeSetter/SizeSetter';
+import { Excalidraw } from '@/extensions/Excalidraw';
+import { useAttributes } from '@/hooks/useAttributes';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { EVENTS } from '@/utils/customEvents/events.constant';
+import { deleteNode } from '@/utils/delete-node';
+import { getEditorContainerDOMSize } from '@/utils/editor-container-size';
 
-import type { IExcalidrawAttrs } from "@/extensions/Excalidraw";
+import type { IExcalidrawAttrs } from '@/extensions/Excalidraw';
 
 export function RichTextBubbleExcalidraw() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const { t } = useLocale();
   const { width: maxWidth } = getEditorContainerDOMSize(editor);
   const attrs = useAttributes<IExcalidrawAttrs>(editor, Excalidraw.name, {
     defaultShowPicker: false,
-    createUser: "",
+    createUser: '',
     width: 0,
     height: 0,
   });
@@ -39,7 +41,7 @@ export function RichTextBubbleExcalidraw() {
         .focus()
         .run();
     },
-    [editor],
+    [editor]
   );
 
   const openEditLinkModal = useCallback(() => {
@@ -47,23 +49,13 @@ export function RichTextBubbleExcalidraw() {
     emit(EVENT_ID, attrs);
   }, [editor, attrs]);
 
-  const shouldShow = useCallback(
-    () => editor.isActive(Excalidraw.name),
-    [editor],
-  );
-  const deleteMe = useCallback(
-    () => deleteNode(Excalidraw.name, editor),
-    [editor],
-  );
+  const shouldShow = useCallback(() => editor.isActive(Excalidraw.name), [editor]);
+  const deleteMe = useCallback(() => deleteNode(Excalidraw.name, editor), [editor]);
 
   useEffect(() => {
     if (defaultShowPicker) {
       openEditLinkModal();
-      editor
-        .chain()
-        .updateAttributes(Excalidraw.name, { defaultShowPicker: false })
-        .focus()
-        .run();
+      editor.chain().updateAttributes(Excalidraw.name, { defaultShowPicker: false }).focus().run();
     }
   }, [createUser, defaultShowPicker, editor, openEditLinkModal]);
 
@@ -74,34 +66,22 @@ export function RichTextBubbleExcalidraw() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleExcalidraw"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleExcalidraw'}
       shouldShow={shouldShow}
     >
       <Card
         data-richtext-portal
-        className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+        className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
       >
-        <ActionButton
-          action={openEditLinkModal}
-          icon="Pencil"
-          tooltip={t("editor.edit")}
-        />
+        <ActionButton action={openEditLinkModal} icon='Pencil' tooltip={t('editor.edit')} />
 
-        <SizeSetter
-          height={height}
-          maxWidth={maxWidth}
-          onOk={setSize}
-          width={width}
-        >
-          <ActionButton icon="Settings" tooltip={t("editor.settings")} />
+        <SizeSetter height={height} maxWidth={maxWidth} onOk={setSize} width={width}>
+          <ActionButton icon='Settings' tooltip={t('editor.settings')} />
         </SizeSetter>
 
-        <ActionButton
-          action={deleteMe}
-          icon="Trash2"
-          tooltip={t("editor.delete")}
-        />
+        <ActionButton action={deleteMe} icon='Trash2' tooltip={t('editor.delete')} />
       </Card>
     </BubbleMenu>
   );

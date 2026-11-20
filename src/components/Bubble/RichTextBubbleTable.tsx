@@ -1,15 +1,16 @@
-import { Card } from "@/components/reui/card";
-import { isActive } from "@tiptap/core";
-import { useEditorState } from "@tiptap/react";
-import { BubbleMenu } from "@tiptap/react/menus";
+import { isActive } from '@tiptap/core';
+import { useEditorState } from '@tiptap/react';
+import { BubbleMenu } from '@tiptap/react/menus';
 
-import { ActionButton, Separator } from "@/components";
-import { Table } from "@/extensions/Table";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
+import { ActionButton, Separator } from '@/components';
+import { Card } from '@/components/reui/card';
+import { Table } from '@/extensions/Table';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
 
-import type { Editor } from "@tiptap/core";
+import type { Editor } from '@tiptap/core';
 
 interface RichTextBubbleTableProps {
   hiddenActions?: string[];
@@ -20,6 +21,7 @@ function RichTextBubbleTable({ hiddenActions = [] }: RichTextBubbleTableProps) {
 
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const can = useEditorState({
     editor,
@@ -89,107 +91,108 @@ function RichTextBubbleTable({ hiddenActions = [] }: RichTextBubbleTableProps) {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleTable"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleTable'}
       shouldShow={shouldShow}
     >
       <Card
         data-richtext-portal
-        className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+        className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
       >
-        {!isHidden("addColumnBefore") && (
+        {!isHidden('addColumnBefore') && (
           <ActionButton
             action={onAddColumnBefore}
             disabled={!can.addColumnBefore}
-            icon="BetweenHorizonalEnd"
-            tooltip={t("editor.table.menu.insertColumnBefore")}
+            icon='BetweenHorizonalEnd'
+            tooltip={t('editor.table.menu.insertColumnBefore')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
-        {!isHidden("addColumnAfter") && (
+        {!isHidden('addColumnAfter') && (
           <ActionButton
             action={onAddColumnAfter}
             disabled={!can.addColumnAfter}
-            icon="BetweenHorizonalStart"
-            tooltip={t("editor.table.menu.insertColumnAfter")}
+            icon='BetweenHorizonalStart'
+            tooltip={t('editor.table.menu.insertColumnAfter')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
-        {!isHidden("deleteColumn") && (
+        {!isHidden('deleteColumn') && (
           <ActionButton
             action={onDeleteColumn}
             disabled={!can.deleteColumn}
-            icon="DeleteColumn"
-            tooltip={t("editor.table.menu.deleteColumn")}
+            icon='DeleteColumn'
+            tooltip={t('editor.table.menu.deleteColumn')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
 
-        {!isHidden("addRowAbove") && (
+        {!isHidden('addRowAbove') && (
           <ActionButton
             action={onAddRowAbove}
             disabled={!can.addRowBefore}
-            icon="BetweenVerticalEnd"
-            tooltip={t("editor.table.menu.insertRowAbove")}
+            icon='BetweenVerticalEnd'
+            tooltip={t('editor.table.menu.insertRowAbove')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
-        {!isHidden("addRowBelow") && (
+        {!isHidden('addRowBelow') && (
           <ActionButton
             action={onAddRowBelow}
             disabled={!can.addRowAfter}
-            icon="BetweenVerticalStart"
-            tooltip={t("editor.table.menu.insertRowBelow")}
+            icon='BetweenVerticalStart'
+            tooltip={t('editor.table.menu.insertRowBelow')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
-        {!isHidden("deleteRow") && (
+        {!isHidden('deleteRow') && (
           <ActionButton
             action={onDeleteRow}
             disabled={!can.deleteRow}
-            icon="DeleteRow"
-            tooltip={t("editor.table.menu.deleteRow")}
+            icon='DeleteRow'
+            tooltip={t('editor.table.menu.deleteRow')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
 
-        {!isHidden("mergeCells") && (
+        {!isHidden('mergeCells') && (
           <ActionButton
             action={onMergeCell}
             disabled={!can.mergeCells}
-            icon="TableCellsMerge"
-            tooltip={t("editor.table.menu.mergeCells")}
+            icon='TableCellsMerge'
+            tooltip={t('editor.table.menu.mergeCells')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
-        {!isHidden("splitCells") && (
+        {!isHidden('splitCells') && (
           <ActionButton
             action={onSplitCell}
             disabled={!can.splitCell}
-            icon="TableCellsSplit"
-            tooltip={t("editor.table.menu.splitCells")}
+            icon='TableCellsSplit'
+            tooltip={t('editor.table.menu.splitCells')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}
 
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
 
         {/* {!isHidden('setCellBackground') && (
@@ -201,12 +204,12 @@ function RichTextBubbleTable({ hiddenActions = [] }: RichTextBubbleTableProps) {
           />
         )}  */}
 
-        {!isHidden("deleteTable") && (
+        {!isHidden('deleteTable') && (
           <ActionButton
             action={onDeleteTable}
             disabled={!can.deleteTable}
-            icon="Trash2"
-            tooltip={t("editor.table.menu.deleteTable")}
+            icon='Trash2'
+            tooltip={t('editor.table.menu.deleteTable')}
             tooltipOptions={{ sideOffset: 15 }}
           />
         )}

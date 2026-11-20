@@ -1,26 +1,27 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { Fragment, useMemo } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { Fragment, useMemo } from 'react';
 
-import { Separator } from "@/components";
-import { getBubbleDrawer } from "@/components/Bubble/formatBubble";
-import { Drawer } from "@/extensions/Drawer";
-import { EditDrawerBlock } from "@/extensions/Drawer/components/EditDrawerBlock";
-import { useAttributes } from "@/hooks/useAttributes";
-import { useExtension } from "@/hooks/useExtension";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
+import { Separator } from '@/components';
+import { getBubbleDrawer } from '@/components/Bubble/formatBubble';
+import { Card } from '@/components/reui/card';
+import { Drawer } from '@/extensions/Drawer';
+import { EditDrawerBlock } from '@/extensions/Drawer/components/EditDrawerBlock';
+import { useAttributes } from '@/hooks/useAttributes';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useExtension } from '@/hooks/useExtension';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
 
-import type { Node as ProseMirrorNode } from "@tiptap/pm/model";
-import type { Editor } from "@tiptap/react";
+import type { Node as ProseMirrorNode } from '@tiptap/pm/model';
+import type { Editor } from '@tiptap/react';
 
 function ItemA({
   item,
   disabled,
   editor,
 }: {
-  item: import("./formatBubble").BubbleMenuItem;
+  item: import('./formatBubble').BubbleMenuItem;
   disabled?: boolean;
   editor: Editor;
 }) {
@@ -32,10 +33,10 @@ function ItemA({
 
   return (
     <Fragment>
-      {item.type === "divider" ? (
+      {item.type === 'divider' ? (
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
       ) : (
         <Comp
@@ -52,11 +53,12 @@ export function RichTextBubbleDrawer() {
   const { lang, t } = useLocale();
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const attrs = useAttributes<{
     src: string;
     alt: string;
-    align: "left" | "center" | "right";
+    align: 'left' | 'center' | 'right';
   }>(editor, Drawer.name);
 
   const extension = useExtension(Drawer.name);
@@ -66,16 +68,12 @@ export function RichTextBubbleDrawer() {
     const { $from, to } = selection;
     let isDrawer = false;
 
-    editor.view.state.doc.nodesBetween(
-      $from.pos,
-      to,
-      (node: ProseMirrorNode) => {
-        if (node.type.name === Drawer.name) {
-          isDrawer = true;
-          return false; // Stop iteration if an mermaid is found
-        }
-      },
-    );
+    editor.view.state.doc.nodesBetween($from.pos, to, (node: ProseMirrorNode) => {
+      if (node.type.name === Drawer.name) {
+        isDrawer = true;
+        return false; // Stop iteration if an mermaid is found
+      }
+    });
 
     return isDrawer;
   };
@@ -91,17 +89,18 @@ export function RichTextBubbleDrawer() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleDrawer"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleDrawer'}
       shouldShow={shouldShow}
     >
       {items?.length ? (
         <Card
           data-richtext-portal
-          className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+          className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
         >
           {items?.map((item, key) => {
-            if (item.type === "edit" && attrs?.src) {
+            if (item.type === 'edit' && attrs?.src) {
               return (
                 <EditDrawerBlock
                   attrs={attrs}
@@ -112,13 +111,7 @@ export function RichTextBubbleDrawer() {
               );
             }
 
-            return (
-              <ItemA
-                editor={editor}
-                item={item}
-                key={`bubbleMenu-drawer-${key}`}
-              />
-            );
+            return <ItemA editor={editor} item={item} key={`bubbleMenu-drawer-${key}`} />;
           })}
         </Card>
       ) : (

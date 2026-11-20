@@ -10,12 +10,12 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const dialogContentVariants = cva(
-  'richtext-flex richtext-flex-col richtext-fixed richtext-outline-0 richtext-z-50 richtext-border richtext-border-border richtext-bg-background richtext-p-6 richtext-shadow-lg richtext-shadow-black/5 richtext-duration-200 data-[state=open]:richtext-animate-in data-[state=closed]:richtext-animate-out data-[state=closed]:richtext-fade-out-0 data-[state=open]:richtext-fade-in-0 data-[state=closed]:richtext-zoom-out-95 data-[state=open]:richtext-zoom-in-95 sm:richtext-rounded-lg',
+  'richtext-flex richtext-flex-col richtext-max-h-[calc(100dvh-2rem)] richtext-overflow-y-auto richtext-fixed richtext-outline-0 richtext-z-50 richtext-border richtext-border-border richtext-bg-background richtext-p-6 richtext-shadow-lg richtext-shadow-black/5 richtext-duration-200 data-[state=open]:richtext-animate-in data-[state=closed]:richtext-animate-out data-[state=closed]:richtext-fade-out-0 data-[state=open]:richtext-fade-in-0 data-[state=closed]:richtext-zoom-out-95 data-[state=open]:richtext-zoom-in-95 sm:richtext-rounded-lg',
   {
     variants: {
       variant: {
         default:
-          'richtext-left-[50%] richtext-top-[50%] richtext-max-w-lg richtext-translate-x-[-50%] richtext-translate-y-[-50%] richtext-w-full',
+          'richtext-left-[50%] richtext-top-[50%] richtext-max-w-lg richtext-translate-x-[-50%] richtext-translate-y-[-50%] richtext-w-[calc(100vw-2rem)]',
         fullscreen: 'richtext-inset-5',
       },
     },
@@ -57,7 +57,7 @@ const DialogOverlay = React.forwardRef<
       data-richtext-portal
       data-slot='dialog-overlay'
       className={cn(
-        'richtext-[backdrop-filter:blur(4px)] richtext-fixed richtext-inset-0 richtext-z-50 richtext-bg-black/30 data-[state=open]:richtext-animate-in data-[state=closed]:richtext-animate-out data-[state=closed]:richtext-fade-out-0 data-[state=open]:richtext-fade-in-0',
+        'richtext-fixed richtext-inset-0 richtext-z-50 richtext-bg-black/30 richtext-backdrop-blur-[4px] data-[state=open]:richtext-animate-in data-[state=closed]:richtext-animate-out data-[state=closed]:richtext-fade-out-0 data-[state=open]:richtext-fade-in-0',
         className
       )}
       {...props}

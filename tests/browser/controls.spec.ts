@@ -64,3 +64,15 @@ test('ReUI overlays, focus restoration, tooltip, semantic button styles and noti
   await page.getByRole('button', { name: 'Dismiss notification', exact: true }).click();
   await expect(page.locator('[data-sonner-toast]')).toHaveCount(0);
 });
+
+test('ReUI translated disabled state is actually styled in both themes', async ({ page }) => {
+  for (const name of ['Light theme', 'Dark theme']) {
+    await page.getByRole('button', { name, exact: true }).click();
+    await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    const disabled = page.getByRole('menuitem', { name: 'Unavailable action', exact: true });
+    await expect(disabled).toHaveAttribute('data-disabled', '');
+    await expect(disabled).toHaveCSS('pointer-events', 'none');
+    await expect(disabled).toHaveCSS('opacity', '0.5');
+    await page.keyboard.press('Escape');
+  }
+});

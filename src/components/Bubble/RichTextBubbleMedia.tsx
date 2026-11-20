@@ -1,29 +1,30 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { Fragment, useMemo } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { Fragment, useMemo } from 'react';
 
-import { Separator } from "@/components";
+import { Separator } from '@/components';
 import {
   getBubbleImage,
   getBubbleImageGif,
   getBubbleVideo,
-} from "@/components/Bubble/formatBubble";
-import { Image, ImageBlock } from "@/extensions/Image";
-import { ImageGif } from "@/extensions/ImageGif";
-import { Video } from "@/extensions/Video";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
+} from '@/components/Bubble/formatBubble';
+import { Card } from '@/components/reui/card';
+import { Image, ImageBlock } from '@/extensions/Image';
+import { ImageGif } from '@/extensions/ImageGif';
+import { Video } from '@/extensions/Video';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
 
-import type { Node as ProseMirrorNode } from "@tiptap/pm/model";
-import type { Editor } from "@tiptap/react";
+import type { Node as ProseMirrorNode } from '@tiptap/pm/model';
+import type { Editor } from '@tiptap/react';
 
 function ItemA({
   item,
   disabled,
   editor,
 }: {
-  item: import("./formatBubble").BubbleMenuItem;
+  item: import('./formatBubble').BubbleMenuItem;
   disabled?: boolean;
   editor: Editor;
 }) {
@@ -35,10 +36,10 @@ function ItemA({
 
   return (
     <Fragment>
-      {item.type === "divider" ? (
+      {item.type === 'divider' ? (
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
       ) : (
         <Comp
@@ -67,22 +68,19 @@ function RichTextBubbleImage() {
   const { lang, t } = useLocale();
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const shouldShow = ({ editor }: { editor: Editor }) => {
     const { selection } = editor.view.state;
     const { $from, to } = selection;
     let isImage = false;
 
-    editor.view.state.doc.nodesBetween(
-      $from.pos,
-      to,
-      (node: ProseMirrorNode) => {
-        if (isImageNode(node)) {
-          isImage = true;
-          return false; // Stop iteration if an image is found
-        }
-      },
-    );
+    editor.view.state.doc.nodesBetween($from.pos, to, (node: ProseMirrorNode) => {
+      if (isImageNode(node)) {
+        isImage = true;
+        return false; // Stop iteration if an image is found
+      }
+    });
 
     return isImage;
   };
@@ -98,23 +96,18 @@ function RichTextBubbleImage() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleImage"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleImage'}
       shouldShow={shouldShow}
     >
       {items?.length ? (
         <Card
           data-richtext-portal
-          className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+          className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
         >
           {items?.map((item, key) => {
-            return (
-              <ItemA
-                editor={editor}
-                item={item}
-                key={`bubbleMenu-image-${key}`}
-              />
-            );
+            return <ItemA editor={editor} item={item} key={`bubbleMenu-image-${key}`} />;
           })}
         </Card>
       ) : (
@@ -128,22 +121,19 @@ function RichTextBubbleImageGif() {
   const { lang, t } = useLocale();
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const shouldShow = ({ editor }: { editor: Editor }) => {
     const { selection } = editor.view.state;
     const { $from, to } = selection;
     let isImage = false;
 
-    editor.view.state.doc.nodesBetween(
-      $from.pos,
-      to,
-      (node: ProseMirrorNode) => {
-        if (isImageGifNode(node)) {
-          isImage = true;
-          return false; // Stop iteration if an image is found
-        }
-      },
-    );
+    editor.view.state.doc.nodesBetween($from.pos, to, (node: ProseMirrorNode) => {
+      if (isImageGifNode(node)) {
+        isImage = true;
+        return false; // Stop iteration if an image is found
+      }
+    });
 
     return isImage;
   };
@@ -159,23 +149,18 @@ function RichTextBubbleImageGif() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleImageGif"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleImageGif'}
       shouldShow={shouldShow}
     >
       {items?.length ? (
         <Card
           data-richtext-portal
-          className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+          className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
         >
           {items?.map((item, key) => {
-            return (
-              <ItemA
-                editor={editor}
-                item={item}
-                key={`bubbleMenu-image-gif-${key}`}
-              />
-            );
+            return <ItemA editor={editor} item={item} key={`bubbleMenu-image-gif-${key}`} />;
           })}
         </Card>
       ) : (
@@ -189,22 +174,19 @@ function RichTextBubbleVideo() {
   const { t } = useLocale();
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const shouldShow = ({ editor }: { editor: Editor }) => {
     const { selection } = editor.view.state;
     const { $from, to } = selection;
     let isVideo = false;
 
-    editor.view.state.doc.nodesBetween(
-      $from.pos,
-      to,
-      (node: ProseMirrorNode) => {
-        if (isVideoNode(node)) {
-          isVideo = true;
-          return false;
-        }
-      },
-    );
+    editor.view.state.doc.nodesBetween($from.pos, to, (node: ProseMirrorNode) => {
+      if (isVideoNode(node)) {
+        isVideo = true;
+        return false;
+      }
+    });
 
     return isVideo;
   };
@@ -220,23 +202,18 @@ function RichTextBubbleVideo() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleVideo"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleVideo'}
       shouldShow={shouldShow}
     >
       {items?.length ? (
         <Card
           data-richtext-portal
-          className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+          className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
         >
           {items?.map((item, key) => {
-            return (
-              <ItemA
-                editor={editor}
-                item={item}
-                key={`bubbleMenu-video-${key}`}
-              />
-            );
+            return <ItemA editor={editor} item={item} key={`bubbleMenu-video-${key}`} />;
           })}
         </Card>
       ) : (

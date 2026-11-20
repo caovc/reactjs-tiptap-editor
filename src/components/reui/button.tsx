@@ -62,7 +62,7 @@ const buttonVariants = cva(
         icon: 'focus-visible:richtext-ring-2 focus-visible:richtext-ring-ring focus-visible:richtext-ring-offset-2 richtext-shrink-0',
         link: 'richtext-text-primary richtext-h-auto richtext-p-0 richtext-bg-transparent richtext-rounded-none hover:richtext-bg-transparent data-[state=open]:richtext-bg-transparent',
         input:
-          'richtext-justify-start richtext-font-normal hover:richtext-bg-background [&_svg]:richtext-transition-colors [&_svg]:hover:richtext-text-foreground data-[state=open]:richtext-bg-background focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 [[data-state=open]>&]:richtext-border-ring [[data-state=open]>&]:richtext-outline-none [[data-state=open]>&]:richtext-ring-[3px] [[data-state=open]>&]:richtext-ring-ring/30 aria-invalid:richtext-border-destructive/60 aria-invalid:richtext-ring-destructive/10 dark:aria-invalid:richtext-border-destructive dark:aria-invalid:richtext-ring-destructive/20 in-data-[invalid=true]:richtext-border-destructive/60 in-data-[invalid=true]:richtext-ring-destructive/10 dark:in-data-[invalid=true]:richtext-border-destructive dark:in-data-[invalid=true]:richtext-ring-destructive/20',
+          'richtext-justify-start richtext-font-normal hover:richtext-bg-background [&_svg]:richtext-transition-colors [&_svg]:hover:richtext-text-foreground data-[state=open]:richtext-bg-background focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 [[data-state=open]>&]:richtext-border-ring [[data-state=open]>&]:richtext-outline-none [[data-state=open]>&]:richtext-ring-[3px] [[data-state=open]>&]:richtext-ring-ring/30 aria-[invalid=true]:richtext-border-destructive/60 aria-[invalid=true]:richtext-ring-destructive/10 dark:aria-[invalid=true]:richtext-border-destructive dark:aria-[invalid=true]:richtext-ring-destructive/20 [[data-invalid=true]_&]:richtext-border-destructive/60 [[data-invalid=true]_&]:richtext-ring-destructive/10 dark:[[data-invalid=true]_&]:richtext-border-destructive dark:[[data-invalid=true]_&]:richtext-ring-destructive/20',
       },
       placeholder: {
         true: 'richtext-text-muted-foreground',
@@ -320,13 +320,13 @@ const buttonVariants = cva(
         size: 'xs',
         mode: 'icon',
         className:
-          'richtext-w-7 richtext-h-7 richtext-p-0 richtext-[[&_svg:not([class*=size-])]:size-3.5',
+          'richtext-w-7 richtext-h-7 richtext-p-0 [&_svg:not([class*=richtext-size-])]:richtext-size-3.5',
       },
       {
         size: 'sm',
         mode: 'icon',
         className:
-          'richtext-w-8 richtext-h-8 richtext-p-0 richtext-[[&_svg:not([class*=size-])]:size-3.5',
+          'richtext-w-8 richtext-h-8 richtext-p-0 [&_svg:not([class*=richtext-size-])]:richtext-size-3.5',
       },
       {
         size: 'md',

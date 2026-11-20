@@ -67,6 +67,12 @@ async function run() {
   save.click();
   await waitFor(() => document.querySelector('.ProseMirror .katex'), 'saved formula');
   check(loaderCalls === 1, 'node view shares the loaded renderer with the dialog');
+  await waitFor(
+    () =>
+      !document.querySelector('[role="dialog"]') &&
+      getComputedStyle(document.body).pointerEvents !== 'none',
+    'formula dialog fully closed before opening another overlay'
+  );
 
   editor.commands.setContent({
     type: 'doc',

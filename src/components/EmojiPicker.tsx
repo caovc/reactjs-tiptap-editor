@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
 import {
   type EmojiPickerListCategoryHeaderProps,
   type EmojiPickerListEmojiProps,
   type EmojiPickerListRowProps,
   EmojiPicker as EmojiPickerPrimitive,
-} from "frimousse";
-import { LoaderIcon, SearchIcon } from "lucide-react";
+} from 'frimousse';
+import { LoaderIcon, SearchIcon } from 'lucide-react';
 
-import { Button } from "./reui/button";
-import { Input, InputWrapper } from "./reui/input";
+import { cn } from '@/lib/utils';
 
-import { cn } from "@/lib/utils";
+import { Button } from './reui/button';
+import { Input, InputWrapper } from './reui/input';
 
-import type * as React from "react";
+import type * as React from 'react';
 
 function EmojiPicker({
   className,
@@ -21,10 +21,10 @@ function EmojiPicker({
 }: React.ComponentProps<typeof EmojiPickerPrimitive.Root>) {
   return (
     <EmojiPickerPrimitive.Root
-      data-slot="emoji-picker"
+      data-slot='emoji-picker'
       className={cn(
-        "!richtext-isolate !richtext-flex richtext-h-full !richtext-w-fit !richtext-flex-col !richtext-overflow-hidden !richtext-rounded-md !richtext-bg-popover !richtext-text-popover-foreground",
-        className,
+        '!richtext-isolate !richtext-flex richtext-h-full !richtext-w-fit !richtext-flex-col !richtext-overflow-hidden !richtext-rounded-md !richtext-bg-popover !richtext-text-popover-foreground',
+        className
       )}
       {...props}
     />
@@ -36,12 +36,12 @@ function EmojiPickerSearch({
   ...props
 }: React.ComponentProps<typeof EmojiPickerPrimitive.Search>) {
   return (
-    <InputWrapper className={cn("richtext-m-2", className)}>
-      <SearchIcon aria-hidden="true" />
+    <InputWrapper className={cn('richtext-m-2', className)}>
+      <SearchIcon aria-hidden='true' />
       <Input asChild>
         <EmojiPickerPrimitive.Search
-          aria-label="Search emoji"
-          data-slot="emoji-picker-search"
+          aria-label='Search emoji'
+          data-slot='emoji-picker-search'
           {...props}
         />
       </Input>
@@ -51,31 +51,23 @@ function EmojiPickerSearch({
 
 function EmojiPickerRow({ children, ...props }: EmojiPickerListRowProps) {
   return (
-    <div
-      {...props}
-      className="!richtext-scroll-my-1 !richtext-px-1"
-      data-slot="emoji-picker-row"
-    >
+    <div {...props} className='!richtext-scroll-my-1 !richtext-px-1' data-slot='emoji-picker-row'>
       {children}
     </div>
   );
 }
 
-function EmojiPickerEmoji({
-  emoji,
-  className,
-  ...props
-}: EmojiPickerListEmojiProps) {
+function EmojiPickerEmoji({ emoji, className, ...props }: EmojiPickerListEmojiProps) {
   return (
     <Button
-      variant="ghost"
-      size="icon"
-      type="button"
+      variant='ghost'
+      size='icon'
+      type='button'
       {...props}
-      data-slot="emoji-picker-emoji"
+      data-slot='emoji-picker-emoji'
       className={cn(
-        "!richtext-flex !richtext-size-7 !richtext-items-center !richtext-justify-center !richtext-rounded-sm richtext-bg-transparent !richtext-text-base data-[active]:!richtext-bg-accent",
-        className,
+        '!richtext-flex !richtext-size-7 !richtext-items-center !richtext-justify-center !richtext-rounded-sm richtext-bg-transparent !richtext-text-base data-[active]:!richtext-bg-accent',
+        className
       )}
     >
       {emoji.emoji}
@@ -83,15 +75,12 @@ function EmojiPickerEmoji({
   );
 }
 
-function EmojiPickerCategoryHeader({
-  category,
-  ...props
-}: EmojiPickerListCategoryHeaderProps) {
+function EmojiPickerCategoryHeader({ category, ...props }: EmojiPickerListCategoryHeaderProps) {
   return (
     <div
       {...props}
-      className="!richtext-bg-popover !richtext-px-3 !richtext-pb-2 !richtext-pt-3.5 !richtext-text-xs !richtext-leading-none !richtext-text-muted-foreground"
-      data-slot="emoji-picker-category-header"
+      className='!richtext-bg-popover !richtext-px-3 !richtext-pb-2 !richtext-pt-3.5 !richtext-text-xs !richtext-leading-none !richtext-text-muted-foreground'
+      data-slot='emoji-picker-category-header'
     >
       {category.label}
     </div>
@@ -104,30 +93,27 @@ function EmojiPickerContent({
 }: React.ComponentProps<typeof EmojiPickerPrimitive.Viewport>) {
   return (
     <EmojiPickerPrimitive.Viewport
-      className={cn(
-        "!richtext-outline-hidden !richtext-relative !richtext-flex-1",
-        className,
-      )}
-      data-slot="emoji-picker-viewport"
+      className={cn('!richtext-relative !richtext-flex-1 !richtext-outline-none', className)}
+      data-slot='emoji-picker-viewport'
       {...props}
     >
       <EmojiPickerPrimitive.Loading
-        className="!richtext-absolute !richtext-inset-0 !richtext-flex !richtext-items-center !richtext-justify-center !richtext-text-muted-foreground"
-        data-slot="emoji-picker-loading"
+        className='!richtext-absolute !richtext-inset-0 !richtext-flex !richtext-items-center !richtext-justify-center !richtext-text-muted-foreground'
+        data-slot='emoji-picker-loading'
       >
-        <LoaderIcon className="!richtext-size-4 !richtext-animate-spin" />
+        <LoaderIcon className='!richtext-size-4 !richtext-animate-spin' />
       </EmojiPickerPrimitive.Loading>
 
       <EmojiPickerPrimitive.Empty
-        className="!richtext-absolute !richtext-inset-0 !richtext-flex !richtext-items-center !richtext-justify-center !richtext-text-sm !richtext-text-muted-foreground"
-        data-slot="emoji-picker-empty"
+        className='!richtext-absolute !richtext-inset-0 !richtext-flex !richtext-items-center !richtext-justify-center !richtext-text-sm !richtext-text-muted-foreground'
+        data-slot='emoji-picker-empty'
       >
         No emoji found.
       </EmojiPickerPrimitive.Empty>
 
       <EmojiPickerPrimitive.List
-        className="!richtext-select-none !richtext-pb-1"
-        data-slot="emoji-picker-list"
+        className='!richtext-select-none !richtext-pb-1'
+        data-slot='emoji-picker-list'
         components={{
           Row: EmojiPickerRow,
           Emoji: EmojiPickerEmoji,
@@ -138,16 +124,13 @@ function EmojiPickerContent({
   );
 }
 
-function EmojiPickerFooter({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function EmojiPickerFooter({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      data-slot="emoji-picker-footer"
+      data-slot='emoji-picker-footer'
       className={cn(
-        "!richtext-max-w-(--frimousse-viewport-width) !richtext-flex !richtext-w-full !richtext-min-w-0 !richtext-items-center !richtext-gap-1 !richtext-border-t richtext-border-border !richtext-p-2",
-        className,
+        '!richtext-flex !richtext-w-full !richtext-min-w-0 !richtext-max-w-[var(--frimousse-viewport-width)] !richtext-items-center !richtext-gap-1 !richtext-border-t richtext-border-border !richtext-p-2',
+        className
       )}
       {...props}
     >
@@ -155,16 +138,16 @@ function EmojiPickerFooter({
         {({ emoji }) =>
           emoji ? (
             <>
-              <div className="!richtext-flex !richtext-size-7 !richtext-flex-none !richtext-items-center !richtext-justify-center !richtext-text-lg">
+              <div className='!richtext-flex !richtext-size-7 !richtext-flex-none !richtext-items-center !richtext-justify-center !richtext-text-lg'>
                 {emoji.emoji}
               </div>
 
-              <span className="!richtext-truncate !richtext-text-xs !richtext-text-secondary-foreground">
+              <span className='!richtext-truncate !richtext-text-xs !richtext-text-secondary-foreground'>
                 {emoji.label}
               </span>
             </>
           ) : (
-            <span className="!richtext-ml-1.5 !richtext-flex !richtext-h-7 !richtext-items-center !richtext-truncate !richtext-text-xs !richtext-text-muted-foreground">
+            <span className='!richtext-ml-1.5 !richtext-flex !richtext-h-7 !richtext-items-center !richtext-truncate !richtext-text-xs !richtext-text-muted-foreground'>
               Select an emoji…
             </span>
           )
@@ -174,9 +157,4 @@ function EmojiPickerFooter({
   );
 }
 
-export {
-  EmojiPicker,
-  EmojiPickerSearch,
-  EmojiPickerContent,
-  EmojiPickerFooter,
-};
+export { EmojiPicker, EmojiPickerSearch, EmojiPickerContent, EmojiPickerFooter };

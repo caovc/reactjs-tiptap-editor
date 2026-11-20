@@ -145,7 +145,7 @@ export function RichTextSearchAndReplace() {
         />
       </PopoverTrigger>
 
-      <PopoverContent align='start' className='richtext-w-full' hideWhenDetached side='bottom'>
+      <PopoverContent align='start' className='richtext-w-96' hideWhenDetached side='bottom'>
         <div className='richtext-mb-[6px] richtext-flex richtext-items-center richtext-justify-between'>
           <Label>{t('editor.search.dialog.text')}</Label>
 
@@ -155,7 +155,7 @@ export function RichTextSearchAndReplace() {
         <div className='richtext-mb-[10px] richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5'>
           <Input
             autoFocus
-            className='richtext-w-full'
+            className='richtext-min-w-0 richtext-flex-1'
             onChange={(e) => setSearchTerm(e.currentTarget.value)}
             placeholder='Text'
             required
@@ -163,15 +163,15 @@ export function RichTextSearchAndReplace() {
             value={searchTerm}
           />
 
-          <Button className='richtext-flex-1' onClick={previous}>
+          <Button variant='outline' size='icon' aria-label='Previous result' onClick={previous}>
             <IconComponent name='ChevronUp' />
           </Button>
 
-          <Button className='richtext-flex-1' onClick={next}>
+          <Button variant='outline' size='icon' aria-label='Next result' onClick={next}>
             <IconComponent name='ChevronDown' />
           </Button>
 
-          <Button className='richtext-flex-1' onClick={clear}>
+          <Button variant='outline' onClick={clear}>
             Clear
           </Button>
         </div>
@@ -181,7 +181,7 @@ export function RichTextSearchAndReplace() {
         <div className='richtext-mb-[5px] richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5'>
           <div className='richtext-relative richtext-w-full richtext-max-w-sm richtext-items-center'>
             <Input
-              className='richtext-w-80'
+              className='richtext-w-full'
               onChange={(e) => setReplaceTerm(e.currentTarget.value)}
               placeholder='Text'
               required
@@ -195,8 +195,9 @@ export function RichTextSearchAndReplace() {
           <Checkbox
             checked={caseSensitive}
             onCheckedChange={(v) => {
-              setCaseSensitive(v as boolean);
-              editor.commands.setCaseSensitive(v as boolean);
+              const checked = v === true;
+              setCaseSensitive(checked);
+              editor.commands.setCaseSensitive(checked);
             }}
           />
 

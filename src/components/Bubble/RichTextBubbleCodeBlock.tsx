@@ -1,120 +1,116 @@
-import { Card } from "@/components/reui/card";
-import { Button as ReuiButton } from "@/components/reui/button";
-import { useEditorState } from "@tiptap/react";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { Check, Copy, Trash2 } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
+import { useEditorState } from '@tiptap/react';
+import { BubbleMenu } from '@tiptap/react/menus';
+import { Check, Copy, Trash2 } from 'lucide-react';
+import { useCallback, useMemo, useState } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { IconComponent } from "@/components/icons";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Separator,
-} from "@/components/reui";
-import { CodeBlock } from "@/extensions/CodeBlock";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { deleteNode } from "@/utils/delete-node";
+import { ActionButton } from '@/components/ActionButton';
+import { IconComponent } from '@/components/icons';
+import { Popover, PopoverContent, PopoverTrigger, Separator } from '@/components/reui';
+import { Button as ReuiButton } from '@/components/reui/button';
+import { Card } from '@/components/reui/card';
+import { CodeBlock } from '@/extensions/CodeBlock';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { deleteNode } from '@/utils/delete-node';
 
-import type { Editor } from "@tiptap/react";
+import type { Editor } from '@tiptap/react';
 
 const LIST_LANG = [
-  "asm",
-  "astro",
-  "bash",
-  "c",
-  "cpp",
-  "cs",
-  "css",
-  "csv",
-  "dart",
-  "diff",
-  "docker",
-  "go",
-  "graphql",
-  "html",
-  "http",
-  "ini",
-  "java",
-  "js",
-  "json",
-  "jsx",
-  "kt",
-  "less",
-  "log",
-  "lua",
-  "make",
-  "md",
-  "php",
-  "pl",
-  "plain",
-  "ps1",
-  "py",
-  "rb",
-  "rs",
-  "scss",
-  "sql",
-  "svelte",
-  "swift",
-  "toml",
-  "ts",
-  "tsx",
-  "uri",
-  "vue",
-  "xml",
-  "yaml",
+  'asm',
+  'astro',
+  'bash',
+  'c',
+  'cpp',
+  'cs',
+  'css',
+  'csv',
+  'dart',
+  'diff',
+  'docker',
+  'go',
+  'graphql',
+  'html',
+  'http',
+  'ini',
+  'java',
+  'js',
+  'json',
+  'jsx',
+  'kt',
+  'less',
+  'log',
+  'lua',
+  'make',
+  'md',
+  'php',
+  'pl',
+  'plain',
+  'ps1',
+  'py',
+  'rb',
+  'rs',
+  'scss',
+  'sql',
+  'svelte',
+  'swift',
+  'toml',
+  'ts',
+  'tsx',
+  'uri',
+  'vue',
+  'xml',
+  'yaml',
 ];
 
 const MAP_LANGUAGE_LABEL: Record<string, string> = {
-  plaintext: "Plain Text",
-  js: "JavaScript",
-  ts: "TypeScript",
-  css: "CSS",
-  html: "HTML",
-  python: "Python",
-  bash: "Bash",
-  asm: "Assembly",
-  astro: "Astro",
-  c: "C",
-  cpp: "C++",
-  cs: "C#",
-  csv: "CSV",
-  dart: "Dart",
-  diff: "Diff",
-  docker: "Dockerfile",
-  go: "Go",
-  graphql: "GraphQL",
-  http: "HTTP",
-  ini: "INI",
-  java: "Java",
-  json: "JSON",
-  jsx: "JSX",
-  kt: "Kotlin",
-  less: "Less",
-  log: "Log",
-  lua: "Lua",
-  make: "Makefile",
-  md: "Markdown",
-  php: "PHP",
-  pl: "Perl",
-  plain: "Plain Text",
-  ps1: "PowerShell",
-  py: "Python",
-  rb: "Ruby",
-  rs: "Rust",
-  scss: "SCSS",
-  sql: "SQL",
-  svelte: "Svelte",
-  swift: "Swift",
-  toml: "TOML",
-  tsx: "TSX",
-  uri: "URI/URL",
-  vue: "Vue.js",
-  xml: "XML",
-  yaml: "YAML",
+  plaintext: 'Plain Text',
+  js: 'JavaScript',
+  ts: 'TypeScript',
+  css: 'CSS',
+  html: 'HTML',
+  python: 'Python',
+  bash: 'Bash',
+  asm: 'Assembly',
+  astro: 'Astro',
+  c: 'C',
+  cpp: 'C++',
+  cs: 'C#',
+  csv: 'CSV',
+  dart: 'Dart',
+  diff: 'Diff',
+  docker: 'Dockerfile',
+  go: 'Go',
+  graphql: 'GraphQL',
+  http: 'HTTP',
+  ini: 'INI',
+  java: 'Java',
+  json: 'JSON',
+  jsx: 'JSX',
+  kt: 'Kotlin',
+  less: 'Less',
+  log: 'Log',
+  lua: 'Lua',
+  make: 'Makefile',
+  md: 'Markdown',
+  php: 'PHP',
+  pl: 'Perl',
+  plain: 'Plain Text',
+  ps1: 'PowerShell',
+  py: 'Python',
+  rb: 'Ruby',
+  rs: 'Rust',
+  scss: 'SCSS',
+  sql: 'SQL',
+  svelte: 'Svelte',
+  swift: 'Swift',
+  toml: 'TOML',
+  tsx: 'TSX',
+  uri: 'URI/URL',
+  vue: 'Vue.js',
+  xml: 'XML',
+  yaml: 'YAML',
 };
 
 function SelectLanguages({ listLanguages }: { listLanguages: string[] }) {
@@ -130,8 +126,8 @@ function SelectLanguages({ listLanguages }: { listLanguages: string[] }) {
       const node = selection.$from.parent;
 
       // Check if the current node is a codeBlock and get its language attribute
-      if (node.type.name === "codeBlock") {
-        const currentLanguage = node.attrs.language || "plaintext";
+      if (node.type.name === 'codeBlock') {
+        const currentLanguage = node.attrs.language || 'plaintext';
         return MAP_LANGUAGE_LABEL[currentLanguage] || currentLanguage;
       }
     },
@@ -140,8 +136,8 @@ function SelectLanguages({ listLanguages }: { listLanguages: string[] }) {
   const list = useMemo(() => {
     let listLanguagesFormat = listLanguages || [];
 
-    if (!listLanguages?.includes("plaintext")) {
-      listLanguagesFormat = ["plaintext", ...listLanguagesFormat];
+    if (!listLanguages?.includes('plaintext')) {
+      listLanguagesFormat = ['plaintext', ...listLanguagesFormat];
     }
 
     return listLanguagesFormat.map((language) => {
@@ -156,53 +152,47 @@ function SelectLanguages({ listLanguages }: { listLanguages: string[] }) {
     <Popover modal onOpenChange={setOpen} open={open}>
       <PopoverTrigger
         asChild
-        className="hover:richtext-bg-accent data-[state=on]:richtext-bg-accent"
+        className='hover:richtext-bg-accent data-[state=on]:richtext-bg-accent'
       >
         <ActionButton dataState={!!currentLanguageActive}>
           {currentLanguageActive ? (
             <>{currentLanguageActive}</>
           ) : (
-            <>{t("editor.paragraph.tooltip")}</>
+            <>{t('editor.paragraph.tooltip')}</>
           )}
 
           <IconComponent
-            className="richtext-ml-1 richtext-size-3 richtext-text-zinc-500"
-            name="MenuDown"
+            className='richtext-ml-1 richtext-size-3 richtext-text-zinc-500'
+            name='MenuDown'
           />
         </ActionButton>
       </PopoverTrigger>
 
       <PopoverContent
-        align="start"
-        className="richtext-max-h-[200px] !richtext-w-[initial] richtext-overflow-auto !richtext-p-[4px]"
+        align='start'
+        className='richtext-max-h-[200px] !richtext-w-[initial] richtext-overflow-auto !richtext-p-[4px]'
         hideWhenDetached
-        side="bottom"
+        side='bottom'
       >
         {list?.map((item) => {
           return (
             <ReuiButton
-              type="button"
-              variant="ghost"
-              size="sm"
-              className="richtext-h-auto richtext-justify-start richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground richtext-transition-colors hover:!richtext-bg-accent"
+              type='button'
+              variant='ghost'
+              size='sm'
+              className='richtext-flex richtext-h-auto richtext-w-full richtext-items-center richtext-justify-start richtext-gap-3 richtext-rounded-sm richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground richtext-transition-colors hover:!richtext-bg-accent'
               key={item.value}
               onClick={(e) => {
                 e.preventDefault();
-                editor
-                  .chain()
-                  .focus()
-                  .setCodeBlock({ language: item.value })
-                  .run();
+                editor.chain().focus().setCodeBlock({ language: item.value }).run();
                 setOpen(false);
               }}
             >
-              <div className="!richtext-min-w-[20px]">
+              <div className='!richtext-min-w-[20px]'>
                 {currentLanguageActive === item.label && <Check size={16} />}
               </div>
 
-              <div className="richtext-flex richtext-items-center richtext-gap-1">
-                {item.label}
-              </div>
+              <div className='richtext-flex richtext-items-center richtext-gap-1'>{item.label}</div>
             </ReuiButton>
           );
         })}
@@ -214,16 +204,14 @@ function SelectLanguages({ listLanguages }: { listLanguages: string[] }) {
 export function RichTextBubbleCodeBlock() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const shouldShow = useCallback(({ editor }: { editor: Editor }) => {
     const isActive = editor.isActive(CodeBlock.name);
     return isActive;
   }, []);
 
-  const deleteMe = useCallback(
-    () => deleteNode(CodeBlock.name, editor),
-    [editor],
-  );
+  const deleteMe = useCallback(() => deleteNode(CodeBlock.name, editor), [editor]);
 
   const getCodeContent = () => {
     const { from } = editor.state.selection;
@@ -232,11 +220,11 @@ export function RichTextBubbleCodeBlock() {
     // Leo lên tìm node codeBlock
     for (let depth = resolvedPos.depth; depth >= 0; depth--) {
       const node = resolvedPos.node(depth);
-      if (node.type.name === "codeBlock") {
+      if (node.type.name === 'codeBlock') {
         return node.textContent;
       }
     }
-    return "";
+    return '';
   };
 
   // Dùng trong button copy
@@ -252,8 +240,9 @@ export function RichTextBubbleCodeBlock() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleCodeBlock"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleCodeBlock'}
       shouldShow={shouldShow}
       getReferencedVirtualElement={() => {
         const { from } = editor.state.selection;
@@ -271,23 +260,23 @@ export function RichTextBubbleCodeBlock() {
     >
       <Card
         data-richtext-portal
-        className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+        className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
       >
         <SelectLanguages listLanguages={LIST_LANG} />
 
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
-        <ActionButton action={handleCopy} tooltip="Copy">
+        <ActionButton action={handleCopy} tooltip='Copy'>
           <Copy size={16} />
         </ActionButton>
         <Separator
-          className="!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]"
-          orientation="vertical"
+          className='!richtext-mx-1 !richtext-my-2 !richtext-h-[16px]'
+          orientation='vertical'
         />
 
-        <ActionButton action={deleteMe} tooltip="Delete">
+        <ActionButton action={deleteMe} tooltip='Delete'>
           <Trash2 size={16} />
         </ActionButton>
       </Card>

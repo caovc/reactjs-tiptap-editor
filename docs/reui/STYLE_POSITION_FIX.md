@@ -1,0 +1,52 @@
+# Style and floating-position correction
+
+This follow-up corrects visual defects in the `5d17949` delivery. Passing the previous functional tests did **not** establish correct presentation. The reproduction used the built library and production Pages subpath, not just the Vite development server.
+
+## First incorrect decisions
+
+1. **Class composition did not understand the namespace.** The former `cn` merger retained both `richtext-flex-col` (official ReUI Card default) and `richtext-flex-row` (toolbar override). Tailwind's rule order selected the column, across all bubble Card families. The reproduced selection toolbar measured **102 × 510px**, rather than a horizontal toolbar; the first corrected build measured **594 × 42px**. Padding, width, alignment and minimum-height overrides had the same fault. `src/lib/utils.ts` now uses `clsx` plus **tailwind-merge 2.6.0**, configured for **Tailwind 3 / `richtext-`**. This is not a Tailwind 4 prefix configuration.
+2. **Generation and consumption were disconnected.** The library's content scan excluded Playground/SAP consumers. Their prefixed utility overrides could be absent from the distributed CSS; a separate unprefixed demo utility generation did not supply them. The single namespaced component generator now scans both source trees with paths relative to the config file. Playground emits only its host-page preflight, not a competing set of component utilities. The custom Frimousse/ReUI adapter also contained two untranslated Tailwind 4 utilities (`outline-hidden` and the `max-w-(--variable)` shorthand); they now use Tailwind 3 forms, with the generated footer maximum width checked in-browser. The compiler-backed audit then exposed further ungenerated official registry variants (invalid/disabled/placeholder/ancestor/child states), arbitrary-property syntax, missing 1px spacing and success/info tokens, plus upstream malformed selector/comma/shadow tokens. These are translated reproducibly in `vendor.mjs`; the original pinned snapshots and hashes remain untouched. `scripts/reui/style-contract.mjs` now compiles literal utility candidates with the actual locked Tailwind compiler and fails unknown utilities, allowing only authored CSS selectors and exact documented semantic anchors. Public APIs remain unchanged.
+3. **Portal theme scope incorrectly required a `div`.** A `section`/`main` boundary did not get semantic tokens. The theme selector now supports every `[data-richtext-portal]` element. Token publication alone also failed to activate `dark:` state variants outside the host. Theme publication now synchronizes the `dark` class only on opted-in editor/portal boundaries, including lazy mounts (never `html`/`body`). Tailwind’s selector strategy includes the boundary itself as well as descendants. Body-portaled controls also get a consistent UI font. Demo settings use real ReUI stateful controls with visible outlines, grouped labels and a correctly sized radius slider; the disconnected duplicate dark-mode control was removed.
+4. **The handle's containing block was unmeasurable and outside the editor coordinate context.** Tiptap creates a zero-sized absolute wrapper. Floating UI could not infer its CSS zoom, while the SAP paper supplied already-zoomed viewport rectangles. In the reproduced 75% case, paper/target/handle x positions were **390/448/276px**, and target/handle y positions **664/556px**. The first corrected positions were **390/448/395px** and **664/664px**. The editor host is now positioned locally and its pointer-transparent wrapper has measurable editor dimensions. The engine calculates coordinates; no viewport-left magic number or position clamp is used.
+5. **Position updates and pointer containment were incomplete.** Block controls now track reference geometry with Floating UI `autoUpdate` through scroll, layout, resizing and CSS zoom. A transparent hit bridge uses the *same offset constant* as the visual gap, so crossing to the grip does not cause ProseMirror `mouseleave` to hide it. The empty native dropdown trigger was replaced by a non-interactive ReUI anchor without consuming gutter width. Native drag remains Tiptap's real drag/drop, and menu insertion preserves editor focus.
+6. **Other floating surfaces shared the risk.** Bubble menus use body portals / viewport coordinates, bounded wrapping rows and the actual editor scrollport. The shared slash/mention/emoji suggestion renderer supplies a reference `contextElement` and observes changing caret geometry; popups follow the nested SAP canvas rather than freezing on window-only scroll events.
+7. **Responsive form sizing had a separate actual defect.** A narrow search popover overflowed the viewport because of intrinsic full-width flex sizing and a fixed-width replacement input. It now has a bounded responsive surface, shrinking input and labelled ReUI icon navigation controls. Popover and Dialog primitives have shared viewport limits and scrolling, encoded in the pinned-source vendor adapter so regeneration preserves them.
+
+## Paper-specific versus generic layout
+
+- Generic editors retain the library's normal block-control layout. The positioning host belongs to the actual editor, not a guessed page origin.
+- SAP defines its real inline page margin once (`--sap-page-margin-inline`), uses it for paper padding, and derives control width from that available gutter. Standard 20mm and narrow 15mm margins stay inside the white paper. Controls remain separate from content and are omitted from printing.
+- Continuous A4 and real browser printing remain unchanged; this does not implement screen pagination.
+- The Playground sample now has meaningful headings and one populated live TOC rather than a heading-free TOC shell and placeholder text. TOC links explicitly override the ReUI Button’s centered default with start alignment, including a geometric regression check. Code, details and all existing extensions remain available.
+
+## Repeatable verification
+
+`pnpm audit:styles` verifies literal utility generation across source and both demos; `tests/reui-style.test.mjs` proves translated state/selector utilities compile and unknown plugins cannot borrow semantic exceptions. `tests/style-contract.test.ts` exercises namespaced layout/spacing/width/variant resolution. `tests/reui-vendor.test.mjs` checks that pinned official-source regeneration retains the overlay contract.
+
+`tests/browser/style-geometry.spec.ts` runs against the **production build**:
+
+- Playground: 1440/700/390px; English/Chinese; light/dark; token propagation to non-div scopes; actual border/height/slider-width constraints; horizontally grouped selection toolbar, viewport bounds and no overlap with the selected paragraph; real formatting.
+- SAP: 1440/700px; 75/85/100/125%; standard/narrow page margins; bottom headings and the TLF table; **paper containment, target-side gap and vertical alignment**, continuous pointer travel to the grip, actionable menu and focus return; vertical/horizontal canvas scroll; panel closing and viewport resize without re-hover; print-hidden controls.
+- Nested canvas: selection toolbar and slash popup move with scrolling at 125%; keyboard insertion remains real.
+- Plugin surfaces: wide/narrow light/dark menus, search/color/emoji/table popovers, loaded upload/drawing dialogs, production invalid-input colors, and code/table bubbles. The shared primitive fixture also checks real disabled-menu styling in light/dark themes. Measurements wait for actual loaded controls, not a lazy `Loading…` shell.
+- Existing native drag/drop tests now also assert correct paper geometry **before** dragging, then verify changed document order and undo at 75/100/125%.
+
+The source UI audit still enforces individually justified native exceptions; it is not a visual acceptance proxy. See the validation record below and the browser-evidence artifact on the Pages workflow. Screenshots are reviewed in addition to executable computed-style/geometric checks.
+
+### Scope and limits
+
+Chromium desktop/headless is the automated browser target; this is not certification of every browser, OS font, third-party engine control, arbitrary external host stylesheet or touch-drag workflow. Existing documented editor/SAP limitations and the known upstream CJS interop failure remain. No history rewrite is performed in this follow-up.
+
+## Validation record
+
+Local final source/artifact validation (2026-11-20, Asia/Shanghai):
+
+- `pnpm audit:ui`: full source/native-boundary/API audit plus compiler-backed style gate passed. Utility contract: 718 literal candidates; 684 generated utilities; 34 explicit authored/semantic anchors; zero unsupported candidates. This is a literal-class contract, not proof for arbitrary runtime-generated classes.
+- `pnpm test:unit`: **38 passed** (24 core/class-merge + 14 audit/vendor/style-compiler checks).
+- `pnpm type-check`, `pnpm type-check:sap`, `pnpm test:types`, library build and both Pages-subpath entry builds passed; 77 public entries retained.
+- Complete `pnpm exec playwright test`: **68 passed**, including 26 new production style/geometry cases and real native drag/undo geometry assertions. The existing KaTeX→Emoji fixture now waits for actual previous-dialog removal/focus teardown before its raw programmatic click; assertions were not removed and timeouts were not increased.
+- ESM bundle isolation: **2 passed**. Known upstream CJS import probe still fails in `Italic.cjs` (`a.default.extend is not a function`), separately non-blocking as before.
+- Lint: **73 warnings / 0 errors**, versus 76 baseline warnings, with no new warning kinds. Existing mixed-export/large-chunk build diagnostics remain; this patch is not a CJS/bundle-size rewrite.
+- All **70 final local screenshots** reviewed via six contact sheets plus full-size representatives; evidence saved under `.verification/style-position/local/` and the workflow's seven-day `browser-evidence` artifact. Loading shells and intermediate fade frames are not accepted as loaded component evidence.
+
+Deployment is a normal append to `main`, not another history rewrite. Check this commit's [Playground Pages workflow](https://github.com/caovc/reactjs-tiptap-editor/actions/workflows/pages.yml). After deployment, the same production paths are checked on both live routes, with separate evidence under `.verification/style-position/live/`; actual online outcome and workflow run are included in the delivery report.

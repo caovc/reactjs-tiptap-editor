@@ -1,0 +1,262 @@
+{
+  "compiler": "Tailwind 3 (locked dependency)",
+  "literalCandidates": 718,
+  "generatedUtilities": 684,
+  "semantic": [
+    {
+      "token": "richtext-tooltip",
+      "files": [
+        "src/components/ActionButton.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-improve-anchor",
+      "files": [
+        "src/components/Bubble/RichTextAIImprove.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-improve-trigger",
+      "files": [
+        "src/components/Bubble/RichTextAIImprove.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-improve-menu",
+      "files": [
+        "src/components/Bubble/RichTextAIImprove.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-improve-item",
+      "files": [
+        "src/components/Bubble/RichTextAIImprove.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-bubble-surface",
+      "files": [
+        "src/components/Bubble/RichTextBubbleCallout.tsx",
+        "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+        "src/components/Bubble/RichTextBubbleColumns.tsx",
+        "src/components/Bubble/RichTextBubbleDrawer.tsx",
+        "src/components/Bubble/RichTextBubbleExcalidraw.tsx",
+        "src/components/Bubble/RichTextBubbleIframe.tsx",
+        "src/components/Bubble/RichTextBubbleKatex.tsx",
+        "src/components/Bubble/RichTextBubbleLink.tsx",
+        "src/components/Bubble/RichTextBubbleMedia.tsx",
+        "src/components/Bubble/RichTextBubbleMermaid.tsx",
+        "src/components/Bubble/RichTextBubbleTable.tsx",
+        "src/components/Bubble/RichTextBubbleText.tsx",
+        "src/components/Bubble/RichTextBubbleTwitter.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-block-handle",
+      "files": [
+        "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-block-controls",
+      "files": [
+        "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-selection-bubble",
+      "files": [
+        "src/components/Bubble/RichTextBubbleText.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-group",
+      "files": [
+        "src/components/reui/alert.tsx",
+        "src/components/reui/button.tsx",
+        "src/components/reui/checkbox.tsx",
+        "src/components/reui/sonner.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-peer",
+      "files": [
+        "src/components/reui/checkbox.tsx",
+        "src/components/reui/switch.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-toaster",
+      "files": [
+        "src/components/reui/sonner.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-toast",
+      "files": [
+        "src/components/reui/sonner.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-selection",
+      "files": [
+        "src/extensions/AI/AI.ts"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-empty-anchor",
+      "files": [
+        "src/extensions/AI/AI.ts"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-insertion",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-word",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-preview",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-loading",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-loading-label",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-loading-dots",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-loading-stop",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-review",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-heading",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-prompt-row",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-prompt-icon",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-send",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    },
+    {
+      "token": "richtext-ai-error",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-compose-actions",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-tone",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-status",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-actions",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "authored CSS selector"
+    },
+    {
+      "token": "richtext-ai-apply",
+      "files": [
+        "src/extensions/AI/AIPanel.tsx"
+      ],
+      "reason": "exact semantic/group/peer anchor"
+    }
+  ],
+  "unsupported": []
+}

@@ -51,7 +51,7 @@ const SelectValue = React.forwardRef<
 
 // Define size variants for SelectTrigger
 const selectTriggerVariants = cva(
-  'richtext-flex richtext-bg-background richtext-w-full richtext-items-center richtext-justify-between richtext-outline-none richtext-border richtext-border-input richtext-shadow-sm richtext-shadow-black/5 richtext-transition-shadow richtext-text-foreground data-placeholder:richtext-text-muted-foreground focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 [&>span]:richtext-line-clamp-1 aria-invalid:richtext-border-destructive/60 aria-invalid:richtext-ring-destructive/10 dark:aria-invalid:richtext-border-destructive dark:aria-invalid:richtext-ring-destructive/20 [[data-invalid=true]_&]:richtext-border-destructive/60 [[data-invalid=true]_&]:richtext-ring-destructive/10 dark:[[data-invalid=true]_&]:richtext-border-destructive dark:[[data-invalid=true]_&]:richtext-ring-destructive/20',
+  'richtext-flex richtext-bg-background richtext-w-full richtext-items-center richtext-justify-between richtext-outline-none richtext-border richtext-border-input richtext-shadow-sm richtext-shadow-black/5 richtext-transition-shadow richtext-text-foreground data-[placeholder]:richtext-text-muted-foreground focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 [&>span]:richtext-line-clamp-1 aria-[invalid=true]:richtext-border-destructive/60 aria-[invalid=true]:richtext-ring-destructive/10 dark:aria-[invalid=true]:richtext-border-destructive dark:aria-[invalid=true]:richtext-ring-destructive/20 [[data-invalid=true]_&]:richtext-border-destructive/60 [[data-invalid=true]_&]:richtext-ring-destructive/10 dark:[[data-invalid=true]_&]:richtext-border-destructive dark:[[data-invalid=true]_&]:richtext-ring-destructive/20',
   {
     variants: {
       size: {
@@ -192,7 +192,7 @@ const SelectItem = React.forwardRef<
       ref={ref}
       data-slot='select-item'
       className={cn(
-        'data-disabled:richtext-pointer-events-none data-disabled:richtext-opacity-50 richtext-relative richtext-flex richtext-w-full richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-sm richtext-py-1.5 richtext-text-sm richtext-text-foreground richtext-outline-none hover:richtext-bg-accent focus:richtext-bg-accent',
+        'richtext-relative richtext-flex richtext-w-full richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-sm richtext-py-1.5 richtext-text-sm richtext-text-foreground richtext-outline-none hover:richtext-bg-accent focus:richtext-bg-accent data-[disabled]:richtext-pointer-events-none data-[disabled]:richtext-opacity-50',
         indicatorPosition === 'left'
           ? 'richtext-pe-2 richtext-ps-8'
           : 'richtext-pe-8 richtext-ps-2',

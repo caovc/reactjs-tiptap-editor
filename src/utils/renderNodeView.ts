@@ -1,6 +1,6 @@
 import { ReactRenderer } from '@tiptap/react';
 
-import { updatePosition } from '@/utils/updatePosition';
+import { observePosition, updatePosition } from '@/utils/updatePosition';
 
 import type {
   SuggestionOptions,
@@ -18,7 +18,10 @@ export function renderNodeViewClosure<T, TSelected = T>(
 ): NonNullable<SuggestionOptions<T, TSelected>['render']> {
   return () => {
     let renderer: ReactRenderer<SuggestionHandle, SuggestionProps<T, TSelected>> | undefined;
+    let stopPositioning: (() => void) | undefined;
     const destroy = () => {
+      stopPositioning?.();
+      stopPositioning = undefined;
       renderer?.destroy();
       renderer?.element.remove();
       renderer = undefined;
@@ -27,9 +30,10 @@ export function renderNodeViewClosure<T, TSelected = T>(
       onStart(props) {
         if (!props.clientRect) return;
         renderer = new ReactRenderer(node, { props, editor: props.editor });
-        renderer.element.style.position = 'absolute';
+        renderer.element.style.position = 'fixed';
+        renderer.element.classList.add('richtext-suggestion-positioner');
         document.body.appendChild(renderer.element);
-        updatePosition(props.editor, renderer.element);
+        stopPositioning = observePosition(props.editor, renderer.element);
       },
       onUpdate(props) {
         if (!renderer) return;

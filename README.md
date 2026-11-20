@@ -2,7 +2,7 @@
 
 > **ReUI migration fork** of [hunghg255/reactjs-tiptap-editor](https://github.com/hunghg255/reactjs-tiptap-editor).
 > Correction: the initial 15-family replacement was not a complete product-UI migration. The whole-source completion now uses 18 pinned official ReUI v1 families across the shared editor and plugin-owned UI; necessary native/third-party engine boundaries remain explicitly documented.
-> [Migration map and provenance](docs/reui/MIGRATION.md) · [Full file-level audit](docs/reui/FULL_AUDIT.md) · [Current verification](docs/reui/VALIDATION_COMPLETION.md) · [Playground](https://caovc.github.io/reactjs-tiptap-editor/)
+> [Migration map and provenance](docs/reui/MIGRATION.md) · [Full file-level audit](docs/reui/FULL_AUDIT.md) · [Style/position correction](docs/reui/STYLE_POSITION_FIX.md) · [Previous verification](docs/reui/VALIDATION_COMPLETION.md) · [Playground](https://caovc.github.io/reactjs-tiptap-editor/)
 > npm publishing is disabled for this independent fork.
 
 <p align="center">

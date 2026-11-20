@@ -1,15 +1,16 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { useCallback, useState } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { useCallback, useState } from 'react';
 
-import LinkEditBlock from "@/extensions/Link/components/LinkEditBlock";
-import LinkViewBlock from "@/extensions/Link/components/LinkViewBlock";
-import { Link } from "@/extensions/Link/Link";
-import { useAttributes } from "@/hooks/useAttributes";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
+import { Card } from '@/components/reui/card';
+import LinkEditBlock from '@/extensions/Link/components/LinkEditBlock';
+import LinkViewBlock from '@/extensions/Link/components/LinkViewBlock';
+import { Link } from '@/extensions/Link/Link';
+import { useAttributes } from '@/hooks/useAttributes';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
 
-import type { Editor } from "@tiptap/react";
+import type { Editor } from '@tiptap/react';
 
 export interface BubbleMenuLinkProps {
   editor: Editor;
@@ -19,12 +20,10 @@ export interface BubbleMenuLinkProps {
 export function RichTextBubbleLink() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const [showEdit, setShowEdit] = useState(false);
-  const attrs = useAttributes<{ href: string; target: string }>(
-    editor,
-    Link.name,
-  );
+  const attrs = useAttributes<{ href: string; target: string }>(editor, Link.name);
   const link = attrs?.href;
 
   const shouldShow = useCallback(({ editor }: { editor: Editor }) => {
@@ -41,16 +40,16 @@ export function RichTextBubbleLink() {
 
     editor
       .chain()
-      .extendMarkRange("link")
+      .extendMarkRange('link')
       .insertContent({
-        type: "text",
+        type: 'text',
         text,
         marks: [
           {
-            type: "link",
+            type: 'link',
             attrs: {
               href: url,
-              target: openInNewTab ? "_blank" : "",
+              target: openInNewTab ? '_blank' : '',
             },
           },
         ],
@@ -64,7 +63,7 @@ export function RichTextBubbleLink() {
   };
 
   const unSetLink = useCallback(() => {
-    editor.chain().extendMarkRange("link").unsetLink().focus().run();
+    editor.chain().extendMarkRange('link').unsetLink().focus().run();
     setShowEdit(false);
   }, [editor]);
 
@@ -79,26 +78,23 @@ export function RichTextBubbleLink() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleLink"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleLink'}
       shouldShow={shouldShow}
     >
       <>
         {showEdit ? (
           <Card
             data-richtext-portal
-            className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-4 "
+            className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-4'
           >
-            <LinkEditBlock
-              editor={editor}
-              onClose={onClose}
-              onSetLink={onSetLink}
-            />
+            <LinkEditBlock editor={editor} onClose={onClose} onSetLink={onSetLink} />
           </Card>
         ) : (
           <Card
             data-richtext-portal
-            className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+            className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
           >
             <LinkViewBlock
               editor={editor}

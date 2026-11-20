@@ -1,21 +1,23 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { useCallback, useState } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { useCallback, useState } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { Twitter } from "@/extensions/Twitter";
-import FormEditLinkTwitter from "@/extensions/Twitter/components/FormEditLinkTwitter";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { deleteNode } from "@/utils/delete-node";
+import { ActionButton } from '@/components/ActionButton';
+import { Card } from '@/components/reui/card';
+import { Twitter } from '@/extensions/Twitter';
+import FormEditLinkTwitter from '@/extensions/Twitter/components/FormEditLinkTwitter';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { deleteNode } from '@/utils/delete-node';
 
-import type { Editor } from "@tiptap/react";
+import type { Editor } from '@tiptap/react';
 
 export function RichTextBubbleTwitter() {
   const { t } = useLocale();
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const [showEdit, setShowEdit] = useState(false);
 
@@ -29,10 +31,7 @@ export function RichTextBubbleTwitter() {
     setShowEdit(false);
   };
 
-  const deleteMe = useCallback(
-    () => deleteNode(Twitter.name, editor),
-    [editor],
-  );
+  const deleteMe = useCallback(() => deleteNode(Twitter.name, editor), [editor]);
 
   if (!editable) {
     return <></>;
@@ -41,26 +40,27 @@ export function RichTextBubbleTwitter() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleTwitter"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleTwitter'}
       shouldShow={shouldShow}
     >
       <>
         {showEdit ? (
           <Card
             data-richtext-portal
-            className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-4 "
+            className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-4'
           >
             <FormEditLinkTwitter editor={editor} onSetLink={onSetLink} />
           </Card>
         ) : (
           <Card
             data-richtext-portal
-            className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+            className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
           >
             <ActionButton
-              icon="Pencil"
-              tooltip={t("editor.link.edit.tooltip")}
+              icon='Pencil'
+              tooltip={t('editor.link.edit.tooltip')}
               tooltipOptions={{ sideOffset: 15 }}
               action={() => {
                 setShowEdit(true);
@@ -69,8 +69,8 @@ export function RichTextBubbleTwitter() {
 
             <ActionButton
               action={deleteMe}
-              icon="Trash"
-              tooltip={t("editor.delete")}
+              icon='Trash'
+              tooltip={t('editor.delete')}
               tooltipOptions={{ sideOffset: 15 }}
             />
           </Card>

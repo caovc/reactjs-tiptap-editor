@@ -131,7 +131,7 @@ const DropdownMenuItem = React.forwardRef<
       ref={ref}
       data-slot='dropdown-menu-item'
       className={cn(
-        'data-disabled:richtext-pointer-events-none data-disabled:richtext-opacity-50 richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-gap-2 richtext-rounded-md richtext-px-2 richtext-py-1.5 richtext-text-sm richtext-text-foreground richtext-outline-none richtext-transition-colors [&_svg:not([class*=richtext-size-])]:richtext-size-4 [&_svg:not([role=img]):not([class*=text-])]:richtext-opacity-60 [&_svg]:richtext-pointer-events-none [&_svg]:richtext-shrink-0',
+        'richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-gap-2 richtext-rounded-md richtext-px-2 richtext-py-1.5 richtext-text-sm richtext-text-foreground richtext-outline-none richtext-transition-colors data-[disabled]:richtext-pointer-events-none data-[disabled]:richtext-opacity-50 [&_svg:not([class*=richtext-size-])]:richtext-size-4 [&_svg:not([role=img]):not([class*=text-])]:richtext-opacity-60 [&_svg]:richtext-pointer-events-none [&_svg]:richtext-shrink-0',
         'focus:richtext-bg-accent focus:richtext-text-foreground',
         'data-[active=true]:richtext-bg-accent data-[active=true]:richtext-text-accent-foreground',
         inset && 'richtext-ps-8',
@@ -153,7 +153,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
       ref={ref}
       data-slot='dropdown-menu-checkbox-item'
       className={cn(
-        'data-disabled:richtext-pointer-events-none data-disabled:richtext-opacity-50 richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-md richtext-py-1.5 richtext-pe-2 richtext-ps-8 richtext-text-sm richtext-outline-none richtext-transition-colors focus:richtext-bg-accent focus:richtext-text-accent-foreground',
+        'richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-md richtext-py-1.5 richtext-pe-2 richtext-ps-8 richtext-text-sm richtext-outline-none richtext-transition-colors focus:richtext-bg-accent focus:richtext-text-accent-foreground data-[disabled]:richtext-pointer-events-none data-[disabled]:richtext-opacity-50',
         className
       )}
       checked={checked}
@@ -178,7 +178,7 @@ const DropdownMenuRadioItem = React.forwardRef<
       ref={ref}
       data-slot='dropdown-menu-radio-item'
       className={cn(
-        'data-disabled:richtext-pointer-events-none data-disabled:richtext-opacity-50 richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-md richtext-py-1.5 richtext-pe-2 richtext-ps-6 richtext-text-sm richtext-outline-none richtext-transition-colors focus:richtext-bg-accent focus:richtext-text-accent-foreground',
+        'richtext-relative richtext-flex richtext-cursor-default richtext-select-none richtext-items-center richtext-rounded-md richtext-py-1.5 richtext-pe-2 richtext-ps-6 richtext-text-sm richtext-outline-none richtext-transition-colors focus:richtext-bg-accent focus:richtext-text-accent-foreground data-[disabled]:richtext-pointer-events-none data-[disabled]:richtext-opacity-50',
         className
       )}
       {...props}

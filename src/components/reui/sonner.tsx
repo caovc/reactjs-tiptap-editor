@@ -15,7 +15,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme === 'dark' ? 'dark' : 'light'}
-      className='richtext-toaster [&_[data-type=success]>[data-icon]]:richtext-text-success [&_[data-type=success]_[data-title]]:richtext-text-success [&_[data-type=info]_[data-title]]:richtext-text-info richtext-group [&_[data-type=error]>[data-icon]]:richtext-text-destructive [&_[data-type=error]_[data-title]]:richtext-text-destructive'
+      className='richtext-toaster richtext-group [&_[data-type=error]>[data-icon]]:richtext-text-destructive [&_[data-type=error]_[data-title]]:richtext-text-destructive [&_[data-type=info]_[data-title]]:richtext-text-info [&_[data-type=success]>[data-icon]]:richtext-text-success [&_[data-type=success]_[data-title]]:richtext-text-success'
       toastOptions={{
         classNames: {
           toast:

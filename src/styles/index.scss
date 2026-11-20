@@ -1,15 +1,52 @@
-@use "./global";
-@use "./editor";
-@use "./ProseMirror";
-@use "./columns";
-@use "./mention";
-@use "./codeblock";
-@use "./ai";
-@use "./details";
-@use "./toc";
+@use './global';
+@use './editor';
+@use './ProseMirror';
+@use './columns';
+@use './mention';
+@use './codeblock';
+@use './ai';
+@use './details';
+@use './toc';
 
 .richtext-selection-bubble {
   z-index: 50;
+  max-inline-size: calc(100dvw - 16px);
+}
+.richtext-bubble-surface {
+  flex-wrap: wrap;
+  max-inline-size: calc(100dvw - 16px);
+}
+
+// A measurable offset parent is essential: Floating UI cannot infer CSS zoom
+// from Tiptap's default zero-sized wrapper. Both coordinates and dimensions
+// must be expressed in the same local editor coordinate system.
+// Include the visual offset in the hit path: otherwise ProseMirror mouseleave
+// hides the handle while crossing the gap, before the pointer can reach it.
+.richtext-block-handle::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 100%;
+  inline-size: var(--richtext-block-handle-gap);
+}
+.richtext-block-editor {
+  position: relative;
+}
+.richtext-block-positioner {
+  width: 100%;
+  height: 100%;
+}
+.richtext-block-controls {
+  --richtext-block-control-size: 32px;
+  --richtext-block-control-gap: 2px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--richtext-block-control-gap);
+  width: var(
+    --richtext-block-controls-width,
+    calc(2 * var(--richtext-block-control-size) + var(--richtext-block-control-gap))
+  );
 }
 @media print {
   .richtext-selection-bubble,
@@ -33,4 +70,14 @@
   --color-success: #4ade80;
   --color-info: #c4b5fd;
   --color-warning: #fbbf24;
+}
+
+:where([data-richtext-portal]) {
+  font-family: var(--richtext-ui-font, ui-sans-serif, system-ui, sans-serif);
+}
+.richtext-suggestion-positioner {
+  z-index: 50;
+  > [data-slot='card'] {
+    max-inline-size: inherit;
+  }
 }

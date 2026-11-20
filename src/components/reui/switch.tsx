@@ -23,7 +23,7 @@ const useSwitchContext = () => {
 
 // Define classes for variants
 const switchVariants = cva(
-  'richtext-relative richtext-peer richtext-inline-flex richtext-shrink-0 richtext-cursor-pointer richtext-items-center richtext-rounded-full richtext-transition-colors focus-visible:richtext-outline-none focus-visible:richtext-ring-2 focus-visible:richtext-ring-ring focus-visible:richtext-ring-offset-2 focus-visible:richtext-ring-offset-background disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 data-[state=unchecked]:richtext-bg-input aria-invalid:richtext-border aria-invalid:richtext-border-destructive/60 aria-invalid:richtext-ring-destructive/10 dark:aria-invalid:richtext-border-destructive dark:aria-invalid:richtext-ring-destructive/20 [[data-invalid=true]_&]:richtext-border [[data-invalid=true]_&]:richtext-border-destructive/60 [[data-invalid=true]_&]:richtext-ring-destructive/10 dark:[[data-invalid=true]_&]:richtext-border-destructive dark:[[data-invalid=true]_&]:richtext-ring-destructive/20',
+  'richtext-relative richtext-peer richtext-inline-flex richtext-shrink-0 richtext-cursor-pointer richtext-items-center richtext-rounded-full richtext-transition-colors focus-visible:richtext-outline-none focus-visible:richtext-ring-2 focus-visible:richtext-ring-ring focus-visible:richtext-ring-offset-2 focus-visible:richtext-ring-offset-background disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 data-[state=unchecked]:richtext-bg-input aria-[invalid=true]:richtext-border aria-[invalid=true]:richtext-border-destructive/60 aria-[invalid=true]:richtext-ring-destructive/10 dark:aria-[invalid=true]:richtext-border-destructive dark:aria-[invalid=true]:richtext-ring-destructive/20 [[data-invalid=true]_&]:richtext-border [[data-invalid=true]_&]:richtext-border-destructive/60 [[data-invalid=true]_&]:richtext-ring-destructive/10 dark:[[data-invalid=true]_&]:richtext-border-destructive dark:[[data-invalid=true]_&]:richtext-ring-destructive/20',
   {
     variants: {
       shape: {
@@ -80,7 +80,7 @@ const switchThumbVariants = cva(
 );
 
 const switchIndicatorVariants = cva(
-  'richtext-text-sm richtext-font-medium richtext-absolute richtext-mx-[2px] richtext-top-1/2 richtext-w-1/2 -richtext-translate-y-1/2 richtext-flex richtext-pointer-events-none richtext-items-center richtext-justify-center richtext-text-center richtext-transition-transform richtext-duration-300 richtext-[transition-timing-function:cubic-bezier(0.16,1,0.3,1)]',
+  'richtext-text-sm richtext-font-medium richtext-absolute richtext-mx-[2px] richtext-top-1/2 richtext-w-1/2 -richtext-translate-y-1/2 richtext-flex richtext-pointer-events-none richtext-items-center richtext-justify-center richtext-text-center richtext-transition-transform richtext-duration-300 richtext-ease-reui',
   {
     variants: {
       state: {

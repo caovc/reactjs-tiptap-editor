@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 // Define input size variants
 const textareaVariants = cva(
-  'richtext-w-full richtext-bg-background richtext-border richtext-border-input richtext-bg-background richtext-text-foreground richtext-shadow-sm richtext-shadow-black/5 richtext-transition-[color,box-shadow] richtext-text-foreground placeholder:richtext-text-muted-foreground/80 focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 [&[readonly]]:richtext-opacity-70 aria-invalid:richtext-border-destructive aria-invalid:richtext-border-destructive/60 aria-invalid:richtext-ring-destructive/10 dark:aria-invalid:richtext-border-destructive dark:aria-invalid:richtext-ring-destructive/20',
+  'richtext-w-full richtext-bg-background richtext-border richtext-border-input richtext-bg-background richtext-text-foreground richtext-shadow-sm richtext-shadow-black/5 richtext-transition-[color,box-shadow] richtext-text-foreground placeholder:richtext-text-muted-foreground/80 focus-visible:richtext-border-ring focus-visible:richtext-outline-none focus-visible:richtext-ring-[3px] focus-visible:richtext-ring-ring/30 disabled:richtext-cursor-not-allowed disabled:richtext-opacity-50 [&[readonly]]:richtext-opacity-70 aria-[invalid=true]:richtext-border-destructive aria-[invalid=true]:richtext-border-destructive/60 aria-[invalid=true]:richtext-ring-destructive/10 dark:aria-[invalid=true]:richtext-border-destructive dark:aria-[invalid=true]:richtext-ring-destructive/20',
   {
     variants: {
       variant: {

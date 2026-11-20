@@ -82,7 +82,7 @@ const tabsListVariants = cva('richtext-flex richtext-items-center richtext-shrin
 
 // Variants for TabsTrigger
 const tabsTriggerVariants = cva(
-  'richtext-shrink-0 richtext-cursor-pointer richtext-whitespace-nowrap richtext-inline-flex richtext-justify-center richtext-items-center richtext-font-medium richtext-ring-offset-background richtext-transition-colors focus-visible:richtext-outline-none focus-visible:richtext-ring-2 focus-visible:richtext-ring-ring focus-visible:richtext-ring-offset-2 disabled:richtext-pointer-events-none disabled:richtext-opacity-50 data-disabled:richtext-pointer-events-none data-disabled:richtext-opacity-50 [&_svg]:richtext-shrink-0 [&_svg]:richtext-text-muted-foreground [&:hover_svg]:richtext-text-primary [&[data-state=active]_svg]:richtext-text-primary',
+  'richtext-shrink-0 richtext-cursor-pointer richtext-whitespace-nowrap richtext-inline-flex richtext-justify-center richtext-items-center richtext-font-medium richtext-ring-offset-background richtext-transition-colors focus-visible:richtext-outline-none focus-visible:richtext-ring-2 focus-visible:richtext-ring-ring focus-visible:richtext-ring-offset-2 disabled:richtext-pointer-events-none disabled:richtext-opacity-50 data-[disabled]:richtext-pointer-events-none data-[disabled]:richtext-opacity-50 [&_svg]:richtext-shrink-0 [&_svg]:richtext-text-muted-foreground [&:hover_svg]:richtext-text-primary [&[data-state=active]_svg]:richtext-text-primary',
   {
     variants: {
       variant: {

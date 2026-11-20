@@ -1,39 +1,26 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { useCallback } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { useCallback } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { MultipleColumnNode } from "@/extensions/Column";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { deleteNode } from "@/utils/delete-node";
+import { ActionButton } from '@/components/ActionButton';
+import { Card } from '@/components/reui/card';
+import { MultipleColumnNode } from '@/extensions/Column';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { deleteNode } from '@/utils/delete-node';
 
 export function RichTextBubbleColumns() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
   const { t } = useLocale();
 
-  const shouldShow = useCallback(
-    () => editor.isActive(MultipleColumnNode.name),
-    [editor],
-  );
-  const deleteMe = useCallback(
-    () => deleteNode(MultipleColumnNode.name, editor),
-    [editor],
-  );
-  const addColBefore = useCallback(
-    () => editor.chain().focus().addColBefore().run(),
-    [editor],
-  );
-  const addColAfter = useCallback(
-    () => editor.chain().focus().addColAfter().run(),
-    [editor],
-  );
-  const deleteCol = useCallback(
-    () => editor.chain().focus().deleteCol().run(),
-    [editor],
-  );
+  const shouldShow = useCallback(() => editor.isActive(MultipleColumnNode.name), [editor]);
+  const deleteMe = useCallback(() => deleteNode(MultipleColumnNode.name, editor), [editor]);
+  const addColBefore = useCallback(() => editor.chain().focus().addColBefore().run(), [editor]);
+  const addColAfter = useCallback(() => editor.chain().focus().addColAfter().run(), [editor]);
+  const deleteCol = useCallback(() => editor.chain().focus().deleteCol().run(), [editor]);
 
   if (!editable) {
     return <></>;
@@ -42,36 +29,37 @@ export function RichTextBubbleColumns() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleColumns"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleColumns'}
       shouldShow={shouldShow}
     >
       <Card
         data-richtext-portal
-        className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+        className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
       >
         <ActionButton
           action={addColBefore}
-          icon="ColumnAddLeft"
-          tooltip={t("editor.table.menu.insertColumnBefore")}
+          icon='ColumnAddLeft'
+          tooltip={t('editor.table.menu.insertColumnBefore')}
         />
 
         <ActionButton
           action={addColAfter}
-          icon="ColumnAddRight"
-          tooltip={t("editor.table.menu.insertColumnAfter")}
+          icon='ColumnAddRight'
+          tooltip={t('editor.table.menu.insertColumnAfter')}
         />
 
         <ActionButton
           action={deleteCol}
-          icon="DeleteColumn"
-          tooltip={t("editor.table.menu.deleteColumn")}
+          icon='DeleteColumn'
+          tooltip={t('editor.table.menu.deleteColumn')}
         />
 
         <ActionButton
           action={deleteMe}
-          icon="Trash2"
-          tooltip={t("editor.table.menu.delete_column")}
+          icon='Trash2'
+          tooltip={t('editor.table.menu.delete_column')}
         />
       </Card>
     </BubbleMenu>

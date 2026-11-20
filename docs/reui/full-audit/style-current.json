@@ -139,7 +139,7 @@
   },
   {
     "file": "package.json",
-    "sha256": "f6296717239db86b34b3d06b050cbca24645ba6e718ddfa54d1e24896262dff1",
+    "sha256": "f2ffa0c05ce46f1b0589758a7385b7d8a34e91a63ca5c9022d25889368ffe856",
     "role": "build/config/package boundary",
     "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
   },
@@ -169,13 +169,13 @@
   },
   {
     "file": "playground/src/global.css",
-    "sha256": "b8f7b1d30c485dc7a5c6c5cf98f23ebca72e72b398d5c21baaccbe04bce5d0fd",
+    "sha256": "b69dcc540049045c4fb3782cf28653961a1c043467d85c1c32cf4e6f7ee67f09",
     "role": "scoped styles/theme/document layout",
     "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
   },
   {
     "file": "playground/src/sap/sap.css",
-    "sha256": "6c6933da6f52f60d04466971ed68cf8ece6b958c8689cd41b14d108c974a4062",
+    "sha256": "86c8f8f9dff2cd35cd7d6591354fb4ed4ea03f5b13a369328da458380c76765a",
     "role": "scoped styles/theme/document layout",
     "evidence": "SAP narrow/zoom/print screenshots and browser assertions"
   },
@@ -277,7 +277,7 @@
   },
   {
     "file": "src/styles/index.scss",
-    "sha256": "cec9b1d12e6db311f226fe58f6b84032017b720f8ccc048b679a6474e74c846a",
+    "sha256": "9cb4cef0da06487a22bb94e65dee9fba61753930b70d20a97d59a6ea3a08d1c9",
     "role": "scoped styles/theme/document layout",
     "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
   },
@@ -295,7 +295,7 @@
   },
   {
     "file": "tailwind.config.js",
-    "sha256": "b9625a1750235fb5044f9271132092124eaa3148d959e2f3e809aa889f10c8fc",
+    "sha256": "bd6909d2f20758181799d4b1466804f74450fa25f2d12e725cf92e935a8931c0",
     "role": "build/config/package boundary",
     "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
   },

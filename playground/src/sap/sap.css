@@ -16,8 +16,7 @@ body {
   --sap-line: #e2e5eb;
   --sap-muted: #748093;
   --sap-ink: #253046;
-  font-family:
-    Inter, "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-family: Inter, 'Noto Sans CJK SC', 'Microsoft YaHei', system-ui, sans-serif;
   font-size: 13px;
   color: var(--sap-ink);
   height: 100dvh;
@@ -141,10 +140,10 @@ body {
   min-height: 38px;
   border-bottom: 1px solid #eef0f4;
 }
-.sap-tab-row [role="tablist"] {
+.sap-tab-row [role='tablist'] {
   border: 0;
 }
-.sap-tab-row [role="tab"] {
+.sap-tab-row [role='tab'] {
   min-width: 49px;
   padding: 10px 8px 9px;
 }
@@ -266,13 +265,13 @@ body {
   display: grid;
   grid-template-columns: 224px minmax(0, 1fr) 288px;
 }
-.sap-workspace[data-left-open="false"] {
+.sap-workspace[data-left-open='false'] {
   grid-template-columns: minmax(0, 1fr) 288px;
 }
-.sap-workspace[data-right-open="false"] {
+.sap-workspace[data-right-open='false'] {
   grid-template-columns: 224px minmax(0, 1fr);
 }
-.sap-workspace[data-left-open="false"][data-right-open="false"] {
+.sap-workspace[data-left-open='false'][data-right-open='false'] {
   grid-template-columns: minmax(0, 1fr);
 }
 .sap-outline,
@@ -383,19 +382,22 @@ body {
   min-width: max-content;
 }
 .sap-paper {
+  --sap-page-margin-inline: 20mm;
+  --richtext-block-controls-width: min(66px, calc(var(--sap-page-margin-inline) - 6px));
   width: 210mm;
   min-height: 297mm;
-  padding: 16mm 20mm 20mm;
+  padding: 16mm var(--sap-page-margin-inline) 20mm;
   margin-inline: auto;
   background: #fff;
   border: 1px solid #e0e4eb;
   box-shadow: 0 2px 10px #1a2b4510;
-  font-family: "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+  font-family: 'Noto Serif CJK SC', 'Songti SC', SimSun, serif;
   color: #263349;
   font-size: 14px;
 }
-.sap-app[data-margin="narrow"] .sap-paper {
-  padding: 15mm;
+.sap-app[data-margin='narrow'] .sap-paper {
+  --sap-page-margin-inline: 15mm;
+  padding: 15mm var(--sap-page-margin-inline);
 }
 .sap-document-topline {
   display: flex;
@@ -419,7 +421,7 @@ body {
   margin-bottom: 23px;
 }
 .sap-document-kicker {
-  font-family: Inter, "Noto Sans CJK SC", system-ui, sans-serif;
+  font-family: Inter, 'Noto Sans CJK SC', system-ui, sans-serif;
   color: #42669e;
   font-size: 12px;
   letter-spacing: 0.16em;
@@ -438,7 +440,7 @@ body {
   gap: 9px 18px;
   font-size: 11px;
   color: #7b8695;
-  font-family: Inter, "Noto Sans CJK SC", system-ui, sans-serif;
+  font-family: Inter, 'Noto Sans CJK SC', system-ui, sans-serif;
 }
 .sap-cover-meta span {
   display: flex;
@@ -457,7 +459,7 @@ body {
   color: #778195;
   font:
     10px/1.8 Inter,
-    "Noto Sans CJK SC",
+    'Noto Sans CJK SC',
     system-ui,
     sans-serif;
 }
@@ -482,8 +484,7 @@ body {
 .sap-app .sap-paper .tiptap h2,
 .sap-app .sap-paper .tiptap h3 {
   color: #263d60;
-  font-family:
-    Inter, "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-family: Inter, 'Noto Sans CJK SC', 'Microsoft YaHei', system-ui, sans-serif;
   line-height: 1.55;
   font-weight: 600;
   margin: 26px 0 13px;
@@ -504,7 +505,7 @@ body {
 .sap-paper .tiptap h1::before,
 .sap-paper .tiptap h2::before,
 .sap-paper .tiptap h3::before {
-  content: attr(data-section-number) "  ";
+  content: attr(data-section-number) '  ';
   white-space: pre;
 }
 .sap-app .sap-paper .tiptap p {
@@ -530,7 +531,7 @@ body {
 }
 .sap-app .sap-paper .tiptap th {
   background: #f1f4f8;
-  font-family: Inter, "Noto Sans CJK SC", system-ui, sans-serif;
+  font-family: Inter, 'Noto Sans CJK SC', system-ui, sans-serif;
   font-weight: 500;
   text-align: left;
 }
@@ -562,7 +563,7 @@ body {
 }
 .sap-paper .selectedCell::after {
   background: #2563eb1a;
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -575,7 +576,7 @@ body {
   text-align: center;
   font:
     10px/1.8 Inter,
-    "Noto Sans CJK SC",
+    'Noto Sans CJK SC',
     system-ui,
     sans-serif;
 }
@@ -585,11 +586,11 @@ body {
   min-height: 0;
   flex: 1;
 }
-.sap-assistant-tabs > [role="tablist"] {
+.sap-assistant-tabs > [role='tablist'] {
   padding: 0 16px;
   gap: 22px;
 }
-.sap-assistant-tabs > [role="tablist"] > [role="tab"] {
+.sap-assistant-tabs > [role='tablist'] > [role='tab'] {
   padding: 8px 0 10px;
 }
 .sap-panel-content {
@@ -717,7 +718,7 @@ body {
 .sap-review-note .sap-section-heading > strong {
   font-size: 11px;
 }
-.sap-review-note[data-status="resolved"] > .sap-section-heading > strong {
+.sap-review-note[data-status='resolved'] > .sap-section-heading > strong {
   color: #8c9b90;
 }
 .sap-panel-content .sap-anchor {
@@ -904,8 +905,8 @@ body {
   }
   .sap-brand > span,
   .sap-title-separator,
-  .sap-titlebar button[aria-label="打印 / 另存 PDF"],
-  .sap-titlebar button[aria-label="演示说明"] {
+  .sap-titlebar button[aria-label='打印 / 另存 PDF'],
+  .sap-titlebar button[aria-label='演示说明'] {
     display: none;
   }
   .sap-file-name {
@@ -929,7 +930,7 @@ body {
     padding: 0 8px;
     gap: 10px;
   }
-  .sap-tab-row [role="tab"] {
+  .sap-tab-row [role='tab'] {
     min-width: 38px;
   }
   .sap-quick {
@@ -1059,7 +1060,7 @@ body {
   .richtext-block-handle,
   [data-block-handle],
   .sap-selection-toolbar,
-  [data-richtext-portal][data-slot="dropdown-menu-content"] {
+  [data-richtext-portal][data-slot='dropdown-menu-content'] {
     display: none !important;
   }
 }

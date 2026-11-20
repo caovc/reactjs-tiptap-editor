@@ -1,6 +1,5 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Host-page preflight only. Namespaced component utilities come from library style.css. */
 
 .collaboration-carets__caret {
   border-left: 1px solid #0d0d0d;
@@ -77,4 +76,56 @@
 
 .hljs-strong {
   font-weight: 700;
+}
+
+/* Host layout, not a second component theme or utility generator. */
+.playground-shell {
+  min-width: 0;
+  color: hsl(var(--foreground));
+}
+.playground-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 650;
+}
+.playground-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+}
+.playground-settings-content {
+  display: grid;
+  gap: 10px;
+}
+.playground-setting-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.playground-setting-label {
+  flex: 0 0 92px;
+  white-space: nowrap;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+}
+.playground-setting-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .playground-shell {
+    padding: 12px;
+    margin-block: 12px;
+  }
+  .playground-setting-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .playground-setting-label {
+    flex-basis: auto;
+  }
 }

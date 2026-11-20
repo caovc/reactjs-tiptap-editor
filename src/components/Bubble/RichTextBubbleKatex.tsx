@@ -1,28 +1,29 @@
-import { Card } from "@/components/reui/card";
-import { BubbleMenu } from "@tiptap/react/menus";
-import { Pencil, Trash2 } from "lucide-react";
-import React, { useCallback, useEffect, useState } from "react";
+import { BubbleMenu } from '@tiptap/react/menus';
+import { Pencil, Trash2 } from 'lucide-react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { ActionButton } from "@/components/ActionButton";
-import { Button, Label } from "@/components/reui";
+import { ActionButton } from '@/components/ActionButton';
+import { Button, Label } from '@/components/reui';
+import { Card } from '@/components/reui/card';
 import {
   Dialog,
   DialogContent,
   DialogFooter,
   DialogTitle,
   DialogTrigger,
-} from "@/components/reui/dialog";
-import { Textarea } from "@/components/reui/textarea";
-import { Katex } from "@/extensions/Katex";
-import { KatexPreview } from "@/extensions/Katex/components/KatexPreview";
-import { useAttributes } from "@/hooks/useAttributes";
-import { useExtension } from "@/hooks/useExtension";
-import { useLocale } from "@/locales";
-import { useEditorInstance } from "@/store/editor";
-import { useEditableEditor } from "@/store/store";
-import { deleteNode } from "@/utils/delete-node";
+} from '@/components/reui/dialog';
+import { Textarea } from '@/components/reui/textarea';
+import { Katex } from '@/extensions/Katex';
+import { KatexPreview } from '@/extensions/Katex/components/KatexPreview';
+import { useAttributes } from '@/hooks/useAttributes';
+import { useBubbleMenuOptions } from '@/hooks/useBubbleMenuOptions';
+import { useExtension } from '@/hooks/useExtension';
+import { useLocale } from '@/locales';
+import { useEditorInstance } from '@/store/editor';
+import { useEditableEditor } from '@/store/store';
+import { deleteNode } from '@/utils/delete-node';
 
-import type { IKatexAttrs } from "@/extensions/Katex";
+import type { IKatexAttrs } from '@/extensions/Katex';
 
 function ModalEditKatex({
   children,
@@ -39,24 +40,20 @@ function ModalEditKatex({
   const editor = useEditorInstance();
 
   const attrs = useAttributes<IKatexAttrs>(editor, Katex.name, {
-    text: "",
-    macros: "",
+    text: '',
+    macros: '',
   });
 
   const { text, macros } = attrs;
 
-  const [currentValue, setCurrentValue] = useState(
-    decodeURIComponent(text || ""),
-  );
+  const [currentValue, setCurrentValue] = useState(decodeURIComponent(text || ''));
 
-  const [currentMacros, setCurrentMacros] = useState(
-    decodeURIComponent(macros || ""),
-  );
+  const [currentMacros, setCurrentMacros] = useState(decodeURIComponent(macros || ''));
 
   useEffect(() => {
     if (visible) {
-      setCurrentValue(decodeURIComponent(text || ""));
-      setCurrentMacros(decodeURIComponent(macros || ""));
+      setCurrentValue(decodeURIComponent(text || ''));
+      setCurrentMacros(decodeURIComponent(macros || ''));
     }
   }, [visible, text, macros]);
 
@@ -69,8 +66,8 @@ function ModalEditKatex({
         macros: encodeURIComponent(currentMacros),
       })
       .run();
-    setCurrentValue("");
-    setCurrentMacros("");
+    setCurrentValue('');
+    setCurrentMacros('');
     toggleVisible(false);
   }, [editor, currentValue, currentMacros, toggleVisible]);
 
@@ -78,47 +75,47 @@ function ModalEditKatex({
     <Dialog onOpenChange={toggleVisible} open={visible}>
       <DialogTrigger asChild>{children}</DialogTrigger>
 
-      <DialogContent className="richtext-z-[99999] !richtext-max-w-[1300px]">
-        <DialogTitle>{t("editor.formula.dialog.text")}</DialogTitle>
+      <DialogContent className='richtext-z-[99999] !richtext-max-w-[1300px]'>
+        <DialogTitle>{t('editor.formula.dialog.text')}</DialogTitle>
 
-        <div style={{ height: "100%", border: "1px solid hsl(var(--border))" }}>
-          <div className="richtext-flex richtext-gap-[10px] richtext-rounded-[10px] richtext-p-[10px]">
-            <div className="richtext-flex-1">
-              <Label className="mb-[6px]">Expression</Label>
+        <div style={{ height: '100%', border: '1px solid hsl(var(--border))' }}>
+          <div className='richtext-flex richtext-gap-[10px] richtext-rounded-[10px] richtext-p-[10px]'>
+            <div className='richtext-flex-1'>
+              <Label className='mb-[6px]'>Expression</Label>
 
               <Textarea
                 autoFocus
-                className="richtext-mb-[10px]"
+                className='richtext-mb-[10px]'
                 onChange={(e) => setCurrentValue(e.currentTarget.value)}
-                placeholder="Text"
+                placeholder='Text'
                 required
                 rows={10}
                 value={currentValue}
                 style={{
-                  color: "hsl(var(--foreground))",
+                  color: 'hsl(var(--foreground))',
                 }}
               />
 
-              <Label className="mb-[6px]">Macros</Label>
+              <Label className='mb-[6px]'>Macros</Label>
 
               <Textarea
                 onChange={(e) => setCurrentMacros(e.currentTarget.value)}
-                placeholder="Macros"
+                placeholder='Macros'
                 rows={10}
                 value={currentMacros}
                 style={{
-                  color: "hsl(var(--foreground))",
+                  color: 'hsl(var(--foreground))',
                 }}
               />
             </div>
 
             <div
-              className="richtext-flex richtext-flex-1 richtext-items-center richtext-justify-center richtext-rounded-[10px] richtext-p-[10px]"
+              className='richtext-flex richtext-flex-1 richtext-items-center richtext-justify-center richtext-rounded-[10px] richtext-p-[10px]'
               style={{
-                height: "100%",
+                height: '100%',
                 borderWidth: 1,
                 minHeight: 500,
-                background: "#fff",
+                background: '#fff',
               }}
             >
               {visible && (
@@ -133,7 +130,7 @@ function ModalEditKatex({
         </div>
 
         <DialogFooter>
-          <Button onClick={submit} type="button">
+          <Button onClick={submit} type='button'>
             Save changes
           </Button>
         </DialogFooter>
@@ -145,6 +142,7 @@ function ModalEditKatex({
 export function RichTextBubbleKatex() {
   const editable = useEditableEditor();
   const editor = useEditorInstance();
+  const bubbleOptions = useBubbleMenuOptions(editor);
 
   const [visible, toggleVisible] = useState(false);
 
@@ -161,21 +159,22 @@ export function RichTextBubbleKatex() {
   return (
     <BubbleMenu
       editor={editor}
-      options={{ placement: "bottom", offset: 8, flip: true }}
-      pluginKey={"RichTextBubbleKatex"}
+      appendTo={() => document.body}
+      options={bubbleOptions}
+      pluginKey={'RichTextBubbleKatex'}
       shouldShow={shouldShow}
     >
       <Card
         data-richtext-portal
-        className="richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1 "
+        className='richtext-bubble-surface richtext-flex-row richtext-items-center richtext-gap-2 richtext-p-1'
       >
         <ModalEditKatex toggleVisible={toggleVisible} visible={visible}>
-          <ActionButton action={() => toggleVisible(!visible)} tooltip="Edit">
+          <ActionButton action={() => toggleVisible(!visible)} tooltip='Edit'>
             <Pencil size={16} />
           </ActionButton>
         </ModalEditKatex>
 
-        <ActionButton action={deleteMe} tooltip="Delete">
+        <ActionButton action={deleteMe} tooltip='Delete'>
           <Trash2 size={16} />
         </ActionButton>
       </Card>

@@ -1,16 +1,16 @@
-import { Button as ReuiButton } from "@/components/reui/button";
-import { NodeViewWrapper } from "@tiptap/react";
+import { NodeViewWrapper } from '@tiptap/react';
 
+import { Button as ReuiButton } from '@/components/reui/button';
 import {
   scrollToTableOfContentsItem,
   useTableOfContents,
-} from "@/extensions/TableOfContents/components/useTableOfContents";
-import { cn } from "@/lib/utils";
-import { useLocale } from "@/locales";
+} from '@/extensions/TableOfContents/components/useTableOfContents';
+import { cn } from '@/lib/utils';
+import { useLocale } from '@/locales';
 
-import type { TableOfContentsItem } from "@/extensions/TableOfContents/components/useTableOfContents";
-import type { NodeViewProps } from "@tiptap/react";
-import type { CSSProperties } from "react";
+import type { TableOfContentsItem } from '@/extensions/TableOfContents/components/useTableOfContents';
+import type { NodeViewProps } from '@tiptap/react';
+import type { CSSProperties } from 'react';
 
 // Walk back through parent headings to produce "1.2.3" style labels.
 function buildIndexLabel(items: TableOfContentsItem[], index: number) {
@@ -24,7 +24,7 @@ function buildIndexLabel(items: TableOfContentsItem[], index: number) {
     }
   }
 
-  return parts.join(".");
+  return parts.join('.');
 }
 
 export function NodeViewTableOfContents({ editor, selected }: NodeViewProps) {
@@ -33,42 +33,34 @@ export function NodeViewTableOfContents({ editor, selected }: NodeViewProps) {
 
   return (
     <NodeViewWrapper
-      className={cn("table-of-contents", { "is-selected": selected })}
+      className={cn('table-of-contents', { 'is-selected': selected })}
       contentEditable={false}
-      data-type="table-of-contents"
+      data-type='table-of-contents'
     >
-      <p className="table-of-contents__title">
-        {t("editor.tableofcontents.title")}
-      </p>
+      <p className='table-of-contents__title'>{t('editor.tableofcontents.title')}</p>
 
       {items.length === 0 ? (
-        <p className="table-of-contents__empty">
-          {t("editor.tableofcontents.empty")}
-        </p>
+        <p className='table-of-contents__empty'>{t('editor.tableofcontents.empty')}</p>
       ) : (
-        <ul className="table-of-contents__list">
+        <ul className='table-of-contents__list'>
           {items.map((item, index) => (
             <li
-              className="table-of-contents__item"
+              className='table-of-contents__item'
               key={item.id ?? `${item.pos}`}
-              style={{ "--toc-level": item.level } as CSSProperties}
+              style={{ '--toc-level': item.level } as CSSProperties}
             >
               <ReuiButton
-                variant="ghost"
-                size="sm"
-                className={cn("table-of-contents__link", {
-                  "is-active": item.isActive,
+                variant='ghost'
+                size='sm'
+                className={cn('table-of-contents__link richtext-justify-start', {
+                  'is-active': item.isActive,
                 })}
                 onClick={() => scrollToTableOfContentsItem(editor, item)}
-                type="button"
+                type='button'
               >
-                <span className="table-of-contents__index">
-                  {buildIndexLabel(items, index)}
-                </span>
+                <span className='table-of-contents__index'>{buildIndexLabel(items, index)}</span>
 
-                <span className="table-of-contents__text">
-                  {item.textContent}
-                </span>
+                <span className='table-of-contents__text'>{item.textContent}</span>
               </ReuiButton>
             </li>
           ))}

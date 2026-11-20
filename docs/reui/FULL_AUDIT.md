@@ -2,16 +2,18 @@
 
 > 更正：第一轮只替换基础组件，不足以宣称全仓迁移。本报告覆盖 src 与 playground/src **所有 TS/TSX/JS/JSX 文件**，而不是仅查 shadcn 名称。每行均给出旧实现、当前组合/边界、变更类型及证据等级；静态通过不等于所有插件分支运行通过。
 
+> 后续视觉纠正：[样式与定位根因、几何验收](STYLE_POSITION_FIX.md)。此前功能通过并不代表视觉正确；另用实际 Tailwind 编译器校验 [utility-current.json](full-audit/utility-current.json)，不以 import 盘点代替 CSS 生成证明。
+
 - 基线：旧 main 01db11df5b7ac42fe2499b41b9a7961fdeb44319；356 源模块，154 个含 JSX 文件。
-- 当前：345 源模块，157 个含 JSX 文件；18 个官方 ReUI 家族。
-- 旧/新路径并集：363；变更路径 85（包括删除、新增、纯引用/格式整理，不等于重写组件数）。
+- 当前：346 源模块，157 个含 JSX 文件；18 个官方 ReUI 家族。
+- 旧/新路径并集：364；变更路径 101（包括删除、新增、纯引用/格式整理，不等于重写组件数）。
 - 业务原生控件候选：68 → 7（最终均为7个隐藏 file input）；业务直接 Radix：4 → 0；旧 UI 目录引用：42 → 0；原生交互候选：20 → 9。
 - 当前业务例外 16 个精确节点：7 个隐藏文件桥、4 个媒体文档选中面、4 个缩放手柄、1 个表格 pointer-capture 容器。没有业务原生 button/select/textarea/range，且没有未批准候选。ReUI 内部原生 DOM / Radix 正常保留。
 - 不把业务词汇、React 布局 div、ProseMirror contentDOM 或 SVG 改名为 ReUI。旧目录18个文件完整移除；通知 API 移入 notifications.ts，emoji 的搜索/选项真实由 ReUI 提供，Frimousse 仅保留数据/导航/虚拟化引擎。
 
 ## 可重复检查
 
-`pnpm audit:ui` 生成 current.json 并校验逐节点例外、官方来源路径与77个公开 export entry/typesVersions 快照；`pnpm test:unit` 包含10个反例/正例门禁测试；`node scripts/reui/report.mjs` 重建此表。
+`pnpm audit:ui` 生成 current.json、执行样式编译契约并校验逐节点例外、官方来源路径与77个公开 export entry/typesVersions 快照；`pnpm test:unit` 包含10个反例/正例门禁测试；`node scripts/reui/report.mjs` 重建此表。
 
 完整 AST、事件、DOM sinks、文件 SHA：`full-audit/baseline.json` 与 `full-audit/current.json`。基线只读，不得重建覆盖。例外不能通过忽略目录消失；未用例外也会使检查失败。
 
@@ -92,22 +94,22 @@
 | `src/components/notifications.ts` | 通知API（不是新UI系统） | ui/toast.ts + use-toast.ts，最终Sonner渲染 | 通知函数/类型原样迁入独立业务helper；渲染仍是官方ReUI Sonner | 新增 | Playground非法上传真实通知；类型导出一致 |
 | `src/components/ReactBus.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动 | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
 | `src/components/reui/alert.tsx` | 编辑器共享组件 | 新增 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 新增；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/button.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/button.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/card.tsx` | 官方浮层/面板表面原语 | 新引入官方ReUI v1 Card | 固定commit官方源码；React18 forwardRef适配使建议列表的DOM ref真实可用 | 新增；官方 ReUI vendored | slash/mention/emoji/短语滚动与键盘；主体/插件/selection bubble回归 |
-| `src/components/reui/checkbox.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | CheckboxPrimitive.Root, CheckboxPrimitive.Indicator | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/dialog.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | DialogPrimitive.Root, DialogPrimitive.Trigger, DialogPrimitive.Portal, DialogPrimitive.Close, DialogPrimitive.Overlay, DialogPortal, DialogOverlay, DialogPrimitive.Content, DialogClose, DialogPrimitive.Title, DialogPrimitive.Description | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/dropdown-menu.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | DropdownMenuPrimitive.Root, DropdownMenuPrimitive.Portal, DropdownMenuPrimitive.Trigger, DropdownMenuPrimitive.SubTrigger, DropdownMenuPrimitive.SubContent, DropdownMenuPrimitive.Content, DropdownMenuPrimitive.Group, DropdownMenuPrimitive.Item, DropdownMenuPrimitive.CheckboxItem, DropdownMenuPrimitive.ItemIndicator, DropdownMenuPrimitive.RadioItem, DropdownMenuPrimitive.Label, DropdownMenuPrimitive.RadioGroup, DropdownMenuPrimitive.Separator, DropdownMenuPrimitive.Sub | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/checkbox.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | CheckboxPrimitive.Root, CheckboxPrimitive.Indicator | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/dialog.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | DialogPrimitive.Root, DialogPrimitive.Trigger, DialogPrimitive.Portal, DialogPrimitive.Close, DialogPrimitive.Overlay, DialogPortal, DialogOverlay, DialogPrimitive.Content, DialogClose, DialogPrimitive.Title, DialogPrimitive.Description | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/dropdown-menu.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | DropdownMenuPrimitive.Root, DropdownMenuPrimitive.Portal, DropdownMenuPrimitive.Trigger, DropdownMenuPrimitive.SubTrigger, DropdownMenuPrimitive.SubContent, DropdownMenuPrimitive.Content, DropdownMenuPrimitive.Group, DropdownMenuPrimitive.Item, DropdownMenuPrimitive.CheckboxItem, DropdownMenuPrimitive.ItemIndicator, DropdownMenuPrimitive.RadioItem, DropdownMenuPrimitive.Label, DropdownMenuPrimitive.RadioGroup, DropdownMenuPrimitive.Separator, DropdownMenuPrimitive.Sub | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/index.ts` | 编辑器共享组件 | 新增 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 新增 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/components/reui/input.tsx` | 官方输入原语适配 | 官方 ReUI v1 Input + React18 forwardRef | 增加 Slot asChild，使 Frimousse Search 的实际 DOM 使用 ReUI 输入；保留官方 variants | 已改（含格式化/直接引用整理）；官方 ReUI vendored | tests/browser/plugin-ui.spec.ts：真实emoji搜索；controls |
 | `src/components/reui/label.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/popover.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | PopoverPrimitive.Root, PopoverPrimitive.Trigger, PopoverPrimitive.PopoverPortal, PopoverPrimitive.Content, PopoverPrimitive.Anchor | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/select.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | SelectContext.Provider, SelectPrimitive.Root, SelectPrimitive.Group, SelectPrimitive.Value, SelectPrimitive.Trigger, SelectPrimitive.Icon, SelectPrimitive.ScrollUpButton, SelectPrimitive.ScrollDownButton, SelectPrimitive.Portal, SelectPrimitive.Content, SelectScrollUpButton, SelectPrimitive.Viewport, SelectScrollDownButton, SelectPrimitive.Label, SelectPrimitive.Item, SelectPrimitive.ItemIndicator, SelectPrimitive.ItemText, SelectPrimitive.Separator | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/popover.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | PopoverPrimitive.Root, PopoverPrimitive.Trigger, PopoverPrimitive.PopoverPortal, PopoverPrimitive.Content, PopoverPrimitive.Anchor | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/select.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | SelectContext.Provider, SelectPrimitive.Root, SelectPrimitive.Group, SelectPrimitive.Value, SelectPrimitive.Trigger, SelectPrimitive.Icon, SelectPrimitive.ScrollUpButton, SelectPrimitive.ScrollDownButton, SelectPrimitive.Portal, SelectPrimitive.Content, SelectScrollUpButton, SelectPrimitive.Viewport, SelectScrollDownButton, SelectPrimitive.Label, SelectPrimitive.Item, SelectPrimitive.ItemIndicator, SelectPrimitive.ItemText, SelectPrimitive.Separator | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/separator.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/slider.tsx` | 编辑器共享组件 | 新增 | SliderPrimitive.Root, SliderPrimitive.Track, SliderPrimitive.Range, SliderPrimitive.Thumb | 新增；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/sonner.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/switch.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | SwitchContext.Provider, SwitchPrimitive.Root, SwitchPrimitive.Thumb | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/tabs.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | TabsPrimitive.Root, TabsContext.Provider, TabsPrimitive.List, TabsPrimitive.Trigger, TabsPrimitive.Content | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
-| `src/components/reui/textarea.tsx` | 编辑器共享组件 | native-control×1 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/sonner.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/switch.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | SwitchContext.Provider, SwitchPrimitive.Root, SwitchPrimitive.Thumb | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/tabs.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | TabsPrimitive.Root, TabsContext.Provider, TabsPrimitive.List, TabsPrimitive.Trigger, TabsPrimitive.Content | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
+| `src/components/reui/textarea.tsx` | 编辑器共享组件 | native-control×1 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已改（含格式化/直接引用整理）；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/toggle.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | TogglePrimitive.Root | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/reui/tooltip.tsx` | 编辑器共享组件 | 既有语义节点 / 共享组件组合 | TooltipPrimitive.Provider, TooltipProvider, TooltipPrimitive.Root, TooltipPrimitive.Trigger, TooltipPrimitive.Portal, TooltipPrimitive.Content, TooltipPrimitive.Arrow | 已审计，未改动；官方 ReUI vendored | 固定 registry 原始 SHA；控件/插件浏览器用例覆盖部分 API |
 | `src/components/RichTextProvider.tsx` | 本库公开编辑器主体/上下文/Portal | 旧 UI 目录的 tooltip/通知路径；Context/ProseMirror 原生 | 直接 ReUI TooltipProvider + Sonner；保留 scoped reset、theme、event bus、EditorContext | 已改（含格式化/直接引用整理） | tests/browser/playground.spec.ts / controls.spec.ts；existing 两编辑器隔离；SAP整套回归 |
@@ -288,7 +290,7 @@
 | `src/extensions/OrderedList/components/RichTextOrderedList.tsx` | OrderedList 插件 | 既有语义节点 / 共享组件组合 | ActionButton | 已审计，未改动 | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
 | `src/extensions/OrderedList/index.ts` | OrderedList 插件 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/extensions/OrderedList/OrderedList.ts` | OrderedList 插件 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
-| `src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx` | SearchAndReplace 插件 | 既有语义节点 / 共享组件组合 | Popover, PopoverTrigger, ActionButton, PopoverContent, Input, Button, Checkbox | 已审计，未改动 | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
+| `src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx` | SearchAndReplace 插件 | 既有语义节点 / 共享组件组合 | Popover, PopoverTrigger, ActionButton, PopoverContent, Input, Button, Checkbox | 已改（含格式化/直接引用整理） | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
 | `src/extensions/SearchAndReplace/index.ts` | SearchAndReplace 插件 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/extensions/SearchAndReplace/SearchAndReplace.ts` | SearchAndReplace 插件 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/extensions/ShortMessage/components/ShortMessageList.tsx` | 短语建议 | 原生按钮或 span+onClick，独立高亮皮肤 | 官方 ReUI Card 表面 + ReUI Button选项，保留键盘/鼠标/active scroll与选择，不保留假按钮包装 | 已改（含格式化/直接引用整理） | tests/browser/plugin-ui.spec.ts；斜杠另见 tests/browser/sap-blocks.spec.ts |
@@ -337,11 +339,12 @@
 | `src/extensions/Video/Video.ts` | Video 插件 | 非交互代码 | 文档 schema / command / contentDOM（非表单控件）；UI 由同插件 components 和共享 ReUI 控件提供 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/hooks/useActive.tsx` | 共享 hooks | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/hooks/useAttributes.tsx` | 共享 hooks | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `src/hooks/useBubbleMenuOptions.ts` | 共享 hooks | 新增 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 新增 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/hooks/useButtonProps.ts` | 共享 hooks | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/hooks/useExtension.tsx` | 共享 hooks | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/hooks/useLocalStorage.ts` | 共享 hooks | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/index.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
-| `src/lib/utils.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `src/lib/utils.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/locale-bundle.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/locale.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/locales/en.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
@@ -356,7 +359,7 @@
 | `src/store/editor.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/store/EditorEditableReactive.tsx` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/store/store.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
-| `src/store/ThemeColorReactive.tsx` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `src/store/ThemeColorReactive.tsx` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/svg64.d.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/theme/theme.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/types.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
@@ -376,9 +379,9 @@
 | `src/utils/mitt.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/utils/pdf.ts` | 编辑器模块 | 非交互代码 | 必要的文档/导出/媒体 DOM；见原生及外部引擎边界 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/utils/plateform.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
-| `src/utils/renderNodeView.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `src/utils/renderNodeView.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/utils/shortId.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
-| `src/utils/updatePosition.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `src/utils/updatePosition.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/utils/utils.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/utils/validateFile.ts` | 编辑器模块 | legacy-ui-import×1 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `src/vite-env.d.ts` | 编辑器模块 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
@@ -417,7 +420,7 @@
 | `playground/package.json` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `playground/postcss.config.js` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `playground/sap/index.html` | static build entry | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
-| `playground/src/global.css` | scoped styles/theme/document layout | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
+| `playground/src/global.css` | scoped styles/theme/document layout | 已改 | Static review + builds; no claim of exhaustive visual/property testing |
 | `playground/src/sap/sap.css` | scoped styles/theme/document layout | 已改 | SAP narrow/zoom/print screenshots and browser assertions |
 | `playground/tailwind.config.js` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `playground/tsconfig.json` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
@@ -438,7 +441,7 @@
 | `src/styles/index.scss` | scoped styles/theme/document layout | 已改 | Static review + builds; no claim of exhaustive visual/property testing |
 | `src/styles/mention.scss` | scoped styles/theme/document layout | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `src/styles/toc.scss` | scoped styles/theme/document layout | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
-| `tailwind.config.js` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
+| `tailwind.config.js` | build/config/package boundary | 已改 | Static review + builds; no claim of exhaustive visual/property testing |
 | `tests/vite.config.ts` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `tsconfig.json` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |
 | `vite.config.ts` | build/config/package boundary | 已审阅，未改动 | Static review + builds; no claim of exhaustive visual/property testing |

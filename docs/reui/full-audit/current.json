@@ -1,15 +1,20 @@
 [
   {
     "file": "playground/src/App.tsx",
-    "sha256": "104fc7adb428fd3c1c5e3d40861e81a96d625f2ecbd23f055e35a58f5a4c28ab",
+    "sha256": "e051bf588305e177c2cb44d02c4cbb35c53e28de7cf44d05217aa84b810799c3",
     "jsx": {
-      "section": 1,
-      "div": 6,
-      "ReuiButton": 18,
-      "span": 1,
+      "Card": 2,
+      "CardHeader": 2,
+      "div": 9,
+      "h1": 1,
+      "p": 1,
+      "ReuiButton": 2,
+      "a": 1,
+      "CardContent": 2,
+      "span": 4,
+      "Toggle": 4,
       "Slider": 1,
       "SliderThumb": 1,
-      "CardHeader": 1,
       "RichTextUndo": 1,
       "RichTextRedo": 1,
       "RichTextSearchAndReplace": 1,
@@ -58,11 +63,10 @@
       "RichTextCallout": 1,
       "RichTextDetails": 1,
       "RichTextTableOfContents": 1,
+      "main": 1,
       "Header": 1,
       "RichTextProvider": 1,
-      "Card": 1,
       "RichTextToolbar": 1,
-      "CardContent": 1,
       "EditorContent": 1,
       "RichTextBubbleCallout": 1,
       "RichTextBubbleColumns": 1,
@@ -84,10 +88,6 @@
       "ReuiTextarea": 1
     },
     "imports": [
-      "@/components/reui/card",
-      "@/components/reui/textarea",
-      "@/components/reui/slider",
-      "@/components/reui/button",
       "@tiptap/extension-document",
       "@tiptap/extension-hard-break",
       "@tiptap/extension-list",
@@ -153,6 +153,11 @@
       "reactjs-tiptap-editor/theme",
       "reactjs-tiptap-editor/twitter",
       "reactjs-tiptap-editor/video",
+      "@/components/reui/button",
+      "@/components/reui/card",
+      "@/components/reui/slider",
+      "@/components/reui/textarea",
+      "@/components/reui/toggle",
       "reactjs-tiptap-editor/style.css",
       "katex/dist/katex.min.css",
       "easydrawer/styles.css",
@@ -160,99 +165,34 @@
     ],
     "events": [
       {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 515
+        "tag": "Toggle",
+        "event": "onPressedChange",
+        "line": 444
+      },
+      {
+        "tag": "Toggle",
+        "event": "onPressedChange",
+        "line": 459
+      },
+      {
+        "tag": "Toggle",
+        "event": "onPressedChange",
+        "line": 467
       },
       {
         "tag": "ReuiButton",
         "event": "onClick",
-        "line": 525
+        "line": 475
       },
       {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 533
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 541
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 549
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 557
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 565
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 573
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 585
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 595
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 608
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 618
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 629
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 640
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 651
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 662
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 673
-      },
-      {
-        "tag": "ReuiButton",
-        "event": "onClick",
-        "line": 684
+        "tag": "Toggle",
+        "event": "onPressedChange",
+        "line": 488
       },
       {
         "tag": "Slider",
         "event": "onValueChange",
-        "line": 699
+        "line": 502
       }
     ],
     "domSinks": [],
@@ -1226,7 +1166,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
-    "sha256": "5d6ab852dea95bc38deb135598f40748e1bf6d99058809d328eb7ed4a4ddc210",
+    "sha256": "e761a9d861fbc2f8308d5bdbef29b9f01b62a96db91e00b7564a88792ed93da3",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 1,
@@ -1248,15 +1188,16 @@
       "Button": 2
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components/ActionButton",
       "@/components/reui",
+      "@/components/reui/card",
       "@/components/reui/dialog",
       "@/components/reui/select",
       "@/extensions/Callout",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1266,32 +1207,32 @@
       {
         "tag": "Dialog",
         "event": "onOpenChange",
-        "line": 115
+        "line": 114
       },
       {
         "tag": "Select",
         "event": "onValueChange",
-        "line": 132
+        "line": 126
       },
       {
         "tag": "Input",
         "event": "onChange",
-        "line": 155
+        "line": 147
       },
       {
         "tag": "Textarea",
         "event": "onChange",
+        "line": 159
+      },
+      {
+        "tag": "Button",
+        "event": "onClick",
         "line": 169
       },
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 179
-      },
-      {
-        "tag": "Button",
-        "event": "onClick",
-        "line": 183
+        "line": 173
       }
     ],
     "domSinks": [],
@@ -1300,7 +1241,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
-    "sha256": "d4d99d7cd68e672240bd8d9d7ba77f285d20b8086dc78633570c2208913ce32d",
+    "sha256": "962de610924d4386f81bf3387ba0118c6ca236f5600689630b787f014b2d1b44",
     "jsx": {
       "Popover": 1,
       "PopoverTrigger": 1,
@@ -1318,8 +1259,6 @@
       "Trash2": 1
     },
     "imports": [
-      "@/components/reui/card",
-      "@/components/reui/button",
       "@tiptap/react",
       "@tiptap/react/menus",
       "lucide-react",
@@ -1327,7 +1266,10 @@
       "@/components/ActionButton",
       "@/components/icons",
       "@/components/reui",
+      "@/components/reui/button",
+      "@/components/reui/card",
       "@/extensions/CodeBlock",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1338,12 +1280,12 @@
       {
         "tag": "Popover",
         "event": "onOpenChange",
-        "line": 156
+        "line": 152
       },
       {
         "tag": "ReuiButton",
         "event": "onClick",
-        "line": 183
+        "line": 179
       }
     ],
     "domSinks": [],
@@ -1352,18 +1294,19 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleColumns.tsx",
-    "sha256": "a6cb29efaa0757ca8ab0fb192fbee5acc35fa7551c66eb5eee42068e24adf85e",
+    "sha256": "0ae354a6815395bca8d678c1e6a62349796648f4523994fd8c343748c5ef72dd",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 1,
       "ActionButton": 4
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components/ActionButton",
+      "@/components/reui/card",
       "@/extensions/Column",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1376,7 +1319,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleDrawer.tsx",
-    "sha256": "729dc775507d55338272c4aebe72c1a56e4f9f58643afb6fc2b815354ea6ae58",
+    "sha256": "5dd80a87b3d5025470e39f4549dc853e59845ede14a14a101cdcb02df54c4538",
     "jsx": {
       "Fragment": 1,
       "Separator": 1,
@@ -1387,14 +1330,15 @@
       "ItemA": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components",
       "@/components/Bubble/formatBubble",
+      "@/components/reui/card",
       "@/extensions/Drawer",
       "@/extensions/Drawer/components/EditDrawerBlock",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/hooks/useExtension",
       "@/locales",
       "@/store/editor",
@@ -1409,7 +1353,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleExcalidraw.tsx",
-    "sha256": "79dfe2ba00b9c967e6d8ae486a91587c3430720c2351613dfeb86f733156b099",
+    "sha256": "0413ea0fb20a1250984475b993170bd6bd4d91b4236697ac55d40f4a0a9760ea",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 1,
@@ -1417,14 +1361,15 @@
       "SizeSetter": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components/ActionButton",
       "@/components/ReactBus",
+      "@/components/reui/card",
       "@/components/SizeSetter/SizeSetter",
       "@/extensions/Excalidraw",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1437,7 +1382,7 @@
       {
         "tag": "SizeSetter",
         "event": "onOk",
-        "line": 91
+        "line": 80
       }
     ],
     "domSinks": [],
@@ -1446,7 +1391,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
-    "sha256": "d891af08a6735a7f337f3469241a26203559397dbfac19ed11765c29e9baa866",
+    "sha256": "e595195f621d5abecfdd7378755e0b93d45465e741709256b68561d766a63b3a",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 1,
@@ -1462,16 +1407,17 @@
       "SizeSetter": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components/ActionButton",
-      "@/components/SizeSetter/SizeSetter",
       "@/components/reui",
+      "@/components/reui/card",
       "@/components/reui/dialog",
+      "@/components/SizeSetter/SizeSetter",
       "@/extensions/Iframe",
       "@/extensions/Iframe/utils",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1481,27 +1427,27 @@
       {
         "tag": "Dialog",
         "event": "onOpenChange",
-        "line": 124
+        "line": 118
       },
       {
         "tag": "Input",
         "event": "onInput",
-        "line": 134
+        "line": 128
       },
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 143
+        "line": 137
       },
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 147
+        "line": 141
       },
       {
         "tag": "SizeSetter",
         "event": "onOk",
-        "line": 154
+        "line": 148
       }
     ],
     "domSinks": [],
@@ -1510,7 +1456,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
-    "sha256": "1831b001ff53469d8669cabdf46742220e6d5a7f335fbc68053d3afeb0903688",
+    "sha256": "20caa1a7f216ba8eada8dae669ed01323eff7d9d8f68f891328d6eb5680ca7f7",
     "jsx": {
       "Dialog": 1,
       "DialogTrigger": 1,
@@ -1530,17 +1476,18 @@
       "Trash2": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "lucide-react",
       "react",
       "@/components/ActionButton",
       "@/components/reui",
+      "@/components/reui/card",
       "@/components/reui/dialog",
       "@/components/reui/textarea",
       "@/extensions/Katex",
       "@/extensions/Katex/components/KatexPreview",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/hooks/useExtension",
       "@/locales",
       "@/store/editor",
@@ -1552,22 +1499,22 @@
       {
         "tag": "Dialog",
         "event": "onOpenChange",
-        "line": 78
+        "line": 75
       },
       {
         "tag": "Textarea",
         "event": "onChange",
-        "line": 89
+        "line": 86
       },
       {
         "tag": "Textarea",
         "event": "onChange",
-        "line": 104
+        "line": 101
       },
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 136
+        "line": 133
       }
     ],
     "domSinks": [],
@@ -1576,7 +1523,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleLink.tsx",
-    "sha256": "0fec68fdd338135c91758ce335e65790c9f86c90d48aebd90839b6a7692b45b5",
+    "sha256": "34c6bc766849e3ab6651ee3d521cec65e06f3f57274f64bdb32e0d2400f6952a",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 2,
@@ -1584,13 +1531,14 @@
       "LinkViewBlock": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
+      "@/components/reui/card",
       "@/extensions/Link/components/LinkEditBlock",
       "@/extensions/Link/components/LinkViewBlock",
       "@/extensions/Link/Link",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/store/editor",
       "@/store/store",
       "@tiptap/react"
@@ -1609,12 +1557,12 @@
       {
         "tag": "LinkViewBlock",
         "event": "onClear",
-        "line": 103
+        "line": 99
       },
       {
         "tag": "LinkViewBlock",
         "event": "onEdit",
-        "line": 103
+        "line": 99
       }
     ],
     "domSinks": [],
@@ -1623,7 +1571,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleMedia.tsx",
-    "sha256": "af2557d503b02e1f82b9d92ad71b07a5e00e8b02b820f426c5388ae55221d550",
+    "sha256": "302e3b1a9c636e5aa60b0ef213b02f5568797155b7dd9d299c3eae9286ddf858",
     "jsx": {
       "Fragment": 1,
       "Separator": 1,
@@ -1633,14 +1581,15 @@
       "ItemA": 3
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components",
       "@/components/Bubble/formatBubble",
+      "@/components/reui/card",
       "@/extensions/Image",
       "@/extensions/ImageGif",
       "@/extensions/Video",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1654,18 +1603,18 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
-    "sha256": "e603f20f8936d51bd3f8bddc37f780f7e69c9e3a1ccf2372e2bedb1f87da1e6f",
+    "sha256": "6fce650fa5120070e9f1d813b72e642b203597e12a42d7b71461340e04a159ef",
     "jsx": {
       "DragHandle": 1,
       "div": 1,
       "ActionButton": 2,
       "DropdownMenu": 1,
       "DropdownMenuTrigger": 1,
+      "span": 12,
       "DropdownMenuContent": 1,
       "DropdownMenuGroup": 1,
       "DropdownMenuItem": 15,
       "IconComponent": 11,
-      "span": 11,
       "DropdownMenuSeparator": 3,
       "DropdownMenuSub": 2,
       "DropdownMenuSubTrigger": 2,
@@ -1673,10 +1622,11 @@
       "DropdownMenuSubContent": 2
     },
     "imports": [
+      "@floating-ui/dom",
       "@tiptap/extension-drag-handle-react",
-      "@tiptap/pm/state",
-      "@tiptap/pm/model",
       "@tiptap/pm/history",
+      "@tiptap/pm/model",
+      "@tiptap/pm/state",
       "react",
       "@/components",
       "@/extensions/Clear",
@@ -1686,106 +1636,111 @@
       "@/store/editor",
       "@/store/store",
       "@/utils/indent",
+      "@tiptap/core",
       "@tiptap/extension-paragraph",
       "@tiptap/pm/model",
-      "@tiptap/react",
-      "@tiptap/core"
+      "@tiptap/react"
     ],
     "events": [
       {
         "tag": "DragHandle",
         "event": "onElementDragStart",
-        "line": 221
+        "line": 259
       },
       {
         "tag": "DragHandle",
         "event": "onElementDragEnd",
-        "line": 221
+        "line": 259
       },
       {
         "tag": "DragHandle",
         "event": "onNodeChange",
-        "line": 221
+        "line": 259
       },
       {
         "tag": "DropdownMenu",
         "event": "onOpenChange",
-        "line": 269
+        "line": 307
+      },
+      {
+        "tag": "DropdownMenuContent",
+        "event": "onCloseAutoFocus",
+        "line": 317
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 280
+        "line": 329
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 290
+        "line": 339
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 300
+        "line": 349
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 309
+        "line": 358
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 332
+        "line": 376
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 341
+        "line": 385
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 350
+        "line": 394
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 373
+        "line": 417
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onClick",
-        "line": 383
+        "line": 427
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 397
+        "line": 441
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 400
+        "line": 444
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 403
+        "line": 447
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 409
+        "line": 450
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 420
+        "line": 460
       },
       {
         "tag": "DropdownMenuItem",
         "event": "onSelect",
-        "line": 436
+        "line": 476
       }
     ],
     "domSinks": [],
@@ -1794,7 +1749,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleMermaid.tsx",
-    "sha256": "3eb6bc7c52c7d3110523b41eec185162121d40cf63098e232b59664802018864",
+    "sha256": "d90dabfd45f0ffd0b61aa4104bbfaeee916c0e8202f65f03782d760338b19c72",
     "jsx": {
       "Fragment": 1,
       "Separator": 1,
@@ -1805,14 +1760,15 @@
       "ItemA": 1
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components",
       "@/components/Bubble/formatBubble",
+      "@/components/reui/card",
       "@/extensions/Mermaid",
       "@/extensions/Mermaid/components/EditMermaidBlock",
       "@/hooks/useAttributes",
+      "@/hooks/useBubbleMenuOptions",
       "@/hooks/useExtension",
       "@/locales",
       "@/store/editor",
@@ -1827,7 +1783,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleTable.tsx",
-    "sha256": "3b61d46af8e446a31483f9d96f6bb5b2b266c35d65f80da05b058d4d75ea4316",
+    "sha256": "fe47307fbe0881eb38519d3facb32fa31d7a2b1ddbf254e4302de71fd8f864d7",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 1,
@@ -1835,12 +1791,13 @@
       "Separator": 3
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/core",
       "@tiptap/react",
       "@tiptap/react/menus",
       "@/components",
+      "@/components/reui/card",
       "@/extensions/Table",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1853,7 +1810,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleText.tsx",
-    "sha256": "043c5f7d2192d5709022e16103dc3e72e660b1110bcfa48ff6b85d0969434407",
+    "sha256": "c5ed05b4fad09e01b2764335c94a1c61d1c53d208c936964e0e7e5cb941f8e0a",
     "jsx": {
       "Popover": 1,
       "PopoverTrigger": 1,
@@ -1880,8 +1837,6 @@
       "DefaultButtonBubble": 1
     },
     "imports": [
-      "@/components/reui/card",
-      "@/components/reui/button",
       "@tiptap/pm/state",
       "@tiptap/react",
       "@tiptap/react/menus",
@@ -1890,6 +1845,8 @@
       "@/components",
       "@/components/icons",
       "@/components/reui",
+      "@/components/reui/button",
+      "@/components/reui/card",
       "@/extensions/AI/state",
       "@/extensions/Bold",
       "@/extensions/Code",
@@ -1901,6 +1858,7 @@
       "@/extensions/Strike",
       "@/extensions/TextAlign",
       "@/extensions/TextUnderline",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -1911,12 +1869,12 @@
       {
         "tag": "Popover",
         "event": "onOpenChange",
-        "line": 68
+        "line": 64
       },
       {
         "tag": "ReuiButton",
         "event": "onClick",
-        "line": 93
+        "line": 89
       }
     ],
     "domSinks": [],
@@ -1925,7 +1883,7 @@
   },
   {
     "file": "src/components/Bubble/RichTextBubbleTwitter.tsx",
-    "sha256": "b267906d825bb0e2c883dae34be812769382003baa48111066c1a3edf445e5da",
+    "sha256": "048d144fa7f1437a60e422b54b0647b3182749ff2b7e7f53ea7937bb9641186e",
     "jsx": {
       "BubbleMenu": 1,
       "Card": 2,
@@ -1933,12 +1891,13 @@
       "ActionButton": 2
     },
     "imports": [
-      "@/components/reui/card",
       "@tiptap/react/menus",
       "react",
       "@/components/ActionButton",
+      "@/components/reui/card",
       "@/extensions/Twitter",
       "@/extensions/Twitter/components/FormEditLinkTwitter",
+      "@/hooks/useBubbleMenuOptions",
       "@/locales",
       "@/store/editor",
       "@/store/store",
@@ -2070,7 +2029,7 @@
   },
   {
     "file": "src/components/EmojiPicker.tsx",
-    "sha256": "347bb132e6b67ceacc52fb775feff4cb31332f59b72ed9d9e795cadf9afc51ec",
+    "sha256": "e92140dbd15c0e53e79de09798c31cadca8b6b7f69b552b3f64a99d47b1db724",
     "jsx": {
       "EmojiPickerPrimitive.Root": 1,
       "InputWrapper": 1,
@@ -2090,9 +2049,9 @@
     "imports": [
       "frimousse",
       "lucide-react",
+      "@/lib/utils",
       "./reui/button",
       "./reui/input",
-      "@/lib/utils",
       "react"
     ],
     "events": [],
@@ -2894,23 +2853,23 @@
   },
   {
     "file": "src/components/reui/alert.tsx",
-    "sha256": "66ffda4315d61dd67699893b8e8702d743e61945fe1be39cad157e1a7ff32698",
+    "sha256": "b86af43fc8a2fe1754efda93f8f8b05c3fe78544626a8c5fb31879ee64e8229b",
     "jsx": {
       "div": 6,
       "button": 1,
       "X": 1
     },
     "imports": [
-      "react",
-      "@/lib/utils",
       "class-variance-authority",
-      "lucide-react"
+      "lucide-react",
+      "react",
+      "@/lib/utils"
     ],
     "events": [
       {
         "tag": "button",
         "event": "onClick",
-        "line": 239
+        "line": 232
       }
     ],
     "domSinks": [],
@@ -2918,14 +2877,14 @@
     "findings": [
       {
         "kind": "native-control",
-        "detail": "<button\n          onClick={onClose}\n          aria-label=\"Dismiss\"\n          data-slot=\"alert-close\"\n          className={cn(\n            \"richtext-group richtext-shrink-0 richtext-size-4 richtext-cursor-pointer\",\n          )}\n        >",
-        "line": 239
+        "detail": "<button\n          onClick={onClose}\n          aria-label='Dismiss'\n          data-slot='alert-close'\n          className={cn('richtext-group richtext-size-4 richtext-shrink-0 richtext-cursor-pointer')}\n        >",
+        "line": 232
       }
     ]
   },
   {
     "file": "src/components/reui/button.tsx",
-    "sha256": "e04697d0ec74a8a9fa2af5126fab8029ca7414db3218a75925c2081565490b9b",
+    "sha256": "6fda2ba1e022af6dcecdc7efc79f05c75cc0f910b0250f7bdaa3fe35c68f5030",
     "jsx": {
       "button": 1,
       "Icon": 1
@@ -2950,16 +2909,16 @@
   },
   {
     "file": "src/components/reui/card.tsx",
-    "sha256": "581c3f634def14d754be29f721fafcc87ccd6c031450a39986c2b65de00040c4",
+    "sha256": "2a6d7dc152a96a23c6a39ca29962eb2304cb1e260d6107753ec3dc47866b28fe",
     "jsx": {
       "CardContext.Provider": 1,
       "div": 8,
       "h3": 1
     },
     "imports": [
+      "class-variance-authority",
       "react",
-      "@/lib/utils",
-      "class-variance-authority"
+      "@/lib/utils"
     ],
     "events": [],
     "domSinks": [],
@@ -2968,7 +2927,7 @@
   },
   {
     "file": "src/components/reui/checkbox.tsx",
-    "sha256": "7ee0d80d8b9b638311779d454860a60708bb3c201dacc94da8f5660ba9a67565",
+    "sha256": "a93a91722dc5bdc05d94eade01ca1837d2686cb2be09552613d2abc28e97d870",
     "jsx": {
       "CheckboxPrimitive.Root": 1,
       "CheckboxPrimitive.Indicator": 1,
@@ -2989,7 +2948,7 @@
   },
   {
     "file": "src/components/reui/dialog.tsx",
-    "sha256": "a9f61bab91a621b14ffcb91572fd051f65b5e4aea7b12b0ec2ee7b95cc818d48",
+    "sha256": "5bc1f8f8a6d648088888be8ac278c4b30915a44e08db42d51d0e38fd509c9084",
     "jsx": {
       "DialogPrimitive.Root": 1,
       "DialogPrimitive.Trigger": 1,
@@ -3020,7 +2979,7 @@
   },
   {
     "file": "src/components/reui/dropdown-menu.tsx",
-    "sha256": "67f5423fa66051918c6d5aea26c950306fbbe9b29c4d1b7a9dd4ecf976bc20ad",
+    "sha256": "dcb09c0ab47acff8e6a9dc9207d5d915c6f16398f319670cb8153bb46f0cb0da",
     "jsx": {
       "DropdownMenuPrimitive.Root": 1,
       "DropdownMenuPrimitive.Portal": 2,
@@ -3084,15 +3043,15 @@
   },
   {
     "file": "src/components/reui/input.tsx",
-    "sha256": "bb5282169d6a6ece0563641fac8033195aee2e371e58d1834e5eee67d0916e7b",
+    "sha256": "d983e7703c73d1380854f4fd50561033b171ae99d5ba9c20fb166007a7f6f50e",
     "jsx": {
       "input": 1,
       "div": 3
     },
     "imports": [
       "class-variance-authority",
-      "react",
       "radix-ui",
+      "react",
       "@/lib/utils"
     ],
     "events": [],
@@ -3101,8 +3060,8 @@
     "findings": [
       {
         "kind": "native-control",
-        "detail": "<Comp\n      ref={ref}\n      data-slot=\"input\"\n      type={type}\n      className={cn(inputVariants({ variant }), className)}\n      {...props}\n    />",
-        "line": 81
+        "detail": "<Comp\n      ref={ref}\n      data-slot='input'\n      type={type}\n      className={cn(inputVariants({ variant }), className)}\n      {...props}\n    />",
+        "line": 80
       }
     ]
   },
@@ -3125,7 +3084,7 @@
   },
   {
     "file": "src/components/reui/popover.tsx",
-    "sha256": "6d1f44d3cc724032ae3e8e47b2f4837e7496c216b931af2a276b4827996962de",
+    "sha256": "b71ea21f76a24a279e00610597d52495badfe8955b54d69f483b7b8d10c183c5",
     "jsx": {
       "PopoverPrimitive.Root": 1,
       "PopoverPrimitive.Trigger": 1,
@@ -3145,7 +3104,7 @@
   },
   {
     "file": "src/components/reui/select.tsx",
-    "sha256": "fa5f76e6d73006bb066bf7c38dc434ce0ebe5743fad495d1b4854ab576e1cd16",
+    "sha256": "5df6b63e2d2d0dcaa1140f9f30c58ebb04c8709ea6e8ac015ccd96458106cdf5",
     "jsx": {
       "SelectContext.Provider": 1,
       "SelectPrimitive.Root": 1,
@@ -3201,7 +3160,7 @@
   },
   {
     "file": "src/components/reui/slider.tsx",
-    "sha256": "ce71de189227070f988502fb7c68c01f13bdfd11ab0a623253bce155b768afc8",
+    "sha256": "faa76ff4dfdb860ae1c52b957fd7e4b619edfaf7953a1f07c58c5f7aa5a9841c",
     "jsx": {
       "SliderPrimitive.Root": 1,
       "SliderPrimitive.Track": 1,
@@ -3209,9 +3168,9 @@
       "SliderPrimitive.Thumb": 1
     },
     "imports": [
+      "radix-ui",
       "react",
-      "@/lib/utils",
-      "radix-ui"
+      "@/lib/utils"
     ],
     "events": [],
     "domSinks": [],
@@ -3220,7 +3179,7 @@
   },
   {
     "file": "src/components/reui/sonner.tsx",
-    "sha256": "7bc78ab889c010d3df92603c092c4687d64e72d69a56d96a008fc5b9d10bf8aa",
+    "sha256": "9e2b9583106cc0a05020d1bed31873512c0b7a6d3fe40cfc18c5bd6279413cca",
     "jsx": {
       "Sonner": 1
     },
@@ -3236,7 +3195,7 @@
   },
   {
     "file": "src/components/reui/switch.tsx",
-    "sha256": "f77d26f8ffb7c351417e925414501f7fd64f39250cfe44a713cb29c08e573b5a",
+    "sha256": "427a1034f141cc7e0200a75dae74f9b665251d861bdac221fc633a91072a3326",
     "jsx": {
       "SwitchContext.Provider": 1,
       "div": 1,
@@ -3257,7 +3216,7 @@
   },
   {
     "file": "src/components/reui/tabs.tsx",
-    "sha256": "2203d247ff6d39205b2bcf5fbfaf0b7a2e68629290771e2c7dffdada62dcabf0",
+    "sha256": "ab9fa7a0c3dd683e9e7c7aefc3833baa59769f26ae203e3fecee530e87672325",
     "jsx": {
       "TabsPrimitive.Root": 1,
       "TabsContext.Provider": 1,
@@ -3278,7 +3237,7 @@
   },
   {
     "file": "src/components/reui/textarea.tsx",
-    "sha256": "3d6345596e5f884a33f639ef6a0d0c5b464bbad9931f254f2cee2e77402283d8",
+    "sha256": "08f8ec53ad6aedb29cf84da589c6ad528a71dd1843e65a06417a0a7dc0d5eb49",
     "jsx": {
       "textarea": 1
     },
@@ -6886,7 +6845,7 @@
   },
   {
     "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
-    "sha256": "d49c56d196f35f6e76daa3d7dbfbc683eb368d55d9e4fdb1ab7b97ecca23de16",
+    "sha256": "7e9c474e18213e0573825b16d1e103f7d6ad89e788ce5369234e9c3b434d6bd2",
     "jsx": {
       "Popover": 1,
       "PopoverTrigger": 1,
@@ -6948,12 +6907,12 @@
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 207
+        "line": 208
       },
       {
         "tag": "Button",
         "event": "onClick",
-        "line": 211
+        "line": 212
       }
     ],
     "domSinks": [],
@@ -7365,7 +7324,7 @@
   },
   {
     "file": "src/extensions/TableOfContents/components/NodeViewTableOfContents.tsx",
-    "sha256": "bcf261a2bdade75ff4e6257b41397236283b7fbb917dc170f94505615e30a0e1",
+    "sha256": "728f071fea3f1ca54eafa5cef1901bec0d56ea7ab42afc267ff827d15eeb9b24",
     "jsx": {
       "NodeViewWrapper": 1,
       "p": 2,
@@ -7375,8 +7334,8 @@
       "span": 2
     },
     "imports": [
-      "@/components/reui/button",
       "@tiptap/react",
+      "@/components/reui/button",
       "@/extensions/TableOfContents/components/useTableOfContents",
       "@/lib/utils",
       "@/locales",
@@ -7388,7 +7347,7 @@
       {
         "tag": "ReuiButton",
         "event": "onClick",
-        "line": 56
+        "line": 52
       }
     ],
     "domSinks": [],
@@ -7939,6 +7898,21 @@
     "findings": []
   },
   {
+    "file": "src/hooks/useBubbleMenuOptions.ts",
+    "sha256": "dbac559f58e74d327062347940f2106736ad891e24f9a4da9f07ec6486ff549d",
+    "jsx": {},
+    "imports": [
+      "@floating-ui/dom",
+      "react",
+      "@tiptap/core",
+      "@tiptap/react/menus"
+    ],
+    "events": [],
+    "domSinks": [],
+    "documentSchema": false,
+    "findings": []
+  },
+  {
     "file": "src/hooks/useButtonProps.ts",
     "sha256": "8fd33763cfdc96f2adfc163273a9f4ac8d2df1aee35a6bb49cf642480d8463ec",
     "jsx": {},
@@ -7994,10 +7968,11 @@
   },
   {
     "file": "src/lib/utils.ts",
-    "sha256": "9897b36f5e81282b62cb2e9bf3ad3c4fc809d76c4d8af5c681e890796f2f3b96",
+    "sha256": "caad66db5c964d6f05f0af5052e6cbc151d1944251b78ba5a2dc613cbcbd3f7e",
     "jsx": {},
     "imports": [
-      "cn"
+      "clsx",
+      "tailwind-merge"
     ],
     "events": [],
     "domSinks": [],
@@ -8135,7 +8110,7 @@
   },
   {
     "file": "src/store/ThemeColorReactive.tsx",
-    "sha256": "93b26fa6abc832890a20696a502aa4a336e6b807db341fab11042619b35d256a",
+    "sha256": "cef129d478d1385f2887a34ce805b6bb11ed6a1c9699ef98296985cd6b20c062",
     "jsx": {},
     "imports": [
       "react",
@@ -8428,7 +8403,7 @@
   },
   {
     "file": "src/utils/renderNodeView.ts",
-    "sha256": "716206bf0e682b02eec9d1810190c6cfc765b479311a46d35ae0d387a24e9cce",
+    "sha256": "1ea8f2532738301874212d106c46d00a301f088a58ec4fc0ce5d5014d4e8f7c8",
     "jsx": {},
     "imports": [
       "@tiptap/react",
@@ -8453,7 +8428,7 @@
   },
   {
     "file": "src/utils/updatePosition.ts",
-    "sha256": "a2db8ee6ae04dfa83f5329d330dffacf472938421471341a94ba803f7f7a8d25",
+    "sha256": "8ec895bf7948db9c57db01d0069d95bc3b6ba87b4906016a845aefe814dd753b",
     "jsx": {},
     "imports": [
       "@floating-ui/dom",
