@@ -141,12 +141,20 @@ for (const width of [1440, 700, 390])
         await page.waitForFunction(() => window.editor?.isInitialized);
         await page.evaluate(() => {
           if (!window.editor) throw Error('Editor not ready');
-          window.editor.commands.setContent('<h2>Visual review</h2><p>Geometry and formatting</p>');
+          window.editor.commands.setContent(
+            '<h2>Visual review</h2><p>Geometry and formatting across wrapped lines</p>'
+          );
         });
         const paragraph = page.locator('.ProseMirror > p');
         await paragraph.click();
-        await page.keyboard.press('Home');
-        await page.keyboard.press('Shift+End');
+        const selectedText = await paragraph.innerText();
+        // Home/End select a visual line, not a paragraph. CI's font metrics
+        // wrap this sample at 390px; use real keyboard character selection.
+        await page.keyboard.press('Control+End');
+        for (const _character of selectedText) await page.keyboard.press('Shift+ArrowLeft');
+        await expect
+          .poll(() => page.evaluate(() => window.getSelection()?.toString()))
+          .toBe(selectedText);
         const bubble = page.locator('.richtext-selection-bubble');
         const card = bubble.locator('[data-slot=card]');
         await expect(card).toHaveCSS('flex-direction', 'row');
@@ -179,7 +187,7 @@ for (const width of [1440, 700, 390])
         await card
           .getByRole('button', { name: language === 'Chinese' ? '粗体' : 'Bold', exact: true })
           .click();
-        await expect(paragraph.locator('strong')).toHaveText('Geometry and formatting');
+        await expect(paragraph.locator('strong')).toHaveText(selectedText);
       });
     }
 
