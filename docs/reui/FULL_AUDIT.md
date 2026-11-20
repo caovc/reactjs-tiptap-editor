@@ -6,7 +6,7 @@
 
 - 基线：旧 main 01db11df5b7ac42fe2499b41b9a7961fdeb44319；356 源模块，154 个含 JSX 文件。
 - 当前：346 源模块，157 个含 JSX 文件；18 个官方 ReUI 家族。
-- 旧/新路径并集：364；变更路径 101（包括删除、新增、纯引用/格式整理，不等于重写组件数）。
+- 旧/新路径并集：364；变更路径 102（包括删除、新增、纯引用/格式整理，不等于重写组件数）。
 - 业务原生控件候选：68 → 7（最终均为7个隐藏 file input）；业务直接 Radix：4 → 0；旧 UI 目录引用：42 → 0；原生交互候选：20 → 9。
 - 当前业务例外 16 个精确节点：7 个隐藏文件桥、4 个媒体文档选中面、4 个缩放手柄、1 个表格 pointer-capture 容器。没有业务原生 button/select/textarea/range，且没有未批准候选。ReUI 内部原生 DOM / Radix 正常保留。
 - 不把业务词汇、React 布局 div、ProseMirror contentDOM 或 SVG 改名为 ReUI。旧目录18个文件完整移除；通知 API 移入 notifications.ts，emoji 的搜索/选项真实由 ReUI 提供，Frimousse 仅保留数据/导航/虚拟化引擎。
@@ -29,7 +29,7 @@
 | `playground/src/sap/controls.tsx` | SAP 文档工作台 | 既有语义节点 / 共享组件组合 | Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectItem, Tooltip, TooltipTrigger, Button, TooltipContent, Toggle | 已审计，未改动 | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
 | `playground/src/sap/document.ts` | SAP 文档工作台 | 非交互代码 | 非交互模块（API、schema、数据、状态或工具）；无独立 UI 待替换 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `playground/src/sap/editor.ts` | SAP schema与扩展 | 已有安全schema与编号/批注，缺少slash扩展 | 加入公共SlashCommand，不造第二套节点模型；现有schema导入校验仍在 | 已改（含格式化/直接引用整理） | SAP导入安全/ID/批注全部既有回归；tests/browser/sap-blocks.spec.ts |
-| `playground/src/sap/extensions.ts` | SAP 文档工作台 | 非交互代码 | 文档 schema / command / contentDOM（非表单控件）；UI 由同插件 components 和共享 ReUI 控件提供 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
+| `playground/src/sap/extensions.ts` | SAP 文档工作台 | 非交互代码 | 文档 schema / command / contentDOM（非表单控件）；UI 由同插件 components 和共享 ReUI 控件提供 | 已改（含格式化/直接引用整理） | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `playground/src/sap/main.tsx` | SAP 文档工作台 | 既有语义节点 / 共享组件组合 | 语义布局、图标或文档节点；交互控件通过共享 ReUI 组件组合 | 已审计，未改动 | 静态逐文件核对＋类型/构建；不声称此文件每条分支均浏览器覆盖 |
 | `playground/src/sap/model.ts` | SAP 文档工作台 | 非交互代码 | 必要的文档/导出/媒体 DOM；见原生及外部引擎边界 | 已审计，未改动 | 全源 AST / 类型 / 导出门禁；非逐功能运行证明 |
 | `playground/src/sap/SapApp.tsx` | Word式工作台集成 | 公开Provider + EditorContent但未挂载块能力 | 保留Word功能区，同时装配真正库SapBlockTools；仍使用本库公开Provider（本库没有单一RichTextEditor组件）；修复桌面缩小后两侧面板同时遮住画布（matchMedia关闭，仍可手动展开） | 已改（含格式化/直接引用整理）；1 个精确原生例外 | sap.spec.ts 13条 + sap-blocks.spec.ts 7条；保存、目录、批注、打印 |

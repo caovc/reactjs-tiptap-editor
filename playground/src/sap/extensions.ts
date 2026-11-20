@@ -128,5 +128,8 @@ export function isolateHistory(editor: Editor | null, run: () => void) {
 }
 export function jumpTo(editor: Editor, from: number, to = from) {
   editor.view.dispatch(closeHistory(editor.state.tr));
-  editor.chain().focus().setTextSelection({ from, to }).scrollIntoView().run();
+  editor.chain().setTextSelection({ from, to }).scrollIntoView().run();
+  // Tiptap focus() queues a frame; navigation must publish the new DOM
+  // selection before the very next input, not restore the previous caret.
+  editor.view.focus();
 }

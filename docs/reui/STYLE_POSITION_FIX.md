@@ -12,6 +12,10 @@ This follow-up corrects visual defects in the `5d17949` delivery. Passing the pr
 6. **Other floating surfaces shared the risk.** Bubble menus use body portals / viewport coordinates, bounded wrapping rows and the actual editor scrollport. The shared slash/mention/emoji suggestion renderer supplies a reference `contextElement` and observes changing caret geometry; popups follow the nested SAP canvas rather than freezing on window-only scroll events.
 7. **Responsive form sizing had a separate actual defect.** A narrow search popover overflowed the viewport because of intrinsic full-width flex sizing and a fixed-width replacement input. It now has a bounded responsive surface, shrinking input and labelled ReUI icon navigation controls. Popover and Dialog primitives have shared viewport limits and scrolling, encoded in the pinned-source vendor adapter so regeneration preserves them.
 
+## Navigation focus follow-up
+
+The subsequent full CI run also caught a real SAP outline race: Tiptap `focus()` queues a frame, so an immediate input could still use the old DOM caret despite a new editor-state selection. The shared SAP navigation helper now sets the target selection and synchronously calls `EditorView.focus()` before returning. Existing exact prefix-insertion/undo/redo assertions remain, with an additional immediate DOM-focus/offset check. Ten repeated navigation paths and all 20 SAP/browser block cases pass locally; the final Pages workflow reruns all 68 cases before deployment.
+
 ## Paper-specific versus generic layout
 
 - Generic editors retain the library's normal block-control layout. The positioning host belongs to the actual editor, not a guessed page origin.

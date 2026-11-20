@@ -962,7 +962,7 @@
   },
   {
     "file": "playground/src/sap/extensions.ts",
-    "sha256": "1db318a5d57d87a2e8099ec4a2ade28989fa763a91ce4bfb8f6e907d9169723a",
+    "sha256": "27cc8a9b21f204e11397e894c2b822f2d6b575f59221f00180394005b84ec705",
     "jsx": {},
     "imports": [
       "@tiptap/core",

@@ -142,6 +142,12 @@ test('SAP: editing formats, fonts, live numbered outline and cursor-preserving n
   await expect(nav.getByRole('button', { name: /更新统计章节/ })).toBeVisible();
   await expect(nav.getByRole('button', { name: /格式回归文字/ })).toHaveCount(0);
   await nav.getByRole('button', { name: /更新统计章节/ }).click();
+  expect(
+    await page.evaluate(() => ({
+      focused: document.activeElement?.matches('.ProseMirror'),
+      offset: window.getSelection()?.anchorOffset,
+    }))
+  ).toEqual({ focused: true, offset: 0 });
   await page.keyboard.insertText('导航');
   await expect(page.locator('.tiptap h2').last()).toHaveText('导航更新统计章节');
   await page.getByRole('button', { name: '撤销', exact: true }).click();
