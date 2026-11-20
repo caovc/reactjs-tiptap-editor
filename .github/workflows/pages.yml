@@ -1,0 +1,58 @@
+name: Playground Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm audit:ui && pnpm lint && pnpm type-check
+      - run: pnpm build:lib && pnpm type-check:sap && pnpm test:types && pnpm test:unit
+      - name: Verify ESM bubble isolation
+        run: node --test --test-name-pattern='text-only bubble' tests/bundle-isolation.test.mjs
+      - name: Probe known upstream CJS interop issue (non-blocking)
+        continue-on-error: true
+        run: node --test --test-name-pattern='all bubble entry points' tests/bundle-isolation.test.mjs
+      - name: Build playground and SAP demo for repository subpath
+        run: pnpm --dir playground build
+        env:
+          PAGES_BASE_PATH: /reactjs-tiptap-editor/
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:browser
+      - name: Retain browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence
+          path: test-results
+          retention-days: 7
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: playground/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy playground
+        id: deployment
+        uses: actions/deploy-pages@v4

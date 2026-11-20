@@ -1,0 +1,98 @@
+[
+  {
+    "file": "playground/src/sap/SapApp.tsx",
+    "kind": "native-control",
+    "detail": "<input\n          ref={fileInput}\n          type=\"file\"\n          accept=\".json,.html,.htm\"\n          aria-label=\"导入 SAP 文件\"\n          hidden\n          onChange={(event) => {\n            const file = event.target.files?.[0];\n            event.target.value = \"\";\n            if (file) void readFile(file);\n          }}\n        />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+    "kind": "native-control",
+    "detail": "<input\n              // accept=\"image/*\"\n              accept={uploadOptions.acceptMimes.join(\",\") || \"image/*\"}\n              multiple={uploadOptions.multiple}\n              onChange={handleFile}\n              ref={fileInput}\n              style={{ display: \"none\" }}\n              type=\"file\"\n            />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/extensions/Attachment/components/NodeViewAttachment/NodeViewAttachment.tsx",
+    "kind": "native-control",
+    "detail": "<input hidden onChange={handleFile} ref={$upload} type=\"file\" />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/extensions/Drawer/components/NodeViewDrawer/NodeViewDrawer.tsx",
+    "kind": "native-interaction",
+    "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Drawer/components/NodeViewDrawer/NodeViewDrawer.tsx",
+    "kind": "native-interaction",
+    "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onMouseDown={(e) => onMouseDown(e, direction)}\n                >",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Image/components/ImageCropper.tsx",
+    "kind": "native-control",
+    "detail": "<input\n        accept={uploadOptions?.acceptMimes?.join(\",\") || \"image/*\"}\n        multiple={false} // TODO No sense unless doing queue processing\n        onChange={handleFile}\n        ref={fileInput}\n        style={{ display: \"none\" }}\n        type=\"file\"\n      />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/extensions/Image/components/ImageView.tsx",
+    "kind": "native-interaction",
+    "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Image/components/ImageView.tsx",
+    "kind": "native-interaction",
+    "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onPointerCancel={(e) => finishResize(e, false)}\n                  onPointerDown={(e) => onPointerDown(e, direction)}\n                  onPointerMove={onPointerMove}\n                  onPointerUp={(e) => finishResize(e, true)}\n                >",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Image/components/RichTextImage.tsx",
+    "kind": "native-control",
+    "detail": "<input\n              // accept=\"image/*\"\n              accept={uploadOptions.acceptMimes.join(\",\") || \"image/*\"}\n              multiple={uploadOptions.multiple}\n              onChange={handleFile}\n              ref={fileInput}\n              style={{ display: \"none\" }}\n              type=\"file\"\n            />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/extensions/ImageGif/components/ImageGifView.tsx",
+    "kind": "native-interaction",
+    "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/ImageGif/components/ImageGifView.tsx",
+    "kind": "native-interaction",
+    "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onPointerCancel={(e) => finishResize(e, false)}\n                  onPointerDown={(e) => onPointerDown(e, direction)}\n                  onPointerMove={onPointerMove}\n                  onPointerUp={(e) => finishResize(e, true)}\n                >",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/ImportWord/components/RichTextImportWord.tsx",
+    "kind": "native-control",
+    "detail": "<input\n        accept='.docx'\n        onChange={handleFileChange}\n        ref={fileInput}\n        type='file'\n        style={{\n          display: 'none',\n        }}\n      />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  },
+  {
+    "file": "src/extensions/Mermaid/components/NodeViewMermaid/NodeViewMermaid.tsx",
+    "kind": "native-interaction",
+    "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Mermaid/components/NodeViewMermaid/NodeViewMermaid.tsx",
+    "kind": "native-interaction",
+    "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onMouseDown={(e) => onMouseDown(e, direction)}\n                >",
+    "reason": "ProseMirror media-node selection surface, not application action UI. Keeps semantic image DOM and node selection for the shared ReUI bubble toolbar."
+  },
+  {
+    "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+    "kind": "native-interaction",
+    "detail": "<div\n            className=\"richtext-flex richtext-flex-col richtext-flex-wrap richtext-justify-between richtext-gap-1\"\n            onPointerCancel={onPointerCancel}\n            onPointerDown={onPointerDown}\n            onPointerMove={onPointerMove}\n            onPointerUp={onPointerUp}\n            style={{ touchAction: \"none\" }}\n          >",
+    "reason": "One native pointer-capture gesture surface for touch/drag table-size selection. Every selectable grid cell is a keyboard-operable ReUI Button; header option is ReUI Checkbox."
+  },
+  {
+    "file": "src/extensions/Video/components/VideoUploadTab.tsx",
+    "kind": "native-control",
+    "detail": "<input\n        accept={\n          (uploadOptions.acceptMimes ?? DEFAULT_VIDEO_OPTIONS.acceptMimes).join(',') || 'video/*'\n        }\n        multiple={uploadOptions.multiple ?? DEFAULT_VIDEO_OPTIONS.multiple}\n        onChange={handleFile}\n        ref={fileInput}\n        type='file'\n        style={{\n          display: 'none',\n        }}\n      />",
+    "reason": "Hidden browser file-picker bridge; activation, validation and upload actions are ReUI. A browser file input is required to obtain File objects securely."
+  }
+]

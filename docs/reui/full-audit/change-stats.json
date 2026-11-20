@@ -1,0 +1,586 @@
+{
+  "baseline": "01db11df5b7ac42fe2499b41b9a7961fdeb44319",
+  "scope": "Historical diff of source, styles, tests, tooling/config and human docs; generated audit artifacts and this file excluded; includes formatting, not a count of rewritten widgets",
+  "files": [
+    {
+      "file": ".github/workflows/ci.yml",
+      "added": 7,
+      "deleted": 1
+    },
+    {
+      "file": ".github/workflows/pages.yml",
+      "added": 2,
+      "deleted": 2
+    },
+    {
+      "file": "README.md",
+      "added": 5,
+      "deleted": 5
+    },
+    {
+      "file": "docs/.vitepress/locale.ts",
+      "added": 1,
+      "deleted": 1
+    },
+    {
+      "file": "docs/reui/MIGRATION.md",
+      "added": 84,
+      "deleted": 89
+    },
+    {
+      "file": "docs/reui/VALIDATION.md",
+      "added": 2,
+      "deleted": 0
+    },
+    {
+      "file": "docs/reui/VALIDATION_COMPLETION.md",
+      "added": 73,
+      "deleted": 0
+    },
+    {
+      "file": "docs/reui/sources.json",
+      "added": 21,
+      "deleted": 0
+    },
+    {
+      "file": "docs/sap/README.md",
+      "added": 9,
+      "deleted": 5
+    },
+    {
+      "file": "docs/sap/VALIDATION.md",
+      "added": 2,
+      "deleted": 0
+    },
+    {
+      "file": "package.json",
+      "added": 3,
+      "deleted": 3
+    },
+    {
+      "file": "playground/src/App.tsx",
+      "added": 380,
+      "deleted": 237
+    },
+    {
+      "file": "playground/src/sap/SapApp.tsx",
+      "added": 682,
+      "deleted": 446
+    },
+    {
+      "file": "playground/src/sap/blocks.tsx",
+      "added": 177,
+      "deleted": 0
+    },
+    {
+      "file": "playground/src/sap/editor.ts",
+      "added": 25,
+      "deleted": 23
+    },
+    {
+      "file": "playground/src/sap/sap.css",
+      "added": 43,
+      "deleted": 22
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "added": 0,
+      "deleted": 13
+    },
+    {
+      "file": "scripts/reui/forward-refs.mjs",
+      "added": 66,
+      "deleted": 49
+    },
+    {
+      "file": "scripts/reui/full-audit.mjs",
+      "added": 211,
+      "deleted": 0
+    },
+    {
+      "file": "scripts/reui/inventory.mjs",
+      "added": 2,
+      "deleted": 120
+    },
+    {
+      "file": "scripts/reui/native-exceptions.json",
+      "added": 98,
+      "deleted": 0
+    },
+    {
+      "file": "scripts/reui/registry-v1.json",
+      "added": 86,
+      "deleted": 4
+    },
+    {
+      "file": "scripts/reui/report.mjs",
+      "added": 139,
+      "deleted": 0
+    },
+    {
+      "file": "scripts/reui/style-audit.mjs",
+      "added": 89,
+      "deleted": 0
+    },
+    {
+      "file": "scripts/reui/vendor.mjs",
+      "added": 112,
+      "deleted": 56
+    },
+    {
+      "file": "src/components/ActionButton.tsx",
+      "added": 90,
+      "deleted": 74
+    },
+    {
+      "file": "src/components/ActionMenuButton.tsx",
+      "added": 56,
+      "deleted": 50
+    },
+    {
+      "file": "src/components/Bubble/RichTextAIImprove.tsx",
+      "added": 44,
+      "deleted": 27
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+      "added": 78,
+      "deleted": 53
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+      "added": 155,
+      "deleted": 133
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleColumns.tsx",
+      "added": 44,
+      "deleted": 25
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleDrawer.tsx",
+      "added": 48,
+      "deleted": 33
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleExcalidraw.tsx",
+      "added": 54,
+      "deleted": 27
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+      "added": 56,
+      "deleted": 39
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+      "added": 55,
+      "deleted": 47
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleLink.tsx",
+      "added": 36,
+      "deleted": 22
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleMedia.tsx",
+      "added": 89,
+      "deleted": 49
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+      "added": 314,
+      "deleted": 166
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleMermaid.tsx",
+      "added": 50,
+      "deleted": 35
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleTable.tsx",
+      "added": 50,
+      "deleted": 46
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleText.tsx",
+      "added": 78,
+      "deleted": 53
+    },
+    {
+      "file": "src/components/Bubble/RichTextBubbleTwitter.tsx",
+      "added": 31,
+      "deleted": 21
+    },
+    {
+      "file": "src/components/ColorPicker.tsx",
+      "added": 164,
+      "deleted": 207
+    },
+    {
+      "file": "src/components/EmojiPicker.tsx",
+      "added": 182,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/LazyContent.tsx",
+      "added": 17,
+      "deleted": 8
+    },
+    {
+      "file": "src/components/RichTextProvider.tsx",
+      "added": 15,
+      "deleted": 15
+    },
+    {
+      "file": "src/components/SizeSetter/SizeSetter.tsx",
+      "added": 50,
+      "deleted": 28
+    },
+    {
+      "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+      "added": 89,
+      "deleted": 62
+    },
+    {
+      "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+      "added": 63,
+      "deleted": 42
+    },
+    {
+      "file": "src/components/index.ts",
+      "added": 7,
+      "deleted": 6
+    },
+    {
+      "file": "src/components/notifications.ts",
+      "added": 41,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/reui/alert.tsx",
+      "added": 326,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/reui/card.tsx",
+      "added": 252,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/reui/index.ts",
+      "added": 18,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/reui/input.tsx",
+      "added": 62,
+      "deleted": 39
+    },
+    {
+      "file": "src/components/reui/slider.tsx",
+      "added": 48,
+      "deleted": 0
+    },
+    {
+      "file": "src/components/ui/button.tsx",
+      "added": 0,
+      "deleted": 39
+    },
+    {
+      "file": "src/components/ui/checkbox.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/dialog.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/dropdown-menu.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/emoji-picker.tsx",
+      "added": 0,
+      "deleted": 159
+    },
+    {
+      "file": "src/components/ui/index.ts",
+      "added": 0,
+      "deleted": 15
+    },
+    {
+      "file": "src/components/ui/input.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/label.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/popover.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/select.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/separator.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/switch.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/tabs.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/textarea.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/toast.tsx",
+      "added": 0,
+      "deleted": 10
+    },
+    {
+      "file": "src/components/ui/toggle.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/tooltip.tsx",
+      "added": 0,
+      "deleted": 2
+    },
+    {
+      "file": "src/components/ui/use-toast.ts",
+      "added": 0,
+      "deleted": 24
+    },
+    {
+      "file": "src/constants/resetCSS.ts",
+      "added": 1,
+      "deleted": 0
+    },
+    {
+      "file": "src/extensions/AI/AIPanel.tsx",
+      "added": 174,
+      "deleted": 89
+    },
+    {
+      "file": "src/extensions/Attachment/components/NodeViewAttachment/NodeViewAttachment.tsx",
+      "added": 37,
+      "deleted": 25
+    },
+    {
+      "file": "src/extensions/Callout/components/NodeViewCallout/NodeViewCallout.tsx",
+      "added": 52,
+      "deleted": 60
+    },
+    {
+      "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+      "added": 50,
+      "deleted": 37
+    },
+    {
+      "file": "src/extensions/Drawer/components/ControlDrawer/ControlDrawer.module.scss",
+      "added": 36,
+      "deleted": 62
+    },
+    {
+      "file": "src/extensions/Drawer/components/ControlDrawer/ControlDrawer.tsx",
+      "added": 307,
+      "deleted": 163
+    },
+    {
+      "file": "src/extensions/Drawer/components/DrawerCanvas.tsx",
+      "added": 59,
+      "deleted": 34
+    },
+    {
+      "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+      "added": 27,
+      "deleted": 15
+    },
+    {
+      "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+      "added": 28,
+      "deleted": 19
+    },
+    {
+      "file": "src/extensions/Emoji/components/EmojiList/EmojiNodeView.tsx",
+      "added": 43,
+      "deleted": 25
+    },
+    {
+      "file": "src/extensions/Emoji/components/EmojiPickerPanel.tsx",
+      "added": 2,
+      "deleted": 2
+    },
+    {
+      "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+      "added": 31,
+      "deleted": 28
+    },
+    {
+      "file": "src/extensions/Iframe/components/IframeNodeView.tsx",
+      "added": 23,
+      "deleted": 21
+    },
+    {
+      "file": "src/extensions/Image/components/ImageCropper.tsx",
+      "added": 61,
+      "deleted": 44
+    },
+    {
+      "file": "src/extensions/Image/components/RichTextImage.tsx",
+      "added": 90,
+      "deleted": 61
+    },
+    {
+      "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+      "added": 50,
+      "deleted": 29
+    },
+    {
+      "file": "src/extensions/Katex/components/KatexPreview.tsx",
+      "added": 19,
+      "deleted": 10
+    },
+    {
+      "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+      "added": 41,
+      "deleted": 37
+    },
+    {
+      "file": "src/extensions/Mention/components/NodeViewMentionList.tsx",
+      "added": 116,
+      "deleted": 96
+    },
+    {
+      "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+      "added": 51,
+      "deleted": 34
+    },
+    {
+      "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+      "added": 54,
+      "deleted": 37
+    },
+    {
+      "file": "src/extensions/ShortMessage/components/ShortMessageList.tsx",
+      "added": 42,
+      "deleted": 28
+    },
+    {
+      "file": "src/extensions/SlashCommand/components/SlashCommandNodeView.tsx",
+      "added": 59,
+      "deleted": 42
+    },
+    {
+      "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+      "added": 72,
+      "deleted": 25
+    },
+    {
+      "file": "src/extensions/Table/components/RichTextTable.tsx",
+      "added": 11,
+      "deleted": 13
+    },
+    {
+      "file": "src/extensions/TableOfContents/components/NodeViewTableOfContents.tsx",
+      "added": 33,
+      "deleted": 22
+    },
+    {
+      "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+      "added": 28,
+      "deleted": 24
+    },
+    {
+      "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+      "added": 31,
+      "deleted": 22
+    },
+    {
+      "file": "src/extensions/Video/components/RichTextVideo.tsx",
+      "added": 55,
+      "deleted": 39
+    },
+    {
+      "file": "src/locales/en.ts",
+      "added": 211,
+      "deleted": 202
+    },
+    {
+      "file": "src/locales/zh-cn.ts",
+      "added": 210,
+      "deleted": 202
+    },
+    {
+      "file": "src/styles/ai.scss",
+      "added": 47,
+      "deleted": 189
+    },
+    {
+      "file": "src/styles/index.scss",
+      "added": 36,
+      "deleted": 9
+    },
+    {
+      "file": "src/utils/validateFile.ts",
+      "added": 28,
+      "deleted": 24
+    },
+    {
+      "file": "tests/browser/plugin-ui.spec.ts",
+      "added": 338,
+      "deleted": 0
+    },
+    {
+      "file": "tests/browser/sap-blocks.spec.ts",
+      "added": 237,
+      "deleted": 0
+    },
+    {
+      "file": "tests/plugin-fixture.html",
+      "added": 1,
+      "deleted": 0
+    },
+    {
+      "file": "tests/plugin-fixture.tsx",
+      "added": 42,
+      "deleted": 0
+    },
+    {
+      "file": "tests/reui-controls.tsx",
+      "added": 70,
+      "deleted": 53
+    },
+    {
+      "file": "tests/reui-vendor.test.mjs",
+      "added": 87,
+      "deleted": 0
+    },
+    {
+      "file": "tests/ui-audit.test.mjs",
+      "added": 133,
+      "deleted": 0
+    }
+  ]
+}

@@ -1,0 +1,5896 @@
+[
+  {
+    "file": "playground/src/App.tsx",
+    "sha256": "b6def8ccdec4223599a73f7528f2f8ed8a9e8394c97d6d8001e4ee089bcf6dae",
+    "jsx": {
+      "div": 8,
+      "button": 18,
+      "span": 1,
+      "input": 1,
+      "RichTextUndo": 1,
+      "RichTextRedo": 1,
+      "RichTextSearchAndReplace": 1,
+      "RichTextClear": 1,
+      "RichTextFormatPainter": 1,
+      "RichTextFontFamily": 1,
+      "RichTextHeading": 1,
+      "RichTextFontSize": 1,
+      "RichTextBold": 1,
+      "RichTextItalic": 1,
+      "RichTextUnderline": 1,
+      "RichTextStrike": 1,
+      "RichTextMoreMark": 1,
+      "RichTextEmoji": 1,
+      "RichTextColor": 1,
+      "RichTextHighlight": 1,
+      "RichTextBulletList": 1,
+      "RichTextOrderedList": 1,
+      "RichTextAlign": 1,
+      "RichTextIndent": 1,
+      "RichTextLineHeight": 1,
+      "RichTextTaskList": 1,
+      "RichTextLink": 1,
+      "RichTextImage": 1,
+      "RichTextVideo": 1,
+      "RichTextImageGif": 1,
+      "RichTextBlockquote": 1,
+      "RichTextHorizontalRule": 1,
+      "RichTextCode": 1,
+      "RichTextCodeBlock": 1,
+      "RichTextColumn": 1,
+      "RichTextTable": 1,
+      "RichTextIframe": 1,
+      "RichTextExportPdf": 1,
+      "RichTextImportWord": 1,
+      "RichTextExportWord": 1,
+      "RichTextExportMarkdown": 1,
+      "RichTextTextDirection": 1,
+      "RichTextAttachment": 1,
+      "RichTextKatex": 1,
+      "RichTextExcalidraw": 1,
+      "RichTextMermaid": 1,
+      "RichTextDrawer": 1,
+      "RichTextTwitter": 1,
+      "RichTextCodeView": 1,
+      "RichTextCallout": 1,
+      "RichTextDetails": 1,
+      "RichTextTableOfContents": 1,
+      "Header": 1,
+      "RichTextProvider": 1,
+      "RichTextToolbar": 1,
+      "EditorContent": 1,
+      "RichTextBubbleCallout": 1,
+      "RichTextBubbleColumns": 1,
+      "RichTextBubbleDrawer": 1,
+      "RichTextBubbleExcalidraw": 1,
+      "RichTextBubbleIframe": 1,
+      "RichTextBubbleKatex": 1,
+      "RichTextBubbleLink": 1,
+      "RichTextBubbleImage": 1,
+      "RichTextBubbleVideo": 1,
+      "RichTextBubbleImageGif": 1,
+      "RichTextBubbleMermaid": 1,
+      "RichTextBubbleTable": 1,
+      "RichTextBubbleText": 1,
+      "RichTextBubbleTwitter": 1,
+      "RichTextBubbleCodeBlock": 1,
+      "RichTextBubbleMenuDragHandle": 1,
+      "SlashCommandList": 1,
+      "textarea": 1
+    },
+    "imports": [
+      "@tiptap/extension-document",
+      "@tiptap/extension-hard-break",
+      "@tiptap/extension-list",
+      "@tiptap/extension-paragraph",
+      "@tiptap/extension-text",
+      "@tiptap/extension-text-style",
+      "@tiptap/extensions",
+      "@tiptap/react",
+      "react",
+      "reactjs-tiptap-editor",
+      "reactjs-tiptap-editor/ai",
+      "reactjs-tiptap-editor/attachment",
+      "reactjs-tiptap-editor/blockquote",
+      "reactjs-tiptap-editor/bold",
+      "reactjs-tiptap-editor/bubble",
+      "reactjs-tiptap-editor/bulletlist",
+      "reactjs-tiptap-editor/callout",
+      "reactjs-tiptap-editor/clear",
+      "reactjs-tiptap-editor/code",
+      "reactjs-tiptap-editor/codeblock",
+      "reactjs-tiptap-editor/codeview",
+      "reactjs-tiptap-editor/color",
+      "reactjs-tiptap-editor/column",
+      "reactjs-tiptap-editor/details",
+      "reactjs-tiptap-editor/drawer",
+      "reactjs-tiptap-editor/emoji",
+      "reactjs-tiptap-editor/excalidraw",
+      "reactjs-tiptap-editor/exportmarkdown",
+      "reactjs-tiptap-editor/exportpdf",
+      "reactjs-tiptap-editor/exportword",
+      "reactjs-tiptap-editor/fontfamily",
+      "reactjs-tiptap-editor/fontsize",
+      "reactjs-tiptap-editor/formatpainter",
+      "reactjs-tiptap-editor/heading",
+      "reactjs-tiptap-editor/highlight",
+      "reactjs-tiptap-editor/history",
+      "reactjs-tiptap-editor/horizontalrule",
+      "reactjs-tiptap-editor/iframe",
+      "reactjs-tiptap-editor/image",
+      "reactjs-tiptap-editor/imagegif",
+      "reactjs-tiptap-editor/importword",
+      "reactjs-tiptap-editor/indent",
+      "reactjs-tiptap-editor/italic",
+      "reactjs-tiptap-editor/katex",
+      "reactjs-tiptap-editor/lineheight",
+      "reactjs-tiptap-editor/link",
+      "reactjs-tiptap-editor/locale-bundle",
+      "reactjs-tiptap-editor/markdownpaste",
+      "reactjs-tiptap-editor/mention",
+      "reactjs-tiptap-editor/mermaid",
+      "reactjs-tiptap-editor/moremark",
+      "reactjs-tiptap-editor/orderedlist",
+      "reactjs-tiptap-editor/searchandreplace",
+      "reactjs-tiptap-editor/shortmessage",
+      "reactjs-tiptap-editor/slashcommand",
+      "reactjs-tiptap-editor/strike",
+      "reactjs-tiptap-editor/table",
+      "reactjs-tiptap-editor/tableofcontents",
+      "reactjs-tiptap-editor/tasklist",
+      "reactjs-tiptap-editor/textalign",
+      "reactjs-tiptap-editor/textdirection",
+      "reactjs-tiptap-editor/textunderline",
+      "reactjs-tiptap-editor/theme",
+      "reactjs-tiptap-editor/twitter",
+      "reactjs-tiptap-editor/video",
+      "reactjs-tiptap-editor/style.css",
+      "katex/dist/katex.min.css",
+      "easydrawer/styles.css",
+      "@excalidraw/excalidraw/index.css"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n          type='button'\n          onClick={() => {\n            localeActions.setLang('vi');\n          }}\n        >",
+        "line": 434
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => localeActions.setLang('en')}>",
+        "line": 442
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => localeActions.setLang('zh_CN')}>",
+        "line": 445
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => localeActions.setLang('pt_BR')}>",
+        "line": 448
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => localeActions.setLang('hu_HU')}>",
+        "line": 451
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => localeActions.setLang('ja')}>",
+        "line": 454
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>",
+        "line": 457
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          type='button'\n          onClick={() => {\n            editor?.setEditable(!editorEditable);\n          }}\n        >",
+        "line": 460
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setTheme('light');\n          }}\n        >",
+        "line": 470
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setTheme('dark');\n          }}\n        >",
+        "line": 478
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('default');\n          }}\n        >",
+        "line": 489
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('red');\n          }}\n        >",
+        "line": 497
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('blue');\n          }}\n        >",
+        "line": 506
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('green');\n          }}\n        >",
+        "line": 515
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('orange');\n          }}\n        >",
+        "line": 524
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('rose');\n          }}\n        >",
+        "line": 533
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('violet');\n          }}\n        >",
+        "line": 542
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n          className='border border-solid border-gray-500 p-1'\n          onClick={() => {\n            themeActions.setColor('yellow');\n          }}\n        >",
+        "line": 551
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n          type='range'\n          min={0}\n          max={3}\n          step={0.05}\n          defaultValue={0.65}\n          onChange={(e) => {\n            const value = e.target.value;\n            themeActions.setBorderRadius(`${value}rem`);\n          }}\n        />",
+        "line": 564
+      },
+      {
+        "kind": "native-control",
+        "detail": "<textarea\n          style={{\n            marginTop: 20,\n            height: 500,\n          }}\n          readOnly\n          value={content}\n        />",
+        "line": 708
+      }
+    ]
+  },
+  {
+    "file": "playground/src/components/Hello/Hello.tsx",
+    "sha256": "a44877777cc2eb55bce35381db3c0e3726d34250a106c1d6dd23e2f2a6cd6ce4",
+    "jsx": {
+      "h1": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/emojis.ts",
+    "sha256": "0bb9e279236eb008686d8d6a66244ca011171b96b0fe67c5c098d8546778d5f5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "playground/src/main.tsx",
+    "sha256": "4525cc579d1837ef13989fb5e8fc24da225367f3d034328def28b8373b1cda44",
+    "jsx": {
+      "App": 1
+    },
+    "imports": [
+      "react",
+      "react-dom/client",
+      "./global.css",
+      "./App"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/SapApp.tsx",
+    "sha256": "241e77d2182d58fcaa368e2206630fb6a647b84be317f4b4acfd1a615fb1fe02",
+    "jsx": {
+      "div": 43,
+      "Format": 2,
+      "RichTextProvider": 1,
+      "style": 2,
+      "header": 2,
+      "a": 1,
+      "FileText": 2,
+      "span": 38,
+      "Separator": 3,
+      "Button": 28,
+      "ChevronDown": 3,
+      "Check": 1,
+      "Action": 28,
+      "CircleHelp": 2,
+      "Printer": 3,
+      "DropdownMenu": 3,
+      "DropdownMenuTrigger": 3,
+      "Download": 2,
+      "DropdownMenuContent": 3,
+      "DropdownMenuGroup": 3,
+      "DropdownMenuItem": 9,
+      "FileJson": 1,
+      "FileCode": 2,
+      "Tabs": 2,
+      "Upload": 1,
+      "DropdownMenuSeparator": 1,
+      "RotateCcw": 4,
+      "TabsList": 2,
+      "TabsTrigger": 8,
+      "Search": 2,
+      "ShieldCheck": 6,
+      "TabsContent": 8,
+      "RibbonGroup": 16,
+      "Undo2": 1,
+      "Redo2": 1,
+      "Choice": 5,
+      "Bold": 1,
+      "Italic": 1,
+      "Underline": 1,
+      "Type": 2,
+      "Strikethrough": 1,
+      "Highlighter": 1,
+      "List": 2,
+      "ListOrdered": 1,
+      "AlignLeft": 1,
+      "AlignCenter": 1,
+      "AlignRight": 1,
+      "AlignJustify": 1,
+      "Table2": 2,
+      "Plus": 7,
+      "Minus": 3,
+      "Trash2": 2,
+      "ClipboardList": 3,
+      "BookOpen": 2,
+      "MessageSquarePlus": 2,
+      "MessageSquare": 2,
+      "PanelLeftClose": 1,
+      "ChevronRight": 3,
+      "PanelRightClose": 1,
+      "main": 1,
+      "aside": 2,
+      "X": 1,
+      "Input": 10,
+      "nav": 1,
+      "br": 2,
+      "small": 2,
+      "section": 5,
+      "article": 1,
+      "h1": 1,
+      "strong": 8,
+      "p": 11,
+      "EditorContent": 1,
+      "footer": 2,
+      "h2": 5,
+      "Field": 8,
+      "CheckCheck": 1,
+      "ArrowDown": 2,
+      "Textarea": 2,
+      "input": 1,
+      "Dialog": 1,
+      "DialogContent": 1,
+      "DialogHeader": 1,
+      "DialogTitle": 1,
+      "DialogDescription": 1,
+      "blockquote": 1,
+      "DialogFooter": 3,
+      "ul": 1,
+      "li": 5
+    },
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/react",
+      "lucide-react",
+      "react",
+      "reactjs-tiptap-editor",
+      "sonner",
+      "@/components/reui/button",
+      "@/components/reui/dialog",
+      "@/components/reui/dropdown-menu",
+      "@/components/reui/input",
+      "@/components/reui/separator",
+      "@/components/reui/tabs",
+      "@/components/reui/textarea",
+      "./controls",
+      "./document",
+      "./editor",
+      "./extensions",
+      "./model"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<input\n          ref={fileInput}\n          type='file'\n          accept='.json,.html,.htm'\n          aria-label='导入 SAP 文件'\n          hidden\n          onChange={(event) => {\n            const file = event.target.files?.[0];\n            event.target.value = '';\n            if (file) void readFile(file);\n          }}\n        />",
+        "line": 1284
+      }
+    ]
+  },
+  {
+    "file": "playground/src/sap/controls.tsx",
+    "sha256": "a01c6d0cf1c094a7e332522aa60e1e71d8322c51995af6be237662f7aeef2f63",
+    "jsx": {
+      "Select": 1,
+      "SelectTrigger": 1,
+      "SelectValue": 1,
+      "SelectContent": 1,
+      "SelectGroup": 1,
+      "SelectItem": 1,
+      "Tooltip": 2,
+      "TooltipTrigger": 2,
+      "Button": 1,
+      "span": 1,
+      "TooltipContent": 2,
+      "Toggle": 1,
+      "fieldset": 1,
+      "div": 2,
+      "legend": 1,
+      "Label": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "react",
+      "@/components/reui/button",
+      "@/components/reui/label",
+      "@/components/reui/select",
+      "@/components/reui/toggle",
+      "@/components/reui/tooltip",
+      "./extensions"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/document.ts",
+    "sha256": "f618196680e4099cc09a9f39b497305826dd71eab5b4fc390ad1921c316f1df9",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/editor.ts",
+    "sha256": "5bdfe36e2221f2132553f959b04681fb4803b0c4cebd60484f3b9353ef7d34b3",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-document",
+      "@tiptap/extension-hard-break",
+      "@tiptap/extension-list",
+      "@tiptap/extension-paragraph",
+      "@tiptap/extension-text",
+      "@tiptap/extension-text-style",
+      "@tiptap/extensions",
+      "reactjs-tiptap-editor/bold",
+      "reactjs-tiptap-editor/bulletlist",
+      "reactjs-tiptap-editor/color",
+      "reactjs-tiptap-editor/fontfamily",
+      "reactjs-tiptap-editor/fontsize",
+      "reactjs-tiptap-editor/heading",
+      "reactjs-tiptap-editor/highlight",
+      "reactjs-tiptap-editor/history",
+      "reactjs-tiptap-editor/italic",
+      "reactjs-tiptap-editor/orderedlist",
+      "reactjs-tiptap-editor/searchandreplace",
+      "reactjs-tiptap-editor/strike",
+      "reactjs-tiptap-editor/table",
+      "reactjs-tiptap-editor/textalign",
+      "reactjs-tiptap-editor/textunderline",
+      "./extensions"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/extensions.ts",
+    "sha256": "1db318a5d57d87a2e8099ec4a2ade28989fa763a91ce4bfb8f6e907d9169723a",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/history",
+      "@tiptap/pm/state",
+      "@tiptap/pm/model"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/main.tsx",
+    "sha256": "8883f71a886bc17154f2398bf4e3362acf9ec778a00dd261898973378134d9bd",
+    "jsx": {
+      "SapApp": 1
+    },
+    "imports": [
+      "react-dom/client",
+      "reactjs-tiptap-editor/theme",
+      "reactjs-tiptap-editor/style.css",
+      "./sap.css",
+      "./SapApp"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/sap/model.ts",
+    "sha256": "b8bd7fbec58799686b790ff4282c6d02a4c018b816f599cce6f8fc756fd1f4f7",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/tables",
+      "dompurify",
+      "zod",
+      "./document",
+      "./extensions",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "playground/src/types/env.d.ts",
+    "sha256": "8e1aabff5981ebdb383eef25fed0fc0dbd5b0f4796442661e99e417e564dfa26",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "playground/src/types/global.d.ts",
+    "sha256": "59dd28a27b289aea12a465f14e8a2f4ee457ca1f50fe9987cd6c0ca42aa67f33",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "playground/src/vite-env.d.ts",
+    "sha256": "1b9c64210d87e5514412166211327531a002f84b3e0141a17d85180bcc644189",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/bubble.ts",
+    "sha256": "a9323436ddb303748b1967192dd9f5c64b20f8355a1b5d1b8a758a52c4f24df7",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ActionButton.tsx",
+    "sha256": "833e4cd4fbfc4f595a2475d443f1a11e7d6e368034900970ce7293350f4cf0b5",
+    "jsx": {
+      "Tooltip": 1,
+      "TooltipTrigger": 1,
+      "Comp": 1,
+      "Icon": 1,
+      "TooltipContent": 1,
+      "div": 2,
+      "span": 1
+    },
+    "imports": [
+      "@radix-ui/react-slot",
+      "react",
+      "@/components",
+      "@/lib/utils",
+      "@/utils/plateform",
+      "@/types",
+      "@radix-ui/react-tooltip"
+    ],
+    "findings": [
+      {
+        "kind": "direct-radix",
+        "detail": "@radix-ui/react-slot",
+        "line": 1
+      },
+      {
+        "kind": "direct-radix",
+        "detail": "@radix-ui/react-tooltip",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "file": "src/components/ActionMenuButton.tsx",
+    "sha256": "92e4538b5f2a6c6af822f02e77b8a11b1a268ef51f6e1d9bd484de68b6b790f4",
+    "jsx": {
+      "Tooltip": 1,
+      "TooltipTrigger": 1,
+      "Comp": 1,
+      "div": 5,
+      "Icon": 1,
+      "TooltipContent": 1,
+      "span": 1
+    },
+    "imports": [
+      "@radix-ui/react-slot",
+      "react",
+      "@/components",
+      "@/utils/plateform",
+      "@/types",
+      "@radix-ui/react-tooltip"
+    ],
+    "findings": [
+      {
+        "kind": "direct-radix",
+        "detail": "@radix-ui/react-slot",
+        "line": 1
+      },
+      {
+        "kind": "direct-radix",
+        "detail": "@radix-ui/react-tooltip",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextAIImprove.tsx",
+    "sha256": "30fd4a21c81cabebdf971b4926b4fcce27e4df4b88def8e6881d7d828b4ac774",
+    "jsx": {
+      "div": 1,
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionButton": 1,
+      "Sparkles": 2,
+      "DropdownMenuContent": 1,
+      "DropdownMenuItem": 2,
+      "Icon": 1,
+      "DropdownMenuSeparator": 1
+    },
+    "imports": [
+      "lucide-react",
+      "react",
+      "@/components/ActionButton",
+      "@/components/ui/dropdown-menu",
+      "@/store/editor",
+      "@tiptap/core"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dropdown-menu",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+    "sha256": "d8906c078c5fde6733f39f6c6c442e42c2200a02536548566aaf9a4269a049d1",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 5,
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 2,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "Label": 3,
+      "Select": 1,
+      "SelectTrigger": 1,
+      "SelectValue": 1,
+      "SelectContent": 1,
+      "SelectItem": 1,
+      "Input": 2,
+      "DialogFooter": 1,
+      "Button": 2
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components/ActionButton",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/components/ui/select",
+      "@/extensions/Callout",
+      "@/hooks/useAttributes",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/select",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+    "sha256": "e3039960da60cf0fc2ef10358afb712a191897c4ddd92f9337da15b9a47daa13",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 3,
+      "IconComponent": 1,
+      "PopoverContent": 1,
+      "div": 4,
+      "Check": 1,
+      "BubbleMenu": 1,
+      "SelectLanguages": 1,
+      "Separator": 2,
+      "Copy": 1,
+      "Trash2": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "@tiptap/react/menus",
+      "lucide-react",
+      "react",
+      "@/components/ActionButton",
+      "@/components/icons",
+      "@/components/ui",
+      "@/extensions/CodeBlock",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 8
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<div\n              className='richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent'\n              key={item.value}\n              onClick={(e) => {\n                e.preventDefault();\n                editor.chain().focus().setCodeBlock({ language: item.value }).run();\n                setOpen(false);\n              }}\n            >",
+        "line": 176
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleColumns.tsx",
+    "sha256": "cc9d6f94a0af539b956328758278525ab0d564c1b0f5e9df539c0165d0950fe3",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 1,
+      "ActionButton": 4
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components/ActionButton",
+      "@/extensions/Column",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleDrawer.tsx",
+    "sha256": "2fb3f528c636fc78e737011179c770b1658f2137ca4d4324a9591cc36d776d58",
+    "jsx": {
+      "Fragment": 1,
+      "Separator": 1,
+      "Comp": 1,
+      "BubbleMenu": 1,
+      "div": 1,
+      "EditDrawerBlock": 1,
+      "ItemA": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components",
+      "@/components/Bubble/formatBubble",
+      "@/extensions/Drawer",
+      "@/extensions/Drawer/components/EditDrawerBlock",
+      "@/hooks/useAttributes",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@tiptap/pm/model",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleExcalidraw.tsx",
+    "sha256": "6eedd24fa0ee9f466cf6bb4e7f8b7690240b4ed5dd1654681959c9a1beb80339",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 1,
+      "ActionButton": 3,
+      "SizeSetter": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components/ActionButton",
+      "@/components/ReactBus",
+      "@/components/SizeSetter/SizeSetter",
+      "@/extensions/Excalidraw",
+      "@/hooks/useAttributes",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/customEvents/events.constant",
+      "@/utils/delete-node",
+      "@/utils/editor-container-size",
+      "@/extensions/Excalidraw"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+    "sha256": "4bacf8b0b5fe258ba504d2c0a256ead569cfe22531b031a7f1a0c7c4185ef42b",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 1,
+      "ActionButton": 4,
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "DialogContent": 1,
+      "DialogHeader": 1,
+      "DialogTitle": 1,
+      "Input": 1,
+      "DialogFooter": 1,
+      "Button": 2,
+      "SizeSetter": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components/ActionButton",
+      "@/components/SizeSetter/SizeSetter",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/extensions/Iframe",
+      "@/extensions/Iframe/utils",
+      "@/hooks/useAttributes",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 6
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+    "sha256": "c3d38e61f2e4782e68739e0a08bd3ad7f3c33fe3fa58a4743079de3f58ec2623",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 5,
+      "Label": 2,
+      "Textarea": 2,
+      "KatexPreview": 1,
+      "DialogFooter": 1,
+      "Button": 1,
+      "BubbleMenu": 1,
+      "ModalEditKatex": 1,
+      "ActionButton": 2,
+      "Pencil": 1,
+      "Trash2": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "lucide-react",
+      "react",
+      "@/components/ActionButton",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/components/ui/textarea",
+      "@/extensions/Katex",
+      "@/extensions/Katex/components/KatexPreview",
+      "@/hooks/useAttributes",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node",
+      "@/extensions/Katex"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 6
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 7
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/textarea",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleLink.tsx",
+    "sha256": "d20bee25e425998112f8e1a0e7ff11470de3d9222a87559457725d04565bf4b5",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 2,
+      "LinkEditBlock": 1,
+      "LinkViewBlock": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/extensions/Link/components/LinkEditBlock",
+      "@/extensions/Link/components/LinkViewBlock",
+      "@/extensions/Link/Link",
+      "@/hooks/useAttributes",
+      "@/store/editor",
+      "@/store/store",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleMedia.tsx",
+    "sha256": "67e43c8557523c08e9d454fce01966f3f8800e5878133dcaf8ea05bf6fd6b494",
+    "jsx": {
+      "Fragment": 1,
+      "Separator": 1,
+      "Comp": 1,
+      "BubbleMenu": 3,
+      "div": 3,
+      "ItemA": 3
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components",
+      "@/components/Bubble/formatBubble",
+      "@/extensions/Image",
+      "@/extensions/ImageGif",
+      "@/extensions/Video",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@tiptap/pm/model",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+    "sha256": "34ffb8c87a2b6ffda35972795d490d81425fdf6d37843f9bb6ca5ec0c1b85884",
+    "jsx": {
+      "DragHandle": 1,
+      "div": 1,
+      "ActionButton": 2,
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "DropdownMenuContent": 1,
+      "DropdownMenuItem": 9,
+      "IconComponent": 11,
+      "span": 11,
+      "DropdownMenuSeparator": 1,
+      "DropdownMenuSub": 2,
+      "DropdownMenuSubTrigger": 2,
+      "DropdownMenuPortal": 2,
+      "DropdownMenuSubContent": 2
+    },
+    "imports": [
+      "@tiptap/extension-drag-handle-react",
+      "@tiptap/pm/state",
+      "react",
+      "@/components",
+      "@/extensions/Clear",
+      "@/extensions/Indent",
+      "@/extensions/TextAlign",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/indent",
+      "@tiptap/extension-paragraph",
+      "@tiptap/pm/model",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleMermaid.tsx",
+    "sha256": "5fefcd3135a4422a02cb36dd26d381724bbc722873b969b1463231f40d1ef47e",
+    "jsx": {
+      "Fragment": 1,
+      "Separator": 1,
+      "Comp": 1,
+      "BubbleMenu": 1,
+      "div": 1,
+      "EditMermaidBlock": 1,
+      "ItemA": 1
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components",
+      "@/components/Bubble/formatBubble",
+      "@/extensions/Mermaid",
+      "@/extensions/Mermaid/components/EditMermaidBlock",
+      "@/hooks/useAttributes",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@tiptap/pm/model",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleTable.tsx",
+    "sha256": "09e631b990b9fde03622011da4ff60d3a207df84e845ecde3ab6151d7e662fa2",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 1,
+      "ActionButton": 9,
+      "Separator": 3
+    },
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "@tiptap/react/menus",
+      "@/components",
+      "@/extensions/Table",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleText.tsx",
+    "sha256": "8f96d2fa1e40a4400c60cd2930399b25fc6d4277c3b0df78d150a1a0bd176951",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 2,
+      "PopoverContent": 1,
+      "div": 4,
+      "Check": 2,
+      "RichTextAIImprove": 1,
+      "ParagraphFormat": 1,
+      "Separator": 2,
+      "RichTextBold": 1,
+      "RichTextItalic": 1,
+      "RichTextUnderline": 1,
+      "RichTextStrike": 1,
+      "RichTextCode": 1,
+      "RichTextLink": 1,
+      "RichTextColor": 1,
+      "RichTextHighlight": 1,
+      "RichTextAlign": 1,
+      "BubbleMenu": 1,
+      "DefaultButtonBubble": 1
+    },
+    "imports": [
+      "@tiptap/pm/state",
+      "@tiptap/react",
+      "@tiptap/react/menus",
+      "lucide-react",
+      "react",
+      "@/components",
+      "@/components/icons",
+      "@/components/ui",
+      "@/extensions/AI/state",
+      "@/extensions/Bold",
+      "@/extensions/Code",
+      "@/extensions/Color",
+      "@/extensions/Highlight",
+      "@/extensions/Italic",
+      "@/extensions/Link",
+      "@/extensions/SlashCommand",
+      "@/extensions/Strike",
+      "@/extensions/TextAlign",
+      "@/extensions/TextUnderline",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "./RichTextAIImprove",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 9
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<div\n              className='richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent'\n              key={item.name}\n              onClick={(e) => {\n                e.preventDefault();\n                item.action({\n                  editor,\n                  range: { from: editor.state.selection.from, to: editor.state.selection.to },\n                });\n                setOpen(false);\n              }}\n            >",
+        "line": 86
+      }
+    ]
+  },
+  {
+    "file": "src/components/Bubble/RichTextBubbleTwitter.tsx",
+    "sha256": "77f777edd96db3a5ead2e8a950b37f336d4cfb182ed98112b4f3a8fc9e29797e",
+    "jsx": {
+      "BubbleMenu": 1,
+      "div": 2,
+      "FormEditLinkTwitter": 1,
+      "ActionButton": 2
+    },
+    "imports": [
+      "@tiptap/react/menus",
+      "react",
+      "@/components/ActionButton",
+      "@/extensions/Twitter",
+      "@/extensions/Twitter/components/FormEditLinkTwitter",
+      "@/locales",
+      "@/store/editor",
+      "@/store/store",
+      "@/utils/delete-node",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/formatBubble.ts",
+    "sha256": "e586de78387d7cfc22968e0e25649bec841fdf5f4f70d6ddb5f62479148edeaf",
+    "jsx": {},
+    "imports": [
+      "@tiptap/pm/commands",
+      "@/components",
+      "@/constants",
+      "@/extensions/Image",
+      "@/types",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/Bubble/index.ts",
+    "sha256": "84476a4c76da489b4433dd738909c97d85e303a7a70d7201e722b7a7fef4306a",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ColorPicker.tsx",
+    "sha256": "464565f6b1e8c4c67d6549f01157e76d43c8b78fff6e76945b713b4e51b80865",
+    "jsx": {
+      "Popover": 2,
+      "PopoverTrigger": 2,
+      "PopoverContent": 2,
+      "div": 6,
+      "NoFill": 1,
+      "span": 7,
+      "svg": 3,
+      "path": 3,
+      "AddMoreColor": 1,
+      "HexColorPicker": 1,
+      "Input": 1,
+      "Separator": 1,
+      "Button": 1,
+      "Plus": 1
+    },
+    "imports": [
+      "lucide-react",
+      "react",
+      "react-colorful",
+      "@/components",
+      "@/components/icons/NoFill",
+      "@/constants",
+      "@/hooks/useLocalStorage",
+      "@/locales"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<div\n            className='rd-1 richtext-flex richtext-cursor-pointer richtext-items-center richtext-gap-[4px] richtext-p-1 hover:richtext-bg-accent'\n            onClick={() => {\n              setColor(undefined);\n            }}\n          >",
+        "line": 82
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                      className='richtext-inline-block richtext-size-6 richtext-flex-[0_0_auto] richtext-cursor-pointer richtext-rounded-sm !richtext-border richtext-border-solid !richtext-border-transparent richtext-p-0.5 hover:!richtext-border-border'\n                      key={`sub-color-${idx}`}\n                      onClick={() => setColor(item)}\n                    >",
+        "line": 103
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                    className='richtext-inline-block richtext-size-6 richtext-flex-[0_0_auto] richtext-cursor-pointer richtext-rounded-sm !richtext-border richtext-border-transparent richtext-p-0.5 hover:richtext-border-border hover:richtext-shadow-sm'\n                    key={`sub-color-recent-${index}`}\n                    onClick={() => setColor(item)}\n                  >",
+        "line": 149
+      }
+    ]
+  },
+  {
+    "file": "src/components/LazyContent.tsx",
+    "sha256": "0c740ff31a993092c72879d33e94800e82a77f7b9134fae9d3bfabc573840d6f",
+    "jsx": {
+      "div": 1,
+      "button": 1,
+      "LoadBoundary": 1,
+      "Suspense": 1,
+      "p": 1,
+      "Content": 1
+    },
+    "imports": [
+      "react",
+      "react"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={this.props.onRetry}>",
+        "line": 20
+      }
+    ]
+  },
+  {
+    "file": "src/components/ReactBus.tsx",
+    "sha256": "e4acbeca2c935f0569a7e14232df27bef39bcb1a44f404266d5fe207409c4764",
+    "jsx": {
+      "BusContext.Provider": 1
+    },
+    "imports": [
+      "react",
+      "@/utils/mitt"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/RichTextProvider.tsx",
+    "sha256": "b7c2f1dd500bb3090daf72af7740983be6617b3daede0293d5875581794e8011",
+    "jsx": {
+      "div": 2,
+      "ReactBusProvider": 1,
+      "EditorContext.Provider": 1,
+      "TooltipProvider": 1,
+      "EditorEditableReactive": 1,
+      "SlashDialogTrigger": 1,
+      "ThemeColorReactive": 1,
+      "Toaster": 1
+    },
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "react",
+      "@/components/ReactBus",
+      "@/components/reui/sonner",
+      "@/components/SlashDialogTrigger/SlashDialogTrigger",
+      "@/components/ui/tooltip",
+      "@/constants/resetCSS",
+      "@/store/EditorEditableReactive",
+      "@/store/ThemeColorReactive",
+      "@/utils/dynamicCSS",
+      "../styles/index.scss"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/tooltip",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "file": "src/components/SizeSetter/SizeSetter.tsx",
+    "sha256": "b4a24f0798b1f6ed25362d751f6b5c2dc1b52a4e303bff54c2ec7c54daebb418",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "PopoverContent": 1,
+      "form": 1,
+      "Label": 3,
+      "div": 6,
+      "Input": 3,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components/ui",
+      "@/locales"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+    "sha256": "42910f35c5d20ef785e1dac389b37598dbfff1e489b35d34c5f7800fd74d4593",
+    "jsx": {
+      "Dialog": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "Tabs": 1,
+      "TabsList": 1,
+      "TabsTrigger": 2,
+      "div": 4,
+      "Checkbox": 1,
+      "Label": 2,
+      "Input": 2,
+      "TabsContent": 2,
+      "Button": 2,
+      "IconComponent": 1,
+      "ImageCropper": 1,
+      "input": 1,
+      "form": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui/dialog",
+      "@/extensions/Image/components/ImageCropper",
+      "@/extensions/Image/Image",
+      "@/hooks/useActive",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/validateFile",
+      "./SlashDialogTrigger"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 15
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n              // accept=\"image/*\"\n              accept={uploadOptions.acceptMimes.join(',') || 'image/*'}\n              multiple={uploadOptions.multiple}\n              onChange={handleFile}\n              ref={fileInput}\n              style={{ display: 'none' }}\n              type='file'\n            />",
+        "line": 240
+      }
+    ]
+  },
+  {
+    "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+    "sha256": "efb014f1b594ad1720b4cca428302fb227614816abb515018652d0a06f400424",
+    "jsx": {
+      "Dialog": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "Tabs": 1,
+      "TabsList": 1,
+      "TabsTrigger": 2,
+      "TabsContent": 2,
+      "VideoUploadTab": 1,
+      "div": 3,
+      "Input": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui/dialog",
+      "@/extensions/Video/components/VideoUploadTab",
+      "@/extensions/Video/Video",
+      "@/hooks/useActive",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/checkIsVideoUrl",
+      "./SlashDialogTrigger"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "file": "src/components/SlashDialogTrigger/SlashDialogTrigger.tsx",
+    "sha256": "caf46bacd41e3b3b3967c2f1ab890515959d1ff0abd3aeb0ecc0e4de88a95478",
+    "jsx": {
+      "LazyContent": 2
+    },
+    "imports": [
+      "react",
+      "@/components/LazyContent",
+      "@/components/ReactBus",
+      "@/utils/customEvents/events.constant"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/AspectRatio.tsx",
+    "sha256": "40dd808b1654982d24dcfe5618a12e00cc093857e2eea905d8ad2a06ce65561e",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Blockquote.tsx",
+    "sha256": "a299d17493184715053167cb8003b826d765de8221eaffe59ceab2603094af59",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/CodeView.tsx",
+    "sha256": "c7e52435946b0a30148e0ad07948cf868f0884e52af870e97a1473081481dd5f",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ColumnAddLeft.tsx",
+    "sha256": "969bc6e710d07a84880c6c0067fc51b4e52513e9d8dc6db1b9aec0865751dba2",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ColumnAddRight.tsx",
+    "sha256": "9204ee7f186bce0ce18139d5c9c6c85ac8858626ecf8d3925023e6c1249500f9",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/DeleteColumn.tsx",
+    "sha256": "e9fc1fb76df04bfaa6d5560db950382bca9ea75162a26182cf49a73fe2e60057",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/DeleteRow.tsx",
+    "sha256": "3f65fb730a1ec571e778b3e1d5650649cc0d0fcde391a13169ddce4c61df50bd",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Direction.tsx",
+    "sha256": "767378a5cdbf5c64b6e13b85295884b7c5e0b30fbb4550740c11338a4730bdc9",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Excalidraw.tsx",
+    "sha256": "551d3c988d07fc7fcef61a26fc351a083946399b95bd68ccea9a2c2fc0909673",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ExportMarkdown.tsx",
+    "sha256": "933ab1959b3063fee7fb4dcf769d5db5bf91266bdf714091696aac8413370c8d",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ExportPdf.tsx",
+    "sha256": "179b44880e08ee210ea645eb41f6d447acbe7053a8f5cb02e3884de930e41e5c",
+    "jsx": {
+      "svg": 1,
+      "path": 2
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ExportWord.tsx",
+    "sha256": "e59b8547a97dc71fc91214505f409da11d69266dbe620734f512e77c2d26e220",
+    "jsx": {
+      "svg": 1,
+      "path": 2
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/FileWordOutline.tsx",
+    "sha256": "be6f6ec37c9a3370dd8cbeeec519f255b922026b314f9fd35a0a7ee32993a63e",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/GIfIcon.tsx",
+    "sha256": "e53e05d2efa65ff7e4485655c2416b6c74f24f3d49ec486cc56d47e07a920b82",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Html.tsx",
+    "sha256": "20f56dd817fcd55f0064074f3c897789bb52c79b869b05e8f479ed607c28d238",
+    "jsx": {
+      "svg": 1,
+      "g": 1,
+      "path": 2
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Icon.tsx",
+    "sha256": "798a3b175bd57927d342d845e754273f67e99792eebfd6d7c0bfb7e3aa275ad5",
+    "jsx": {
+      "Icon": 1
+    },
+    "imports": [
+      "react",
+      "@/components"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/IconColorFill.tsx",
+    "sha256": "f7a3528b0b5c344167965ba84bcecd68775f469a60695cc972bec2c8ad2ba5ef",
+    "jsx": {
+      "svg": 1,
+      "g": 3,
+      "path": 3
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/IconHighlightFill.tsx",
+    "sha256": "5a1412de5cb217aa474cd55e1bd18182e84d509e327ba890eb5e79300eca7c50",
+    "jsx": {
+      "svg": 1,
+      "g": 4,
+      "path": 4
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/ImportWord.tsx",
+    "sha256": "bafc4b53b7dceaf327aeb380848d349a98c5fc4eff887654aec6f57b42fd9771",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/LeftToRight.tsx",
+    "sha256": "ed8d0fe096514a630556ee494d57fa50589518e7208d68eae8b2ff27b0a8f3e3",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/LineHeight.tsx",
+    "sha256": "f12e4535503a63897adb2658e232d4a6cc5714995d37cbf30e5f7e4abb072a7d",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/MenuDown.tsx",
+    "sha256": "dc21a10370909747f5778a9973ccc16233d8033d255a2db1eaf5375cbe44c39c",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Mermaid.tsx",
+    "sha256": "19ff174d0cb26e95636447a7d61fef5e511fc3103988c39a00a007e43012d837",
+    "jsx": {
+      "svg": 1,
+      "g": 1,
+      "circle": 4,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/NoFill.tsx",
+    "sha256": "60efd145b0bfb1f286d2a9eae184458287fc666fa9c549edcd26bc668d0d43d6",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/RightToLeft.tsx",
+    "sha256": "f158596921d6af4b22aa8d2a2392bd98438c59fdaeb6c871724f8be4a5e0aedc",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/SizeL.tsx",
+    "sha256": "f94d536daa701d95638cdacc4d5a9e9d3cfad4571fd97283824585fa713eec85",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/SizeM.tsx",
+    "sha256": "4313126a2ab1b6f15566c5a4169427bff86d37ffc97213f981869e4cde584e79",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/SizeS.tsx",
+    "sha256": "ae93ffbd91287784b55570e62481eeb20b7a64814527d8658f50e665eb1ee7eb",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/Twitter.tsx",
+    "sha256": "11ded544eb1c2236b8146280cacbd19a78fa352b0772eef46591092ab3b0afb5",
+    "jsx": {
+      "svg": 1,
+      "path": 1
+    },
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/icons.ts",
+    "sha256": "2ce95a1bdca2f1d3f4a488f16a81e59e351c5fed16048dd3ea49f5498bf6722b",
+    "jsx": {},
+    "imports": [
+      "lucide-react",
+      "@/components/icons",
+      "@/components/icons/CodeView",
+      "@/components/icons/ColumnAddLeft",
+      "@/components/icons/ColumnAddRight",
+      "@/components/icons/Direction",
+      "@/components/icons/Excalidraw",
+      "@/components/icons/ExportMarkdown",
+      "@/components/icons/ExportPdf",
+      "@/components/icons/ExportWord",
+      "@/components/icons/GIfIcon",
+      "@/components/icons/Html",
+      "@/components/icons/LeftToRight",
+      "@/components/icons/Mermaid",
+      "@/components/icons/RightToLeft",
+      "@/components/icons/Twitter",
+      "./ImportWord"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/icons/index.ts",
+    "sha256": "91c01529378c27a760bd6d1e288986d1998f121c25bfa5cff7f6f10fed9239e6",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/index.ts",
+    "sha256": "bf0fa716165b9b25ff3b36cb56d025259053a7d9e12dc44d67cfbc2e38ffd428",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/button.tsx",
+    "sha256": "e04697d0ec74a8a9fa2af5126fab8029ca7414db3218a75925c2081565490b9b",
+    "jsx": {
+      "Comp": 1,
+      "Icon": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "lucide-react",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/checkbox.tsx",
+    "sha256": "7ee0d80d8b9b638311779d454860a60708bb3c201dacc94da8f5660ba9a67565",
+    "jsx": {
+      "CheckboxPrimitive.Root": 1,
+      "CheckboxPrimitive.Indicator": 1,
+      "Check": 1,
+      "Minus": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "lucide-react",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/dialog.tsx",
+    "sha256": "a9f61bab91a621b14ffcb91572fd051f65b5e4aea7b12b0ec2ee7b95cc818d48",
+    "jsx": {
+      "DialogPrimitive.Root": 1,
+      "DialogPrimitive.Trigger": 1,
+      "DialogPrimitive.Portal": 1,
+      "DialogPrimitive.Close": 1,
+      "DialogPrimitive.Overlay": 1,
+      "DialogPortal": 1,
+      "DialogOverlay": 1,
+      "DialogPrimitive.Content": 1,
+      "DialogClose": 1,
+      "X": 1,
+      "span": 1,
+      "div": 3,
+      "DialogPrimitive.Title": 1,
+      "DialogPrimitive.Description": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "lucide-react",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/dropdown-menu.tsx",
+    "sha256": "67f5423fa66051918c6d5aea26c950306fbbe9b29c4d1b7a9dd4ecf976bc20ad",
+    "jsx": {
+      "DropdownMenuPrimitive.Root": 1,
+      "DropdownMenuPrimitive.Portal": 2,
+      "DropdownMenuPrimitive.Trigger": 1,
+      "DropdownMenuPrimitive.SubTrigger": 1,
+      "ChevronRight": 1,
+      "DropdownMenuPrimitive.SubContent": 1,
+      "DropdownMenuPrimitive.Content": 1,
+      "DropdownMenuPrimitive.Group": 1,
+      "DropdownMenuPrimitive.Item": 1,
+      "DropdownMenuPrimitive.CheckboxItem": 1,
+      "span": 3,
+      "DropdownMenuPrimitive.ItemIndicator": 2,
+      "Check": 1,
+      "DropdownMenuPrimitive.RadioItem": 1,
+      "Circle": 1,
+      "DropdownMenuPrimitive.Label": 1,
+      "DropdownMenuPrimitive.RadioGroup": 1,
+      "DropdownMenuPrimitive.Separator": 1,
+      "DropdownMenuPrimitive.Sub": 1
+    },
+    "imports": [
+      "lucide-react",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/input.tsx",
+    "sha256": "321c112e3331559960fab7d7795f84fd42264d9f201230bd30bc170e8c26f671",
+    "jsx": {
+      "input": 1,
+      "div": 3
+    },
+    "imports": [
+      "class-variance-authority",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<input\n      ref={ref}\n      data-slot='input'\n      type={type}\n      className={cn(inputVariants({ variant }), className)}\n      {...props}\n    />",
+        "line": 75
+      }
+    ]
+  },
+  {
+    "file": "src/components/reui/label.tsx",
+    "sha256": "8c59ec13b0469306f5ef77defbba2ada50cdcf81c9ccac560d4757a93d0ad738",
+    "jsx": {
+      "LabelPrimitive.Root": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/popover.tsx",
+    "sha256": "6d1f44d3cc724032ae3e8e47b2f4837e7496c216b931af2a276b4827996962de",
+    "jsx": {
+      "PopoverPrimitive.Root": 1,
+      "PopoverPrimitive.Trigger": 1,
+      "PopoverPrimitive.PopoverPortal": 1,
+      "PopoverPrimitive.Content": 1,
+      "PopoverPrimitive.Anchor": 1
+    },
+    "imports": [
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/select.tsx",
+    "sha256": "fa5f76e6d73006bb066bf7c38dc434ce0ebe5743fad495d1b4854ab576e1cd16",
+    "jsx": {
+      "SelectContext.Provider": 1,
+      "SelectPrimitive.Root": 1,
+      "SelectPrimitive.Group": 1,
+      "SelectPrimitive.Value": 1,
+      "SelectPrimitive.Trigger": 1,
+      "SelectPrimitive.Icon": 1,
+      "ChevronDown": 2,
+      "SelectPrimitive.ScrollUpButton": 1,
+      "ChevronUp": 1,
+      "SelectPrimitive.ScrollDownButton": 1,
+      "SelectPrimitive.Portal": 1,
+      "SelectPrimitive.Content": 1,
+      "SelectScrollUpButton": 1,
+      "SelectPrimitive.Viewport": 1,
+      "SelectScrollDownButton": 1,
+      "SelectPrimitive.Label": 1,
+      "SelectPrimitive.Item": 1,
+      "span": 2,
+      "SelectPrimitive.ItemIndicator": 2,
+      "Check": 1,
+      "SelectPrimitive.ItemText": 1,
+      "SelectPrimitive.Separator": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "lucide-react",
+      "radix-ui",
+      "react",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/separator.tsx",
+    "sha256": "01e234c1ddd8b25255698d5bff6cb5b730363a28bdfc62dd21c12a1b33f6cc3f",
+    "jsx": {
+      "SeparatorPrimitive.Root": 1
+    },
+    "imports": [
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/sonner.tsx",
+    "sha256": "7bc78ab889c010d3df92603c092c4687d64e72d69a56d96a008fc5b9d10bf8aa",
+    "jsx": {
+      "Sonner": 1
+    },
+    "imports": [
+      "react",
+      "sonner",
+      "@/theme/theme"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/switch.tsx",
+    "sha256": "f77d26f8ffb7c351417e925414501f7fd64f39250cfe44a713cb29c08e573b5a",
+    "jsx": {
+      "SwitchContext.Provider": 1,
+      "div": 1,
+      "SwitchPrimitive.Root": 1,
+      "SwitchPrimitive.Thumb": 1,
+      "span": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/tabs.tsx",
+    "sha256": "2203d247ff6d39205b2bcf5fbfaf0b7a2e68629290771e2c7dffdada62dcabf0",
+    "jsx": {
+      "TabsPrimitive.Root": 1,
+      "TabsContext.Provider": 1,
+      "TabsPrimitive.List": 1,
+      "TabsPrimitive.Trigger": 1,
+      "TabsPrimitive.Content": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/textarea.tsx",
+    "sha256": "3d6345596e5f884a33f639ef6a0d0c5b464bbad9931f254f2cee2e77402283d8",
+    "jsx": {
+      "textarea": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<textarea\n      ref={ref}\n      data-slot='textarea'\n      className={cn(textareaVariants({ variant }), className)}\n      {...props}\n    />",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "file": "src/components/reui/toggle.tsx",
+    "sha256": "d014a6575217f5e9267e9ee3b4031f8c50cc9a9ef15059e247eae15dcf100921",
+    "jsx": {
+      "TogglePrimitive.Root": 1
+    },
+    "imports": [
+      "class-variance-authority",
+      "radix-ui",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/reui/tooltip.tsx",
+    "sha256": "4c79a7bf29709397cccd94651b10e698fae78c23449f81311ca6be282dcb22eb",
+    "jsx": {
+      "TooltipPrimitive.Provider": 1,
+      "TooltipProvider": 1,
+      "TooltipPrimitive.Root": 1,
+      "TooltipPrimitive.Trigger": 1,
+      "TooltipPrimitive.Portal": 1,
+      "TooltipPrimitive.Content": 1,
+      "TooltipPrimitive.Arrow": 1
+    },
+    "imports": [
+      "@radix-ui/react-tooltip",
+      "react",
+      "@/lib/utils"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/button.tsx",
+    "sha256": "5925fbfb2cddaafee3817a6fba4ded2f590bf095da5525274613120a683bb0b8",
+    "jsx": {
+      "ReuiButton": 1
+    },
+    "imports": [
+      "react",
+      "../reui/button"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/checkbox.tsx",
+    "sha256": "41efcb7625d006c8e7ea6f43b4482f3e8a7191b3fee410adb6df35c746c6d49d",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/dialog.tsx",
+    "sha256": "f55f1f9059ae1b028b5bd5de6a7aa110b2f036547e46fb1fd4ce722c514781ab",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/dropdown-menu.tsx",
+    "sha256": "e8f7258a8e55a98743a9884683c05afef4b53a7d378cc511b0472460c963942c",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/emoji-picker.tsx",
+    "sha256": "d4c07835fbf16dfb3b769f2a4868c60da117abc4a41e20f421fef4389859b145",
+    "jsx": {
+      "EmojiPickerPrimitive.Root": 1,
+      "div": 5,
+      "SearchIcon": 1,
+      "EmojiPickerPrimitive.Search": 1,
+      "button": 1,
+      "EmojiPickerPrimitive.Viewport": 1,
+      "EmojiPickerPrimitive.Loading": 1,
+      "LoaderIcon": 1,
+      "EmojiPickerPrimitive.Empty": 1,
+      "EmojiPickerPrimitive.List": 1,
+      "EmojiPickerPrimitive.ActiveEmoji": 1,
+      "span": 2
+    },
+    "imports": [
+      "frimousse",
+      "lucide-react",
+      "@/lib/utils",
+      "react"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n      {...props}\n      data-slot='emoji-picker-emoji'\n      className={cn(\n        '!richtext-flex !richtext-size-7 !richtext-items-center !richtext-justify-center !richtext-rounded-sm richtext-bg-transparent !richtext-text-base data-[active]:!richtext-bg-accent',\n        className\n      )}\n    >",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "file": "src/components/ui/index.ts",
+    "sha256": "fcda671b582144c5122ac58e8648f3c4fc591ea63cbbb7f4fc955c01f13c684b",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/input.tsx",
+    "sha256": "6bb7bec7dbb60fcfbd9e74fbdb6de3544480e160c4ad3efec834969e26a4de06",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/label.tsx",
+    "sha256": "0d1d4a1250cc1ecfa24f6629cbf6a726a86cc7fd96c65d734832ac14446f8cb3",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/popover.tsx",
+    "sha256": "a900e706838ecee024bc97b024bb9f8c24c9d68624212a91f2fd5404878e7356",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/select.tsx",
+    "sha256": "db3313cd0db9ccb401a11753dc0c295c2488adebd44caa3a15668bfc35ed6ade",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/separator.tsx",
+    "sha256": "96c8c9b894a4b027c440c3a593aa13cd4a1291f2ddbbd04363ec2d63e862ba7c",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/switch.tsx",
+    "sha256": "9fc55dee846ebb8cf53c6d3b79538418c011677f1f24aab3416845a19f690a38",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/tabs.tsx",
+    "sha256": "be19ae4c801e4a6e4224c6ef5e76c85ee99d5335df0b301634f1c84cc0096a88",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/textarea.tsx",
+    "sha256": "afb46a3f97f14a7ba0224bd79e8e9980e7903164aa0f59374444905a8d6d89c4",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/toast.tsx",
+    "sha256": "e6e38383cb22c677d63e1c23655b4ece400764c3a68c0e974908398630ec184c",
+    "jsx": {},
+    "imports": [
+      "react",
+      "sonner"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/toggle.tsx",
+    "sha256": "baafe988505b81f056c6d3d344f0404fa6f6353b426b50bb95eca6d5091ea6b6",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/tooltip.tsx",
+    "sha256": "236cb5253bf635e00362995ab6a3c0235d86f72b299fb0cf6c8bdcfdbc1e36e8",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/components/ui/use-toast.ts",
+    "sha256": "f2bbcf1ddc86b591bbe753cf82add1749f9b11d189e7ba57c91437ff779a4408",
+    "jsx": {},
+    "imports": [
+      "sonner",
+      "./toast"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/constants/index.ts",
+    "sha256": "6d272c88aeb8c328f0ddc920d556075c3c8c403814df5d793fdf35abbc7e723c",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/constants/resetCSS.ts",
+    "sha256": "8a964135a9779a9420d5ce3f72603d3ebf015861806cf94dd538add767c0c683",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/AI/AI.ts",
+    "sha256": "ba5f582b843aaa489f052fd02c6ab20681e17bf9c54cef930ee365b6310abd5a",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/pm/view",
+      "@tiptap/react",
+      "./AIPanel",
+      "./types",
+      "./state"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/AI/AIPanel.tsx",
+    "sha256": "513b5addc0e58467351467e190e060e89006e8ffb6b74e8e2b65960779af9c5d",
+    "jsx": {
+      "p": 2,
+      "span": 6,
+      "div": 8,
+      "i": 3,
+      "button": 8,
+      "Square": 3,
+      "form": 1,
+      "Sparkles": 2,
+      "X": 2,
+      "textarea": 1,
+      "ArrowUp": 2,
+      "label": 1,
+      "select": 1,
+      "option": 5,
+      "RotateCcw": 1,
+      "Check": 1
+    },
+    "imports": [
+      "lucide-react",
+      "react",
+      "./client",
+      "./types"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n            ref={stopButton}\n            type='button'\n            className='richtext-ai-loading-stop'\n            aria-label='Stop generating'\n            title='Stop generating'\n            onClick={stop}\n          >",
+        "line": 185
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' aria-label='Close AI' onClick={close}>",
+        "line": 209
+      },
+      {
+        "kind": "native-control",
+        "detail": "<textarea\n              ref={input}\n              aria-label={result ? 'Refine AI result' : 'AI prompt'}\n              placeholder={\n                result ? 'Tell AI what else needs to be changed...' : 'Ask AI what you want...'\n              }\n              value={prompt}\n              disabled={working}\n              rows={result ? 1 : 3}\n              onChange={(event) => setPrompt(event.target.value)}\n              onKeyDown={(event) => {\n                if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {\n                  event.preventDefault();\n                  void submit();\n                }\n              }}\n            />",
+        "line": 216
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n                type={revealing ? 'button' : 'submit'}\n                className='richtext-ai-send'\n                aria-label={revealing ? 'Stop generating' : 'Send prompt'}\n                disabled={!revealing && !prompt.trim()}\n                onClick={revealing ? stop : undefined}\n              >",
+        "line": 234
+      },
+      {
+        "kind": "native-control",
+        "detail": "<select\n                  aria-label='Tone'\n                  value={tone}\n                  disabled={working}\n                  onChange={(event) => setTone(event.target.value)}\n                >",
+        "line": 254
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' aria-label='Stop generating' onClick={stop}>",
+        "line": 271
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n                  type='submit'\n                  className='richtext-ai-send'\n                  aria-label='Send prompt'\n                  disabled={!prompt.trim()}\n                >",
+        "line": 275
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' disabled={working} onClick={() => void submit(true)}>",
+        "line": 288
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={close}>",
+        "line": 292
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n                  type='button'\n                  className='richtext-ai-apply'\n                  disabled={working || !result}\n                  onClick={() => apply(result)}\n                >",
+        "line": 295
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/AI/client.ts",
+    "sha256": "ca9c7f52fb80ac04bc8e7893b5e5bdfe857ef6cf09e4f959bf54c513b5933a3f",
+    "jsx": {},
+    "imports": [
+      "./types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/AI/index.ts",
+    "sha256": "ef1a8c10d51cec3e1fdec283c5e8492b5d5f158fcb6d9e10cfa86dc85b3db18f",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/AI/state.ts",
+    "sha256": "d81515c9cabd4106b58d65a291693517a9461023472648f2b036cd572e4fd0fc",
+    "jsx": {},
+    "imports": [
+      "@tiptap/pm/state",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/AI/types.ts",
+    "sha256": "9ebbff5bafe70e0d60a9d7cda3027e93c2bf8f57917165ad19ac7ec1726a7f5d",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Attachment/Attachment.ts",
+    "sha256": "ae40ed906c5fc73c27b202541126dadaf496b906bb1ac05a8ae52dedfcecb874",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "@/components",
+      "@/extensions/Attachment/components/NodeViewAttachment/FileIcon",
+      "@/extensions/Attachment/components/NodeViewAttachment/NodeViewAttachment",
+      "@/utils/dom-dataset",
+      "@/utils/file",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Attachment/components/NodeViewAttachment/FileIcon.tsx",
+    "sha256": "cfeb994aa129044120cf3b1d15bf28a82d8014cfba02bc530d825d70eee4c9dc",
+    "jsx": {
+      "LucideAudioLines": 1,
+      "LucideVideo": 1,
+      "LucideFile": 1,
+      "LucideImage": 1,
+      "ExportPdf": 1,
+      "ExportWord": 1,
+      "LucideSheet": 1,
+      "LucideTableProperties": 1
+    },
+    "imports": [
+      "lucide-react",
+      "@/components/icons/ExportPdf",
+      "@/components/icons/ExportWord",
+      "@/extensions/Attachment/components/NodeViewAttachment/FileIconString",
+      "@/utils/file"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Attachment/components/NodeViewAttachment/FileIconString.ts",
+    "sha256": "7665f487b8b1126013983302adf24a7e3aae2ea7c875297c49166dfa674c8ba1",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Attachment/components/NodeViewAttachment/NodeViewAttachment.tsx",
+    "sha256": "88e9f3663eb21a610fa341dbe5137eedb3e67973d69db7b2b481e4caa26ecac9",
+    "jsx": {
+      "NodeViewWrapper": 3,
+      "div": 4,
+      "p": 2,
+      "span": 5,
+      "input": 1,
+      "ActionButton": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "react",
+      "@/components",
+      "@/lib/utils",
+      "@/locales",
+      "@/store/store",
+      "@/utils/file",
+      "./FileIcon",
+      "./index.module.scss",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<p onClick={selectFile} style={{ cursor: 'pointer' }}>",
+        "line": 84
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input hidden onChange={handleFile} ref={$upload} type='file' />",
+        "line": 92
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<div className={cn(styles.wrap, 'render-wrapper')} onClick={selectFile}>",
+        "line": 101
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<div className={cn(styles.wrap, 'render-wrapper')} onClick={selectFile}>",
+        "line": 121
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Attachment/components/RichTextAttachment.tsx",
+    "sha256": "877f6d5a876ca793e9d5b7fd252ebf4969ae446d9cfa5107bac72c9d1d7a0383",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Attachment/Attachment",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Attachment/index.ts",
+    "sha256": "412be3e79a0f570d0e114b961fcb303347c82fe9104bd75f8a5810505e332f19",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Blockquote/Blockquote.ts",
+    "sha256": "8636d5304a553b6b1b290c5fa307c6d8abf735f5dbe72e7772fea5501da22ead",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-blockquote",
+      "@/types",
+      "@/types",
+      "@tiptap/extension-blockquote"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Blockquote/components/RichTextBlockquote.tsx",
+    "sha256": "d7383866a2bdc72723e731d1112c4553fdb668f6552b003c799891e9b4a78c40",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Blockquote/Blockquote",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Blockquote/index.ts",
+    "sha256": "0cd6915f8b609111a847fc2f145c4aeb58be17b4b08a4fb7892e4f3b3ad6c03f",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Bold/Bold.ts",
+    "sha256": "c6aee97b959d6ec52b69a9cc999ce68b4e65ed7fa07a743a8505294e097268cd",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-bold",
+      "@/components",
+      "@/types",
+      "@/types",
+      "@tiptap/extension-bold"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Bold/components/RichTextBold.tsx",
+    "sha256": "e44313660f85ed7c90fcaf3f3b411372f0f3dd8d85f31be5577cb00dbff739d3",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Bold/Bold",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Bold/index.ts",
+    "sha256": "24d4985967fc6d57348186d7d7b21741c8340e8c28eede8cc02c67c5049db444",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/BulletList/BulletList.ts",
+    "sha256": "edb9a6e7b79b5b30c17b47789ee40e5721dd6cc8175e05cda1313c8c901cc8f7",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-list",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/BulletList/components/RichTextBulletList.tsx",
+    "sha256": "e3c73e222bf0a7feb0efe732115fe5a345708a9f469dac1464cae692bf00fa15",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/BulletList/BulletList",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/BulletList/index.ts",
+    "sha256": "a2112aaf8e2f9a9ce643a2b2a1c2e94935585df7e2312cc08be1ae4924a0828e",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Callout/Callout.ts",
+    "sha256": "6577db757abe32216e7dc8bc2180679ae5a8950a06120f0d1696fb49a25172a7",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "@/components",
+      "@/extensions/Callout/components/NodeViewCallout/NodeViewCallout",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Callout/components/NodeViewCallout/NodeViewCallout.tsx",
+    "sha256": "31c18719ce569ea0a194017c28170ff5756cedd3d52001da9a529deb56801a71",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 2,
+      "IconComponent": 1,
+      "span": 1,
+      "p": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "lucide-react",
+      "@/lib/utils",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+    "sha256": "fdd906e85687376edec1dd0b8bc3c72975102ff75ffd61ede8226118e952c8a5",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 4,
+      "Label": 3,
+      "Select": 1,
+      "SelectTrigger": 1,
+      "SelectValue": 1,
+      "SelectContent": 1,
+      "SelectItem": 1,
+      "Input": 1,
+      "Textarea": 1,
+      "DialogFooter": 1,
+      "Button": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/components/ui/select",
+      "@/components/ui/textarea",
+      "@/extensions/Callout/Callout",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/locales",
+      "@/store/editor"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 4
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/select",
+        "line": 12
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/textarea",
+        "line": 19
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Callout/index.ts",
+    "sha256": "f2d0af1d346318f13577185f93c74946b73d7c414efbb76564d99ab59dfb71e4",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Clear/Clear.ts",
+    "sha256": "497f8036901190ab66e0fde9c06c1f0f553fa7d84df160eb6f733a5d792a27a8",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Clear/components/RichTextClear.tsx",
+    "sha256": "aea7eb01e235ea253b8e27ae4cdf7ba350eb4f6c7e46e057faae653cc60746ca",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components/ActionButton",
+      "@/extensions/Clear/Clear",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Clear/index.ts",
+    "sha256": "8de158b6258543913819ab305db870b77c681894a11c38f47dbffcf19abf06e8",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Code/Code.ts",
+    "sha256": "6ded7888b3452063b0577b30e1a047f5aafe8956ee5269010d7b5acb56c3dcf8",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-code",
+      "@/types",
+      "@tiptap/extension-code"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Code/components/RichTextCode.tsx",
+    "sha256": "80e3858e3e60388f7fb61e4b07a2836c60950ceb77065ea9d5f8298b60fb1918",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Code/Code",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Code/index.ts",
+    "sha256": "ca30ce2a8b88aa9181d2389bcae96f3aa02fbad9d96610c1dd57da6fda0f5303",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/CodeBlock.ts",
+    "sha256": "021e6436de93dfabb2c3ec43cfc73f543aa29c2628e37995536550545f308b72",
+    "jsx": {},
+    "imports": [
+      "@/types",
+      "@/extensions/CodeBlock/extension-code-block-rangi/src",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/components/RichTextCodeBlock.tsx",
+    "sha256": "02074728e50f0095a4fe19b695f35d463fb3cae06dd9fecda7587f630b260588",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/CodeBlock/CodeBlock",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/extension-code-block-rangi/src/code-block-rangi.ts",
+    "sha256": "2d40c5121ebfe201d85edaa8cece14eba9774201a4fa665354de2dac5f5c580b",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-code-block",
+      "./rangi-plugin.js",
+      "@tiptap/extension-code-block",
+      "rangi"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/extension-code-block-rangi/src/index.ts",
+    "sha256": "4a36efc23ba30cc94e2e6fb57720249968a465d9b6a08fee51ef9d053dfb7d71",
+    "jsx": {},
+    "imports": [
+      "./code-block-rangi.js"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/extension-code-block-rangi/src/rangi-plugin.ts",
+    "sha256": "fcdc3bded4e61ac38acb7bedc4a878a3e15c2d03a85caf0062f9030dc7c1b475",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/pm/view",
+      "rangi",
+      "@tiptap/pm/model",
+      "rangi"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeBlock/index.ts",
+    "sha256": "69fc1c966e1fb974ccd78751b4b43d494a4c07cfaae47191b8a3cb1ec114177f",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeView/CodeView.ts",
+    "sha256": "2eca71ab2f6c41489a6492616f2e5bec0ab19bcefc87403faa5c092424266f5b",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeView/components/RichTextCodeView.tsx",
+    "sha256": "88eb688f770df0c1366190519d4f16544b7873252aa40dd130c257b8fb06d766",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/CodeView/CodeView",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/CodeView/index.ts",
+    "sha256": "392739386c9711566d08f455bc6c9f6e4f8813f6eb20e20f2a233fd951c42cb2",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Color/Color.ts",
+    "sha256": "9b7e188df263438ea62d9c02c9c74c8bbf72786f0baf4f004de8ed084a1418d4",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-text-style",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Color/components/RichTextColor.tsx",
+    "sha256": "2bb4f90eae2e99771d56a2791554edcdd9374b54717f29dda33262bb48b115f4",
+    "jsx": {
+      "ColorPicker": 1,
+      "ActionButton": 1,
+      "span": 1,
+      "IconColorFill": 1,
+      "IconComponent": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/icons",
+      "@/components/icons/IconColorFill",
+      "@/extensions/Color/Color",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Color/index.ts",
+    "sha256": "3d66e12087134c5730d5886d8329f9c8af0dee2bdf9133c403af15c00ce50af2",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Column/Column.ts",
+    "sha256": "670ff921d1642f24043c6bb060cc18c5d005bd09fc7e1e49e491162c3ee761f1",
+    "jsx": {},
+    "imports": [
+      "@/types",
+      "@tiptap/core",
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@/utils/columns"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Column/components/RichTextColumn.tsx",
+    "sha256": "bc64eef88d1aa16067b4a9d71d8f946a447ee7d77cea65babeef9b3a1915f152",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Column/Column",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Column/index.ts",
+    "sha256": "c35ab86e4ec75d24b34fc09a380196f32aa0032c0cd14e61a6367389d00cca40",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Details/Details.ts",
+    "sha256": "b6ab350af8a73effb81d02a5d78d2f80bdef62fab208caa168f8ec83fb0ecb13",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-details",
+      "@/components",
+      "@/types",
+      "@tiptap/extension-details"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Details/components/RichTextDetails.tsx",
+    "sha256": "c5d6c00f03b28e79bc691eed9fbad234f3f4d01c9dc011f6cb3a937a0cea385c",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Details/Details",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Details/index.ts",
+    "sha256": "eb2f979d629e63d5fe30cd61af32eee6080b5fa1b2a28d09fb7b0f8145410ab9",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Drawer/Drawer.ts",
+    "sha256": "aebbdfdf48d02f913f504d97022e6050a4bd2efb1547185f230ce162c5a54021",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-image",
+      "@tiptap/react",
+      "@/extensions/Drawer/components/NodeViewDrawer/NodeViewDrawer",
+      "@/types",
+      "@/types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Drawer/components/ControlDrawer/ControlDrawer.tsx",
+    "sha256": "e49cabf5732d7689eb626e9330910243730c2b4068f9f4a95a6225f4f36f7a61",
+    "jsx": {
+      "div": 22,
+      "button": 23,
+      "ColorPicker": 3,
+      "input": 2,
+      "ColorPickerHighlight": 1,
+      "HugeiconsCursorRectangleSelection01": 1,
+      "MdiFormatLetterCase": 1,
+      "MaterialSymbolsEdit": 1,
+      "PhHighlighter": 1,
+      "OuiEraser": 1,
+      "MdiSquareOutline": 1,
+      "MaterialSymbolsRectangleOutline": 1,
+      "MaterialSymbolsCircleOutline": 1,
+      "TablerTriangle": 1,
+      "MaterialSymbolsHexagonOutline": 1,
+      "MingcuteDiamondSquareLine": 1,
+      "IcSharpArrowRightAlt": 1,
+      "PhLineSegmentFill": 1,
+      "IcSharpFavorite": 1,
+      "MaterialSymbolsKidStar": 1,
+      "MaterialSymbolsCloud": 1,
+      "AkarIconsParallelogram": 1,
+      "SolarUndoLeftRoundBold": 1,
+      "SolarUndoRightRoundBold": 1,
+      "MaterialSymbolsDelete": 1,
+      "PencilOption": 1,
+      "HighlightOption": 1,
+      "ShapeOption": 1
+    },
+    "imports": [
+      "easydrawer",
+      "react",
+      "@/lib/utils",
+      "./icon",
+      "./ControlDrawer.module.scss",
+      "@/extensions/Drawer/types"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n          key={index}\n          style={{ backgroundColor: color.toHexString() }}\n          className={cn(styles.color, {\n            [styles.colorActive]: selected.toHexString() === color.toHexString(),\n          })}\n          onClick={() => {\n            setSelected(color);\n            onChange(color);\n          }}\n        >",
+        "line": 81
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            key={index}\n            style={{ backgroundColor: color.toHexString() }}\n            className={cn(styles.color, {\n              [styles.colorActive]: selected.toHexString() === color.toHexString(),\n            })}\n            onClick={() => {\n              setSelected(color);\n              onChange(color);\n            }}\n          >",
+        "line": 104
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            key={index}\n            style={{ backgroundColor: color.toHexString() }}\n            className={cn(styles.color, {\n              [styles.colorActive]: selected.toHexString() === color.toHexString(),\n            })}\n            onClick={() => {\n              setSelected(color);\n              onChange(color);\n            }}\n          >",
+        "line": 120
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n          max={10}\n          min={1}\n          step={0.1}\n          type='range'\n          value={thickness}\n          onChange={(e) => {\n            setThicknessPen(Number.parseFloat(e.currentTarget.value));\n            setThickness(Number.parseFloat(e.currentTarget.value));\n          }}\n        />",
+        "line": 152
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n          defaultValue={0}\n          max={20}\n          min={0}\n          step={1}\n          type='range'\n          // value={thickness}\n          onChange={(e) => {\n            onThicknessChange(Number.parseFloat(e.currentTarget.value));\n          }}\n        />",
+        "line": 196
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'select',\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              if (tool === 'select') {\n                setTool(null);\n                penTool[0].setEnabled(false);\n\n                return;\n              }\n              setTool('select');\n              penTool[0].setEnabled(true);\n            }}\n          >",
+        "line": 236
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'text',\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[1]);\n              if (tool === 'text') {\n                penTool[1].setEnabled(false);\n\n                setTool(null);\n                return;\n              }\n              setTool('text');\n              penTool[1].setEnabled(true);\n            }}\n          >",
+        "line": 258
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'pencil',\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              if (tool === 'pencil') {\n                setTool(null);\n                penTool[2].setEnabled(false);\n                return;\n              }\n              setTool('pencil');\n              penTool[2].setEnabled(true);\n            }}\n          >",
+        "line": 281
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'highlighter',\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              if (tool === 'highlighter') {\n                setTool(null);\n                penTool[3].setEnabled(false);\n                return;\n              }\n              setTool('highlighter');\n              penTool[3].setEnabled(true);\n            }}\n          >",
+        "line": 300
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'eraser',\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              if (tool === 'eraser') {\n                setTool(null);\n                penTool[4].setEnabled(false);\n                return;\n              }\n              setTool('eraser');\n              penTool[4].setEnabled(true);\n            }}\n          >",
+        "line": 321
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.square,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.square);\n              setType(ShapeType.square);\n            }}\n          >",
+        "line": 342
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.rectangle,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.rectangle);\n              setType(ShapeType.rectangle);\n            }}\n          >",
+        "line": 360
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.circle,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.circle);\n              setType(ShapeType.circle);\n            }}\n          >",
+        "line": 378
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.triangle,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.triangle);\n              setType(ShapeType.triangle);\n            }}\n          >",
+        "line": 396
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.hexagonal,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.hexagonal);\n              setType(ShapeType.hexagonal);\n            }}\n          >",
+        "line": 414
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.diamond,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.diamond);\n              setType(ShapeType.diamond);\n            }}\n          >",
+        "line": 432
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.arrow,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.arrow);\n              setType(ShapeType.arrow);\n            }}\n          >",
+        "line": 450
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.line,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.line);\n              setType(ShapeType.line);\n            }}\n          >",
+        "line": 468
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.heart,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.heart);\n              setType(ShapeType.heart);\n            }}\n          >",
+        "line": 486
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.star,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.star);\n              setType(ShapeType.star);\n            }}\n          >",
+        "line": 504
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.cloud,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.cloud);\n              setType(ShapeType.cloud);\n            }}\n          >",
+        "line": 522
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button\n            className={cn(styles.tool, {\n              [styles.active]: tool === 'shapes' && type === ShapeType.parallelogram,\n            })}\n            onClick={() => {\n              const penTool = refEditor.current!.toolController.getPrimaryTools();\n\n              refEditor.current!.toolController.setToolEnabled(penTool[5]);\n              setTool('shapes');\n              penTool[5].setEnabled(true);\n\n              changeShape(ShapeType.parallelogram);\n              setType(ShapeType.parallelogram);\n            }}\n          >",
+        "line": 540
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button className={cn(styles.tool)} onClick={onUndo}>",
+        "line": 560
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button className={cn(styles.tool)} onClick={onRedo}>",
+        "line": 564
+      },
+      {
+        "kind": "native-control",
+        "detail": "<button className={cn(styles.tool)} onClick={onClear}>",
+        "line": 568
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Drawer/components/ControlDrawer/icon.tsx",
+    "sha256": "5defce8233ec7aa0766af8b3e0f0d8978d8674f5c05cd16552465c8f29e1596d",
+    "jsx": {
+      "svg": 27,
+      "path": 34,
+      "g": 4
+    },
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Drawer/components/DrawerCanvas.tsx",
+    "sha256": "a4d5b9f6219683808ca1525bb926849728b6e6f367c3af9bf14cd85f7eb6672a",
+    "jsx": {
+      "div": 2,
+      "ControlDrawer": 1,
+      "p": 1,
+      "DialogFooter": 1,
+      "Button": 1
+    },
+    "imports": [
+      "easydrawer",
+      "react",
+      "@/components/ui/button",
+      "@/components/ui/dialog",
+      "./ControlDrawer/ControlDrawer",
+      "../types",
+      "easydrawer"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/button",
+        "line": 4
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+    "sha256": "f404820223bb86d54c0c74bc3c3dcd96f73ee107a3f10f4adf9004a11a2e29a2",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "LazyContent": 1
+    },
+    "imports": [
+      "react",
+      "svg64",
+      "@/components/ActionButton",
+      "@/components/LazyContent",
+      "@/components/ui/dialog",
+      "@/utils/file",
+      "@/utils/shortId"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Drawer/components/NodeViewDrawer/NodeViewDrawer.tsx",
+    "sha256": "cfb1f237602737f484e495fa5a52377fd78b831a6aaa042ec95d9c99a769b4e3",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 2,
+      "img": 1,
+      "span": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "lodash-es",
+      "react",
+      "@/constants",
+      "@/utils/utils",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+        "line": 239
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onMouseDown={(e) => onMouseDown(e, direction)}\n                >",
+        "line": 253
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+    "sha256": "a0f6970de538d9c112904b7fd9f8239111fa51e08feedfba9e0e96f00cddaa77",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "LazyContent": 1
+    },
+    "imports": [
+      "react",
+      "svg64",
+      "@/components/ActionButton",
+      "@/components/LazyContent",
+      "@/components/ui/dialog",
+      "@/extensions/Drawer/Drawer",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/store/editor",
+      "@/utils/file",
+      "@/utils/shortId"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Drawer/index.ts",
+    "sha256": "58dea8062830eaaf099f8408e0c8b5617cf9c98070ec1c15eff23561678e6611",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Drawer/types.ts",
+    "sha256": "43720ee88a371e0b30f81d42ece35bea65e2994d281d4bb2b36373e5be6534fb",
+    "jsx": {},
+    "imports": [
+      "easydrawer",
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Emoji/Emoji.ts",
+    "sha256": "0077c6dcf8d667d67070d5e72220c7d9d3f4e202dd50b5bed44143d6643fc5df",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-emoji",
+      "@tiptap/react",
+      "@/utils/renderNodeView",
+      "./components/EmojiList/EmojiNodeView"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Emoji/components/EmojiList/EmojiNodeView.tsx",
+    "sha256": "61fcf2b7f5fc47fa311b550fb78e3252e903eaf2c06e31e4b3490d0f24c66a1e",
+    "jsx": {
+      "div": 3,
+      "span": 2
+    },
+    "imports": [
+      "react",
+      "scroll-into-view-if-needed",
+      "@/lib/utils",
+      "@/locales",
+      "@/utils/renderNodeView"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                key={`emoji-list-code-${name}`}\n                onClick={() => selectItem(index)}\n                className={cn(\n                  'richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent',\n                  {\n                    'bg-item-active': index === selectedIndex,\n                  }\n                )}\n              >",
+        "line": 84
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Emoji/components/EmojiPickerPanel.tsx",
+    "sha256": "40ba1c1391d86049ad0574861e7b81440a78c31d1ee28082dbbe0d47fc2bf509",
+    "jsx": {
+      "EmojiPicker": 1,
+      "EmojiPickerSearch": 1,
+      "EmojiPickerContent": 1,
+      "EmojiPickerFooter": 1
+    },
+    "imports": [
+      "@/components/ui/emoji-picker"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/emoji-picker",
+        "line": 1
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Emoji/components/RichTextEmoji.tsx",
+    "sha256": "f18bc953466841ed0fe7f2b10dc695afd7a4c61210a4d7a785905ce085f6a182",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "PopoverContent": 1,
+      "LazyContent": 1,
+      "EmojiPickerWrap": 1,
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/LazyContent",
+      "@/extensions/Emoji/Emoji",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Emoji/index.ts",
+    "sha256": "55584a213eaf3eae3f25c1da1b993d4375ed47c3267d04c786655d9c3ec261c5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Excalidraw/Excalidraw.ts",
+    "sha256": "1bbe43cf601adea03849e935d19baea48e0951144a4b8941cbf9973c1c5d240e",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/react",
+      "@/extensions/Excalidraw/components/NodeViewExcalidraw/NodeViewExcalidraw",
+      "@/utils/dom-dataset"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Excalidraw/components/NodeViewExcalidraw/NodeViewExcalidraw.tsx",
+    "sha256": "4da1d4e1a4ef162513f4dea4c971b0374e12608a543dfb182c6ec5fedc5cc0b8",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "Resizable": 1,
+      "div": 4,
+      "p": 2,
+      "ActionButton": 2
+    },
+    "imports": [
+      "@tiptap/react",
+      "re-resizable",
+      "react",
+      "@/components/ActionButton",
+      "@/extensions/Excalidraw/Excalidraw",
+      "@/lib/utils",
+      "@/store/store",
+      "@/utils/utils",
+      "./index.module.scss",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+    "sha256": "b6333ddfee7fbb932ceef1ab3640a38be053c98413e34b220cad41fadc5a04cc",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 2,
+      "p": 2,
+      "Excalidraw": 1,
+      "DialogFooter": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components/ActionButton",
+      "@/components/ReactBus",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/hooks/useExtension",
+      "@/store/editor",
+      "@/utils/customEvents/events.constant",
+      "../Excalidraw",
+      "../Excalidraw",
+      "@excalidraw/excalidraw/types"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Excalidraw/index.ts",
+    "sha256": "f1e71af7e7148ec79780a3bc482e055ca5e9ac6599b0371e1c1be56c6b5712b9",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportMarkdown/ExportMarkdown.ts",
+    "sha256": "b4a9186c17b52189e3f7a999de7b44d664837275944c77e4cdbfd8a45ad85f92",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/utils/download",
+      "./createMarkdown",
+      "@/types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportMarkdown/components/RichTextExportMarkdown.tsx",
+    "sha256": "363f719bbd0425724a68dd8ba9cb66a3d14f7cf230478a7c17063abc06092843",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/ExportMarkdown/ExportMarkdown",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportMarkdown/createMarkdown.ts",
+    "sha256": "cc9aca362be5df6da31644ebc920b20b6ddfcc7f3c42eda00233949bc4a1653d",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/markdown",
+      "@tiptap/pm/model",
+      "@tiptap/core",
+      "@tiptap/pm/model"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportMarkdown/index.ts",
+    "sha256": "f2b1f0272431c1cc15d62262b5932f558137a12b24cdbaa77ab0659f378b6454",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportPdf/ExportPdf.ts",
+    "sha256": "1df1c371b8f54b9aa67febf3065c8ba7aa42639a9c3952c6db97382af7f8460d",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/utils/pdf",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportPdf/components/RichTextExportPdf.tsx",
+    "sha256": "c5b4bfe70b8c7b2b137c97f9f4e66641f58293219ff8931de5d785ef9a77d160",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/ExportPdf",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportPdf/index.ts",
+    "sha256": "12b9874132a635f05a16c7fd5daec77e914f5786b84cf021637ed3e96a57e7a5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportWord/ExportWord.ts",
+    "sha256": "f73b67489f10083f2bc69feb9bbec1d7f87d2cbd4d4a09f76fe1113df39e4423",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/utils/download",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportWord/components/RichTextExportWord.tsx",
+    "sha256": "017a1d07495e20f050bf4320611240928cdcebdb24bc08b4b613a18a1919694c",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/ExportWord/ExportWord",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportWord/createWordBlob.ts",
+    "sha256": "dc0206307fa9c60f1e223121ded7b175f5c791f6afa984146e79d4d47a7a9077",
+    "jsx": {},
+    "imports": [
+      "docx",
+      "prosemirror-docx",
+      "@tiptap/pm/model",
+      "prosemirror-docx"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ExportWord/index.ts",
+    "sha256": "3f1de8bf4c9d4dc3afebae951d219a1a2b72f2a25c337abcd17d7c89cb37cd9e",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontFamily/FontFamily.ts",
+    "sha256": "bdbcd7977d3a812e89653fdd2ece746494ff95d85929ee4c2b7b24148050902f",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-text-style",
+      "@/constants",
+      "@/utils/utils",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+    "sha256": "835311c0f874721e7473b7af1c43a1461868002fed0807cc6307f1be060d03eb",
+    "jsx": {
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionMenuButton": 1,
+      "DropdownMenuContent": 1,
+      "Fragment": 1,
+      "DropdownMenuCheckboxItem": 1,
+      "div": 1,
+      "DropdownMenuSeparator": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/FontFamily/FontFamily",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/locales",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontFamily/index.ts",
+    "sha256": "3526457cd940dc39b1b3f939664512030352a18cd028970021c1903121594729",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontSize/FontSize.ts",
+    "sha256": "8b954b6d692e7b5f84adabc7d6ea43f483090cf9fca01c0a243cb1c3f7147161",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/constants",
+      "@/utils/utils",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+    "sha256": "757a545415f5422510a2af2ca7c10ba20f2cab5c3257a73cbb41950f94ca97c7",
+    "jsx": {
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionMenuButton": 1,
+      "DropdownMenuContent": 1,
+      "Fragment": 1,
+      "DropdownMenuCheckboxItem": 1,
+      "div": 1,
+      "DropdownMenuSeparator": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/FontSize/FontSize",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/locales",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FontSize/index.ts",
+    "sha256": "428246038eff098f3f24287b38f1bd28ff9a99265710bbf82ed536ede2647b03",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FormatPainter/FormatPainter.ts",
+    "sha256": "af88d27cb16dd65e0bc1525b67f2c23caf51d302448157b07d0e7bd91bc58f99",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/model",
+      "@tiptap/pm/state",
+      "@tiptap/pm/state",
+      "@/components",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FormatPainter/components/RichTextFormatPainter.tsx",
+    "sha256": "aeb8bfec725489cf0828dd063e41cc9bc0e34f9b0550f7294385143d5fd1ca3a",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/FormatPainter/FormatPainter",
+      "@/hooks/useButtonProps",
+      "@/store/editor",
+      "@/store/store"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/FormatPainter/index.ts",
+    "sha256": "9c98238e65075747ce62bf905b233fbd23bd94316be7bc2df20851ae7cf7f1e8",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Heading/Heading.ts",
+    "sha256": "66eda55220afe8fd149358408424df9c52179936721bf8eb1de234cb5277c59e",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-heading",
+      "@/constants",
+      "@/types",
+      "@tiptap/extension-heading",
+      "@tiptap/extension-paragraph"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+    "sha256": "874090d9c68375f75b27668b497961b9d4e05289aadb1649dc9679bc27fa3f62",
+    "jsx": {
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionMenuButton": 1,
+      "DropdownMenuContent": 1,
+      "Fragment": 1,
+      "DropdownMenuCheckboxItem": 1,
+      "div": 1,
+      "DropdownMenuShortcut": 1,
+      "DropdownMenuSeparator": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Heading/Heading",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/lib/utils",
+      "@/locales",
+      "@/utils/plateform",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Heading/index.ts",
+    "sha256": "3362ff93ea28ccf62efe7f595b1cfaf5740008f5b154405e17ba4d32b5e160a2",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Highlight/Highlight.ts",
+    "sha256": "7de67a173408a86eb7924c749366b4f3e105cc68969198a204bd61b59ef34cf5",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-highlight",
+      "@/types",
+      "@tiptap/extension-highlight"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Highlight/components/RichTextHighlight.tsx",
+    "sha256": "70583e3c416d9c812fe53964c2afc028e86b3c3b28139a4488ffc66a4af24b4f",
+    "jsx": {
+      "ColorPicker": 1,
+      "ActionButton": 1,
+      "span": 1,
+      "IconHighlightFill": 1,
+      "IconComponent": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/icons",
+      "@/components/icons/IconHighlightFill",
+      "@/extensions/Highlight/Highlight",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Highlight/index.ts",
+    "sha256": "413b66e3612a0df65d107a062c3b9d21748c9ef729cc9a602f299033440e3fe0",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/History/History.ts",
+    "sha256": "eb0e8719d8c0a6681da918b1fef5a5209855f1bb1b961c39be5ef82812085b61",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extensions",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/History/components/RichTextHistory.tsx",
+    "sha256": "eb034d20ce921676b612aed3eb2a7c64195bda31aecfc9f04c9f1c6be976962a",
+    "jsx": {
+      "ActionButton": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/History/History",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/History/index.ts",
+    "sha256": "cd9e843aa534ef60bd85bac4b930afdad6d1719586f0f42376dcc679c93c3b03",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/HorizontalRule/HorizontalRule.ts",
+    "sha256": "30378441602d873658f0d8266e9b9c00a3faf4fce14a33090040df9dbd11cded",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-horizontal-rule",
+      "@/components",
+      "@/types",
+      "@tiptap/extension-horizontal-rule"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/HorizontalRule/components/RichTextHorizontalRule.tsx",
+    "sha256": "d3274c28381c70db4a658bb60c77757db94add39498b79be132d7f53df1cd19f",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/HorizontalRule/HorizontalRule",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/HorizontalRule/index.ts",
+    "sha256": "92bca75b78a4d0441057a3db540c7ff0038302b1a96c50f75f627dd6a149b088",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Iframe/Iframe.ts",
+    "sha256": "322e1eefc70894f7a34a940e9b5b61a72fe6b4b6e303921eeea67d8c460fb004",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/react",
+      "@/extensions/Iframe/components/IframeNodeView",
+      "@/utils/dom-dataset"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Iframe/components/IframeNodeView.tsx",
+    "sha256": "51c26ce83019222b90c471d86e95f19cbec6be05034212048f24df40f526ffca",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 3,
+      "Input": 1,
+      "Button": 1,
+      "Resizable": 1,
+      "iframe": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "re-resizable",
+      "react",
+      "@/components/ui",
+      "@/extensions/Iframe/Iframe",
+      "@/extensions/Iframe/utils",
+      "@/lib/utils",
+      "@/store/store",
+      "./index.module.scss",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Iframe/components/RichTextIframe.tsx",
+    "sha256": "347f10fb6f702b2d793504d6da1539a826c9d1a003a3b96d28f78b733c872d9e",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Iframe/Iframe",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Iframe/index.ts",
+    "sha256": "8872a1de1d09e0f1d37662072a71e731a151afc0e36c2894b0e8204ef3ce09e7",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Iframe/utils.ts",
+    "sha256": "63aca157f5747eae34a31ca3e62a4fdb3820e44c74ba1284b4fa1d47291df7a5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Image/Image.ts",
+    "sha256": "535847c8f439aeea6574b48063f085cf055fd675da173f9de1b88a39dffdf210",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-image",
+      "@tiptap/pm/state",
+      "@tiptap/react",
+      "@/extensions/Image/components/ImageView",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Image/components/ImageCropper.tsx",
+    "sha256": "cfe1d8a110d69c0947e26970ea19e6d38d8306a4faefcd208de29200764f0ae0",
+    "jsx": {
+      "Button": 3,
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 1,
+      "ReactCrop": 1,
+      "img": 1,
+      "DialogFooter": 1,
+      "IconComponent": 3,
+      "input": 1
+    },
+    "imports": [
+      "react",
+      "react-image-crop",
+      "@/components",
+      "@/components/ui/button",
+      "@/components/ui/dialog",
+      "@/extensions/Image",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/utils/file",
+      "@/utils/validateFile"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/button",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n        accept={uploadOptions?.acceptMimes?.join(',') || 'image/*'}\n        multiple={false} // TODO No sense unless doing queue processing\n        onChange={handleFile}\n        ref={fileInput}\n        style={{ display: 'none' }}\n        type='file'\n      />",
+        "line": 243
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Image/components/ImageView.tsx",
+    "sha256": "20b8666e671b787df8d7cf99f54bb3ca57a9cf3643ec2d03c29717c0c84b5b74",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "span": 3,
+      "img": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "lodash-es",
+      "react",
+      "@/constants",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+        "line": 246
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onPointerCancel={(e) => finishResize(e, false)}\n                  onPointerDown={(e) => onPointerDown(e, direction)}\n                  onPointerMove={onPointerMove}\n                  onPointerUp={(e) => finishResize(e, true)}\n                >",
+        "line": 260
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Image/components/RichTextImage.tsx",
+    "sha256": "2b7843c2907af84e73c88813c3d717ae20eb7fcc6b56bf87bf6b729cd5e23763",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "Tabs": 1,
+      "TabsList": 1,
+      "TabsTrigger": 2,
+      "div": 4,
+      "Checkbox": 1,
+      "Label": 2,
+      "Input": 2,
+      "TabsContent": 2,
+      "Button": 2,
+      "IconComponent": 1,
+      "ImageCropper": 1,
+      "input": 1,
+      "form": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui/dialog",
+      "@/extensions/Image/components/ImageCropper",
+      "@/extensions/Image/Image",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/validateFile"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 16
+      },
+      {
+        "kind": "native-control",
+        "detail": "<input\n              // accept=\"image/*\"\n              accept={uploadOptions.acceptMimes.join(',') || 'image/*'}\n              multiple={uploadOptions.multiple}\n              onChange={handleFile}\n              ref={fileInput}\n              style={{ display: 'none' }}\n              type='file'\n            />",
+        "line": 249
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Image/index.ts",
+    "sha256": "a72ebaac4175dbba6d1be823f5826cd61a77707643d224ed01a6b9d199208e5b",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ImageGif/ImageGif.ts",
+    "sha256": "4588e4e9ef332e55e1a55bc1c270b3a6e59ad3eab6bf9fcae13286bb03bc952e",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-image",
+      "@tiptap/react",
+      "@/extensions/ImageGif/components/ImageGifView",
+      "@/types",
+      "@tiptap/extension-image"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ImageGif/components/ImageGifView.tsx",
+    "sha256": "3395994d5c547266b90167271db88c737cd01a0544e3bbcb657881023008dc01",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 2,
+      "img": 1,
+      "span": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "lodash-es",
+      "react",
+      "@/constants",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+        "line": 225
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onPointerCancel={(e) => finishResize(e, false)}\n                  onPointerDown={(e) => onPointerDown(e, direction)}\n                  onPointerMove={onPointerMove}\n                  onPointerUp={(e) => finishResize(e, true)}\n                >",
+        "line": 239
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+    "sha256": "f7607caae0118435dfa079730a3a1b20a633809961b07d42002bc64f73a470cd",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "PopoverContent": 1,
+      "div": 4,
+      "Input": 1,
+      "img": 1,
+      "p": 2,
+      "ImageGifWrap": 1,
+      "ActionButton": 1
+    },
+    "imports": [
+      "lodash-es",
+      "react",
+      "@/components",
+      "@/extensions/ImageGif/components/services",
+      "@/extensions/ImageGif/ImageGif",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<img\n                      alt=''\n                      className='richtext-cursor-pointer richtext-object-contain richtext-text-center'\n                      key={item.id}\n                      src={item.src}\n                      onClick={() => {\n                        selectImage(item.src);\n                        setOpen(false);\n                      }}\n                    />",
+        "line": 117
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/ImageGif/components/services.ts",
+    "sha256": "b5254cc290e2ef4ded746b507f9e24181145022f9db2cbd714623f79cdec5c4c",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ImageGif/index.ts",
+    "sha256": "cacb044ee86bd05691b23cca29b851b6acc5ffa41390b5233caa71709605734d",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ImportWord/ImportWord.ts",
+    "sha256": "38749c47d23de69325ccbabb7a7045fc5d461f2b8e1c73ec4a3d430931be8594",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/types",
+      "mammoth"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ImportWord/components/RichTextImportWord.tsx",
+    "sha256": "fb5db57fde94e7c157f336e5ddfd2da0bb35c5885b180ef11c0fe725c58f0aa6",
+    "jsx": {
+      "ActionButton": 1,
+      "input": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Image",
+      "@/extensions/ImportWord/ImportWord",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/base64",
+      "@/utils/utils",
+      "mammoth"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<input\n        accept='.docx'\n        onChange={handleFileChange}\n        ref={fileInput}\n        type='file'\n        style={{\n          display: 'none',\n        }}\n      />",
+        "line": 155
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/ImportWord/index.ts",
+    "sha256": "6729b9610caa146ff6953845b1763aa940573bf8d8fa2bd6d6085cb4cb8655bf",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Indent/Indent.ts",
+    "sha256": "1325da032c12c312cdf4c6f560d564cd48bc8f1cb7af26bd425f60e91b0b1c44",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/utils/indent",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Indent/components/RichTextIndent.tsx",
+    "sha256": "1252a3dc0a8261726b87e178dbc3fd60f8d09f984c9dcba5738c5b02e4f197b4",
+    "jsx": {
+      "ActionButton": 2
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Indent/Indent",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Indent/index.ts",
+    "sha256": "e284869263a362d58d13a37481717d34dec2601331f9d25baab03278bc0dee76",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Italic/Italic.ts",
+    "sha256": "ed67d586ab864a510c34c5b066b8ef15351939a5da32727ea21a29275d9d69f0",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-italic",
+      "@/types",
+      "@tiptap/extension-italic"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Italic/components/RichTextItalic.tsx",
+    "sha256": "55812d693d6558eff85180a6d557532a81a1d50f74d1e0c960b0cb7fa3bc9aae",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Italic/Italic",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Italic/index.ts",
+    "sha256": "fba9cd00eadf522b7cfbafd94977f20d6b99988df01141164fc954889a585fc2",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Katex/Katex.ts",
+    "sha256": "65cc095c9065c25f754dc399731e15aa0344b9f85353cfa46c9eaf2d3da3db02",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "@/extensions/Katex/components/KatexWrapper",
+      "./katex-loader",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Katex/components/KatexPreview.tsx",
+    "sha256": "1613821a7a4b210f260d8f2ab8bda3793b4cb5a8ec7dae9af599f54b2b154bdf",
+    "jsx": {
+      "span": 3,
+      "button": 1
+    },
+    "imports": [
+      "react",
+      "@/utils/json",
+      "../katex-loader",
+      "../katex-loader"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button type='button' onClick={() => setAttempt((value) => value + 1)}>",
+        "line": 53
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Katex/components/KatexWrapper.tsx",
+    "sha256": "3c428bab37649dade6e57b42947dfcf6d80d739312becf758c55d8f2035990ee",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "KatexPreview": 1,
+      "span": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "./KatexPreview",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+    "sha256": "db0d9e3a430e71f2545b40341acfa8305eb0bc506489fda8d4b83e5b608925d9",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 4,
+      "Label": 2,
+      "Textarea": 2,
+      "KatexPreview": 1,
+      "DialogFooter": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui/dialog",
+      "@/components/ui/textarea",
+      "@/extensions/Katex/components/KatexPreview",
+      "@/extensions/Katex/Katex",
+      "@/hooks/useActive",
+      "@/hooks/useAttributes",
+      "@/hooks/useButtonProps",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/extensions/Katex/Katex"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 4
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/textarea",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Katex/index.ts",
+    "sha256": "8a36d77506c01447a77be2128047f47e71db300f6ecb68c324c52f8f0addd222",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Katex/katex-loader.ts",
+    "sha256": "901c27a6614c1182c317e681bbfe79fdc302a48e00129d1ab38f087bcc6b50a7",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/LineHeight/LineHeight.ts",
+    "sha256": "518b5324d10b2cc307a12f9c51e3038a59ce8adcec0bfa32cde06acf46b7ff34",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-text-style",
+      "@/constants",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+    "sha256": "c91d90e08020aac209a4d709d80514ea1e22b97ba9814900289d5777336ca5aa",
+    "jsx": {
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 1,
+      "DropdownMenuContent": 1,
+      "Fragment": 1,
+      "DropdownMenuCheckboxItem": 1,
+      "DropdownMenuSeparator": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/LineHeight/LineHeight",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/LineHeight/index.ts",
+    "sha256": "bc824e67d852d69656c499a700c2763cf147c1329b7d4814a0ffafc013b3b199",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Link/Link.ts",
+    "sha256": "48636891cb4fb56de8930f120eeb2d7988457246cd65ea459d2a5032370dc821",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-link",
+      "@/types",
+      "@tiptap/extension-link"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Link/components/LinkEditBlock.tsx",
+    "sha256": "b1e603cf88cd2541c52b3f73dceb1093e692cdc2392c632baee29b9846845d47",
+    "jsx": {
+      "div": 7,
+      "Label": 3,
+      "Input": 2,
+      "span": 1,
+      "IconComponent": 1,
+      "Checkbox": 1,
+      "Button": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Link/Link",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@tiptap/pm/model"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Link/components/LinkViewBlock.tsx",
+    "sha256": "7289526ba5a68a01e3de228749ff2fd3110b187938818575479227e9512301b9",
+    "jsx": {
+      "div": 1,
+      "ActionButton": 3
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/locales"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Link/components/RichTextLink.tsx",
+    "sha256": "940cab281d966402c72bab0107ef0c3b397327b6dbc891f1d67186258d5b8342",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 1,
+      "PopoverContent": 1,
+      "LinkEditBlock": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Link/components/LinkEditBlock",
+      "@/extensions/Link/Link",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/store/editor"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Link/index.ts",
+    "sha256": "257b6a060f2fa5109a10cc123688ac2300c707d7800509cf4bb3007c4e4aa885",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/MarkdownPaste/MarkdownPaste.ts",
+    "sha256": "e0d00b66cd8ca9a48daaf4ddb53dd28b80287fef16647761a8466b700eb4e36c",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "marked"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/MarkdownPaste/index.ts",
+    "sha256": "1e7f64db09953b5fd11c6805f3ca92dfe6660223c08938de43c98e74adabddc5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Mention/Mention.ts",
+    "sha256": "bbe0f2770bfcb961a35aa3d90a199c1ba31842c05b190084015321392650e163",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-mention",
+      "@tiptap/react",
+      "@/extensions/Mention/components/NodeViewMentionList",
+      "@/utils/renderNodeView"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Mention/components/NodeViewMentionList.tsx",
+    "sha256": "9b60b4427082bf26693ee93899bd8a057e1d2e2ab564230da59dee33d7f316be",
+    "jsx": {
+      "div": 3,
+      "span": 1,
+      "img": 1
+    },
+    "imports": [
+      "react",
+      "scroll-into-view-if-needed",
+      "@/lib/utils",
+      "@tiptap/core"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n              className={cn(\n                'richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent',\n                { 'bg-item-active': index === selectedIndex }\n              )}\n              key={`mention-item-${item.id}`}\n              onClick={(e) => {\n                e.preventDefault();\n                selectItem(index);\n              }}\n            >",
+        "line": 83
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Mention/index.ts",
+    "sha256": "f15b8ef20276b4d6cf526a4ec754a2ea716ddcc2b9d6fa5bcf63e41990e125ca",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Mermaid/Mermaid.ts",
+    "sha256": "25c855b72b81293ac4eca51f451c7e7d78c1719a3e808987eed1b5a097f615a6",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-image",
+      "@tiptap/react",
+      "@/extensions/Mermaid/components/NodeViewMermaid/NodeViewMermaid",
+      "@/types",
+      "@/types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+    "sha256": "97b98ba4b098f23df609a50fd907cdc67f71e2e080382c0700800e75cd7bebf2",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 3,
+      "Textarea": 1,
+      "DialogFooter": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "svg64",
+      "@/components/ActionButton",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/components/ui/textarea",
+      "@/utils/file",
+      "@/utils/shortId",
+      "@tiptap/core"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/textarea",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Mermaid/components/NodeViewMermaid/NodeViewMermaid.tsx",
+    "sha256": "47bea974f21adea1ffe034eaaad88fc54c0898bc8dc94e48c06964146180350f",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 2,
+      "img": 1,
+      "span": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "lodash-es",
+      "react",
+      "@/constants",
+      "@/utils/utils",
+      "@tiptap/react"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<img\n          alt={imgAttrs.alt}\n          className='image-view__body__image block'\n          height='auto'\n          onClick={selectImage}\n          onLoad={onImageLoad}\n          src={imgAttrs.src}\n          style={imgAttrs.style}\n        />",
+        "line": 239
+      },
+      {
+        "kind": "native-interaction",
+        "detail": "<span\n                  className={`image-resizer__handler image-resizer__handler--${direction}`}\n                  key={`image-dir-${direction}`}\n                  onMouseDown={(e) => onMouseDown(e, direction)}\n                >",
+        "line": 253
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+    "sha256": "4f8026812a44fdbdd1a87b3f9833b93e26df200bdf9f6256dc9bff25316efc2d",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "div": 3,
+      "p": 1,
+      "Textarea": 1,
+      "DialogFooter": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "svg64",
+      "@/components/ActionButton",
+      "@/components/ui",
+      "@/components/ui/dialog",
+      "@/components/ui/textarea",
+      "@/extensions/Mermaid/Mermaid",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/store/editor",
+      "@/utils/file",
+      "@/utils/shortId"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 5
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 6
+      },
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/textarea",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Mermaid/index.ts",
+    "sha256": "a1583b89e5be27d3ab4d6931f8be4af121d2e2fbb312e1f01efb06d97053c30f",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/MoreMark/MoreMark.ts",
+    "sha256": "f03301cacb4e6c5143b195c825300aba821e5da57040bd634d932d48a6c1ffc0",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-subscript",
+      "@tiptap/extension-superscript",
+      "@/extensions/MoreMark/components/RichTextMoreMark",
+      "@/types",
+      "@tiptap/core",
+      "@tiptap/extension-subscript",
+      "@tiptap/extension-superscript"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/MoreMark/components/RichTextMoreMark.tsx",
+    "sha256": "3984a7ad38713547c3c621a3b736f1a2886097066a11b1aec011b68c2d22190e",
+    "jsx": {
+      "DropdownMenu": 1,
+      "DropdownMenuTrigger": 1,
+      "ActionButton": 1,
+      "MenuDown": 1,
+      "DropdownMenuContent": 1,
+      "DropdownMenuCheckboxItem": 1,
+      "IconComponent": 1,
+      "span": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/MoreMark/MoreMark",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/utils/plateform",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/MoreMark/index.ts",
+    "sha256": "67520f8db769ca6b55d12bbbbe08252bade66f55d175d5595943135041d810ef",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/OrderedList/OrderedList.ts",
+    "sha256": "367362162da303d28c4564bb9f84e9c76845cb51570d39db384beb7afbbdfbbd",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-list",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/OrderedList/components/RichTextOrderedList.tsx",
+    "sha256": "40a566fde0e01d07873d7ee4ea24502f7b76de766dbc648111a299c477df8863",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/OrderedList/OrderedList",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/OrderedList/index.ts",
+    "sha256": "c1c5e72c3969ddc5bca8fa3b0bbe8ee381f63e45cd75a635c4c4d3e468616ef5",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SearchAndReplace/SearchAndReplace.ts",
+    "sha256": "09e86d7ab0da3c4e7aa329ff8d6761da0c5b3e774c1dcec09785c4e51937dfdb",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/model",
+      "@tiptap/pm/state",
+      "@tiptap/pm/view",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+    "sha256": "d49c56d196f35f6e76daa3d7dbfbc683eb368d55d9e4fdb1ab7b97ecca23de16",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "PopoverContent": 1,
+      "div": 6,
+      "Label": 3,
+      "span": 1,
+      "Input": 2,
+      "Button": 5,
+      "IconComponent": 2,
+      "Checkbox": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/SearchAndReplace/SearchAndReplace",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/locales",
+      "@/store/editor"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SearchAndReplace/index.ts",
+    "sha256": "c7d80d0494e426681bbe8b3857f9b1c820f54fc97e82f3bc19c1910f33fdb25e",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ShortMessage/ShortMessage.ts",
+    "sha256": "ecf6e2b83e5752bd88ee40c8d4045c5a396fa9342fa41847526f655222cd4bf0",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/suggestion",
+      "@/extensions/ShortMessage/components/ShortMessageList",
+      "@/utils/renderNodeView",
+      "./types",
+      "@tiptap/core",
+      "@tiptap/suggestion"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ShortMessage/components/ShortMessageList.tsx",
+    "sha256": "71d16c921703d5f5ba0db1ca6653daa2aa793edf626ad4bfae07ca3a9ba98444",
+    "jsx": {
+      "div": 3,
+      "button": 1,
+      "span": 3
+    },
+    "imports": [
+      "react",
+      "scroll-into-view-if-needed",
+      "@/lib/utils",
+      "@/locales",
+      "../types",
+      "@/utils/renderNodeView",
+      "@tiptap/suggestion"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n              className={cn(\n                'richtext-flex richtext-w-full richtext-flex-col richtext-items-start richtext-gap-0.5 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent',\n                { 'bg-item-active': index === selectedIndex }\n              )}\n              data-index={index}\n              key={`short-message-${item.short}-${index}`}\n              onClick={(e) => {\n                e.preventDefault();\n                selectItem(index);\n              }}\n              onMouseDown={(e) => e.preventDefault()}\n              type='button'\n            >",
+        "line": 72
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/ShortMessage/index.ts",
+    "sha256": "329b387a5608cf40a20a11999ca59562c93e8e54ba46a4afbff1e3d413221f90",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/ShortMessage/types.ts",
+    "sha256": "0b4ac7e63e05178660901f2ae284a97e6f5560dcbf2b24af30c753c19cdc2323",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SlashCommand/SlashCommand.ts",
+    "sha256": "643e0de3360a92ecb3a7610a55d4d4d8d16f34fd3b8abec02987b1b441b0d203",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/suggestion",
+      "@/extensions/SlashCommand/components/SlashCommandNodeView",
+      "@/utils/renderNodeView",
+      "./types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SlashCommand/components/SlashCommandList.tsx",
+    "sha256": "c8f7f37d7ef3712d279c143d571e65786555573b1a754ae3f40dc415007f2240",
+    "jsx": {},
+    "imports": [
+      "react",
+      "@/extensions/SlashCommand/renderCommandListDefault",
+      "@/extensions/SlashCommand/types",
+      "@/locales",
+      "@/store/commandList"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SlashCommand/components/SlashCommandNodeView.tsx",
+    "sha256": "0e2c002c7429c6e79e9a24c219542b8aae80d4d6ef5fa338e71364505517ba22",
+    "jsx": {
+      "div": 3,
+      "Fragment": 1,
+      "Label": 1,
+      "button": 1,
+      "img": 1,
+      "IconComponent": 1,
+      "span": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/SlashCommand/renderCommandListDefault",
+      "@/lib/utils",
+      "@/locales",
+      "@/store/commandList",
+      "../types",
+      "@/utils/renderNodeView",
+      "@tiptap/suggestion"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n                      key={`command-${commandIndex}`}\n                      onClick={() => createCommandClickHandler(groupIndex, commandIndex)}\n                      ref={(el) => setActiveItemRef(groupIndex, commandIndex, el)}\n                      className={cn(\n                        'richtext-flex richtext-w-full richtext-items-center richtext-gap-3 richtext-rounded-sm !richtext-border-none !richtext-bg-transparent richtext-px-2 richtext-py-1.5 richtext-text-left richtext-text-sm richtext-text-foreground !richtext-outline-none richtext-transition-colors hover:!richtext-bg-accent',\n                        {\n                          'bg-item-active':\n                            selectedGroupIndex === groupIndex &&\n                            selectedCommandIndex === commandIndex,\n                        }\n                      )}\n                    >",
+        "line": 185
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/SlashCommand/index.ts",
+    "sha256": "4f463574513a3f8dd23fbb577f363eb18bb16c765cd6dd5bd56787e370a278e3",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SlashCommand/renderCommandListDefault.ts",
+    "sha256": "6062e48f37d3642561d94300df1499b43455e0b82643815c85643f84e364a76e",
+    "jsx": {},
+    "imports": [
+      "@/components/ReactBus",
+      "@/constants",
+      "@/utils/customEvents/events.constant",
+      "./types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/SlashCommand/types.ts",
+    "sha256": "4b6e1e26ac0a03e945a40e278391f2baab7f2eb8cd478e5c321ad41b98344143",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Strike/Strike.ts",
+    "sha256": "2c5a8159456ace1354881f7e788d555b906230f7e5791c5434659244164aa59c",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-strike",
+      "@/types",
+      "@/types",
+      "@tiptap/extension-strike"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Strike/components/RichTextStrike.tsx",
+    "sha256": "b63b4d5c63abe553b3344b7c85605616f212aa19831069ce5ed7f44696346991",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/Strike/Strike",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Strike/index.ts",
+    "sha256": "db901b837ac5f8f171134af918b0a2f3b34d322ed8c52abb910de5e642b8f891",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Table/Table.ts",
+    "sha256": "05f776b57780852a542c145ef46de1dc2c73854ca8facfae56760401e7bc6cae",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-table",
+      "./TableCellBackground",
+      "./TableCellBackground",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Table/TableCellBackground.ts",
+    "sha256": "d0406f7bad4aa28cef69b74cdbe6231a2f504361068896a50a1cee26f5dee8c3",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/tables",
+      "@tiptap/core",
+      "@tiptap/pm/state"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+    "sha256": "e23026e477388069a93267debcf43a57c2f791721242c35a2877cf7a34bb963d",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "PopoverContent": 1,
+      "div": 6
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/constants",
+      "@/utils/is-mobile"
+    ],
+    "findings": [
+      {
+        "kind": "native-interaction",
+        "detail": "<div\n            className='richtext-flex richtext-flex-col richtext-flex-wrap richtext-justify-between richtext-gap-1'\n            onPointerCancel={onPointerCancel}\n            onPointerDown={onPointerDown}\n            onPointerMove={onPointerMove}\n            onPointerUp={onPointerUp}\n            style={{ touchAction: 'none' }}\n          >",
+        "line": 185
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Table/components/RichTextTable.tsx",
+    "sha256": "79d82e20c0717236a3e5cf2433af374362435c9f584b863dc15520c6c7fa4fe7",
+    "jsx": {
+      "CreateTablePopover": 1,
+      "ActionButton": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Table/components/CreateTablePopover",
+      "@/extensions/Table/Table",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/store/editor"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Table/index.ts",
+    "sha256": "136df1a8b3a9dd2a7eef85cb8bf2d67b35a71a2ed59e8ef8ca3ee07e860538ff",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TableOfContents/TableOfContents.ts",
+    "sha256": "d277667cc233c196872769a69b9e37fc9ddeff406415841c18046cf210e64084",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/extension-table-of-contents",
+      "@tiptap/react",
+      "@/components",
+      "@/extensions/TableOfContents/components/NodeViewTableOfContents",
+      "@/types",
+      "@tiptap/extension-table-of-contents"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TableOfContents/components/NodeViewTableOfContents.tsx",
+    "sha256": "e21646c6c9a05e74fabf2698c615f2da69a36c9893477ea0bcec730adfc5b271",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "p": 2,
+      "ul": 1,
+      "li": 1,
+      "button": 1,
+      "span": 2
+    },
+    "imports": [
+      "@tiptap/react",
+      "@/extensions/TableOfContents/components/useTableOfContents",
+      "@/lib/utils",
+      "@/locales",
+      "@/extensions/TableOfContents/components/useTableOfContents",
+      "@tiptap/react",
+      "react"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<button\n                className={cn('table-of-contents__link', {\n                  'is-active': item.isActive,\n                })}\n                onClick={() => scrollToTableOfContentsItem(editor, item)}\n                type='button'\n              >",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/TableOfContents/components/RichTextTableOfContents.tsx",
+    "sha256": "31dd77c9b25f444fb0b848f91758d509efba19a68af59c08d63d0ba7a33f1a3d",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/TableOfContents/TableOfContents",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TableOfContents/components/useTableOfContents.ts",
+    "sha256": "d4dcad98bce7b2e36f2d6b94251b5b0f2bc72dccbc224b572fb855b73fb63106",
+    "jsx": {},
+    "imports": [
+      "@tiptap/react",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TableOfContents/index.ts",
+    "sha256": "0c100741818e1a88ec9dbbe3e82a8094eda3c8464b1871910fe929110985bb36",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TaskList/TaskList.ts",
+    "sha256": "f0f2d54e3fa055e53e949f1217a68b33535795229df5fd85621ea48555fb6c62",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-list",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TaskList/components/RichTextTaskList.tsx",
+    "sha256": "f07a9f155827ac7c7493f9a1fbe37de25e2f036997aff402c8d8fe579f9a6832",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/TaskList/TaskList",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TaskList/index.ts",
+    "sha256": "d80172e11ed767b191b2fca7494bbd872e3a5570497b37633671138875b5a9e7",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextAlign/TextAlign.ts",
+    "sha256": "b1ee7dd11d9db705809c6e3f4ec5cdcda4d832a282d45cefde7cdf640fb5fcb1",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-text-align",
+      "@/types",
+      "@tiptap/core",
+      "@tiptap/extension-text-align"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+    "sha256": "eb6ba1ce939ff3dc4f50c2c3901f21982be63ae540e87fd536e9b1be6c572d42",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 2,
+      "PopoverContent": 1,
+      "Tooltip": 1,
+      "TooltipTrigger": 1,
+      "Toggle": 1,
+      "TooltipContent": 1,
+      "span": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui",
+      "@/extensions/TextAlign/TextAlign",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/utils/plateform",
+      "@/types"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/TextAlign/index.ts",
+    "sha256": "68f45eb441face80ef55b7eee7faa80f13e2906bab35c08717a4de832b13993e",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextDirection/TextDirection.ts",
+    "sha256": "5d09ae8f18f961c1f671941f4fa700750951fd21b3cf3c0b84799892c7e2393c",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+    "sha256": "a19696bbfdce5880f62fa135dce9e20d4f9eda15d0e69698cf660b98101a8945",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 2,
+      "PopoverContent": 1,
+      "Tooltip": 1,
+      "TooltipTrigger": 1,
+      "Toggle": 1,
+      "TooltipContent": 1,
+      "span": 2
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui",
+      "@/extensions/TextDirection/TextDirection",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/utils/plateform",
+      "@/types"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/TextDirection/index.ts",
+    "sha256": "4d5725b041aff08d978dd8862ea75a65f219aa23bc4d67ae5cef8d864d6dbb26",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextUnderline/TextUnderline.ts",
+    "sha256": "f6b9d7ad7df2747352b21de40de805458a4697be8766ab526b198d0c2d644f0b",
+    "jsx": {},
+    "imports": [
+      "@tiptap/extension-underline",
+      "@/types",
+      "@/types",
+      "@tiptap/extension-underline"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextUnderline/components/RichTextUnderline.tsx",
+    "sha256": "ef3247fc5dce9eb2c2a53cfe6e69ca6babb6f1ea88b655679b969ab682355639",
+    "jsx": {
+      "ActionButton": 1
+    },
+    "imports": [
+      "@/components",
+      "@/extensions/TextUnderline/TextUnderline",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/TextUnderline/index.ts",
+    "sha256": "b0cd359dd1ea96f6a9c8b170c7c8fffd79597e0636fd9f7c80a17b92d17031ce",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Twitter/Twitter.ts",
+    "sha256": "6a23d5ccbc0e5af1e751b74cc523573f7516fd939151626a846d5ac4f0ae231d",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "@/extensions/Twitter/components/NodeViewTweet",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Twitter/components/FormEditLinkTwitter.tsx",
+    "sha256": "ac45d02b517888c47ef11d663582d565544926b6ca606dac948af1f8b8950aec",
+    "jsx": {
+      "form": 1,
+      "Label": 1,
+      "div": 2,
+      "Input": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Twitter/Twitter",
+      "@/locales"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Twitter/components/NodeViewTweet.tsx",
+    "sha256": "008b3b3deacbf3b70cf4d2030196e8a4027ce4253354ea6ace3f307afec2b666",
+    "jsx": {
+      "NodeViewWrapper": 1,
+      "div": 1,
+      "Tweet": 1
+    },
+    "imports": [
+      "@tiptap/react",
+      "react-tweet"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Twitter/components/RichTextTwitter.tsx",
+    "sha256": "5cc5294878718e6d1f7bca697ab1145e1dd118a7f27dddabf2f7de1325aafd01",
+    "jsx": {
+      "Popover": 1,
+      "PopoverTrigger": 1,
+      "ActionButton": 1,
+      "IconComponent": 1,
+      "PopoverContent": 1,
+      "FormEditLinkTwitter": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Twitter/components/FormEditLinkTwitter",
+      "@/extensions/Twitter/Twitter",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/store/editor"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Twitter/index.ts",
+    "sha256": "408ad0aa38df967a8c9bc92f179f08e2e652359ba743daacfecde7e028d83181",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Video/Video.ts",
+    "sha256": "bcc411ad9bc1bdcd529277075c3603e6c39d94ef4f7880d984e61f24fa8450da",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@/constants",
+      "@/utils/utils",
+      "@/types",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/extensions/Video/components/RichTextVideo.tsx",
+    "sha256": "00e7bb93970815977be251f8905ddb6d8ff5136e321b1f256992a3a365878a13",
+    "jsx": {
+      "Dialog": 1,
+      "DialogTrigger": 1,
+      "ActionButton": 1,
+      "DialogContent": 1,
+      "DialogTitle": 1,
+      "Tabs": 1,
+      "TabsList": 1,
+      "TabsTrigger": 2,
+      "TabsContent": 2,
+      "VideoUploadTab": 1,
+      "div": 3,
+      "Input": 1,
+      "Button": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/components/ui/dialog",
+      "@/extensions/Video/Video",
+      "@/hooks/useActive",
+      "@/hooks/useButtonProps",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/checkIsVideoUrl",
+      "./VideoUploadTab"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/dialog",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Video/components/VideoUploadTab.tsx",
+    "sha256": "805c5db70a57eeb6400739882f151be4d3f76064aa428f135dd56cb9f2a4a6da",
+    "jsx": {
+      "div": 10,
+      "Button": 1,
+      "IconComponent": 2,
+      "span": 4,
+      "input": 1
+    },
+    "imports": [
+      "react",
+      "@/components",
+      "@/extensions/Video/Video",
+      "@/locales",
+      "@/utils/validateFile",
+      "@tiptap/core"
+    ],
+    "findings": [
+      {
+        "kind": "native-control",
+        "detail": "<input\n        accept={\n          (uploadOptions.acceptMimes ?? DEFAULT_VIDEO_OPTIONS.acceptMimes).join(',') || 'video/*'\n        }\n        multiple={uploadOptions.multiple ?? DEFAULT_VIDEO_OPTIONS.multiple}\n        onChange={handleFile}\n        ref={fileInput}\n        type='file'\n        style={{\n          display: 'none',\n        }}\n      />",
+        "line": 343
+      }
+    ]
+  },
+  {
+    "file": "src/extensions/Video/index.ts",
+    "sha256": "20ed1b5f64fddad0fdb3fca1b4984dfd0acf144d16727e21b7819d57fe2b6463",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/hooks/useActive.tsx",
+    "sha256": "a01751ce4c18d583ff8988a67700f095f43b0e4dd32921154f626a0d53bd251e",
+    "jsx": {},
+    "imports": [
+      "@tiptap/react",
+      "react",
+      "@/store/editor",
+      "@/store/store"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/hooks/useAttributes.tsx",
+    "sha256": "c1f915c627223c507313c84127251e0e435e47dd2fead89dd9fd5ac1102b77fe",
+    "jsx": {},
+    "imports": [
+      "@tiptap/react",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/hooks/useButtonProps.ts",
+    "sha256": "8fd33763cfdc96f2adfc163273a9f4ac8d2df1aee35a6bb49cf642480d8463ec",
+    "jsx": {},
+    "imports": [
+      "react",
+      "@/hooks/useExtension",
+      "@/locales",
+      "@/store/editor",
+      "@/utils/utils",
+      "@/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/hooks/useExtension.tsx",
+    "sha256": "800819686cee78e19e048e73da55f39baf9e92e5572c130dd93817ac6a5ce420",
+    "jsx": {},
+    "imports": [
+      "react",
+      "@/store/editor"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/hooks/useLocalStorage.ts",
+    "sha256": "a7ff37ef86eb12839b0e43c01b4be02dbe50b2865b13974ae8a7d553e14bb934",
+    "jsx": {},
+    "imports": [
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/index.ts",
+    "sha256": "e747f4d3373a743f678bc2ab873db47b3a36f6f9e27b013cfe7679c53470ba44",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/lib/utils.ts",
+    "sha256": "9897b36f5e81282b62cb2e9bf3ad3c4fc809d76c4d8af5c681e890796f2f3b96",
+    "jsx": {},
+    "imports": [
+      "cn"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/locale-bundle.ts",
+    "sha256": "e3f63e15857af327ed512f6f37f6780bed4347eecf6a21f9804756ab343c45be",
+    "jsx": {},
+    "imports": [
+      "./locales",
+      "./locales/fi",
+      "./locales/hu",
+      "./locales/ja",
+      "./locales/pt-br",
+      "./locales/vi",
+      "./locales/zh-cn"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/locale.ts",
+    "sha256": "6133b2e8e8d363c6a774d023a7e63722bb106dcb6d139d7a861364698eeb2854",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/en.ts",
+    "sha256": "501a48aa289974e60bb203a730bb7eb4f6eb3b6b538f8dfade14a77ec3559e12",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/fi.ts",
+    "sha256": "7cc525034bf019798af4ea316dd7cab14918919eadf88100746700fc43e0abc3",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/hu.ts",
+    "sha256": "13030da7c75c836ac4e87454b47009e7a0e1e28434d370767766f847fec6f815",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/index.ts",
+    "sha256": "620c2192014cda41803e6f7ebbe77c74c18dad4398678dda1a45f3ac14798ffb",
+    "jsx": {},
+    "imports": [
+      "react",
+      "reactjs-signal",
+      "@/constants",
+      "./en"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/locales/ja.ts",
+    "sha256": "3cf94c238a63abde10c2b9ac77b89f24e70197fdf60ea88c78c4c678056cf6da",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/pt-br.ts",
+    "sha256": "b7a95dda127ffd96731edad6f5907303e8e550d6a0738040fadbb8010755ad40",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/vi.ts",
+    "sha256": "59105ad6a44c35cd698d9f05bd15df4300f1ac7349b39e51e3ee455171edd99f",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/locales/zh-cn.ts",
+    "sha256": "21af940f84579a299dc147a6bc1e29c57cd7404c7bf21763c51abf8c6b26ff52",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/store/EditorEditableReactive.tsx",
+    "sha256": "97b7cc3c751917cfd51cd378e13944ce89462d25c2ea3822c866a86c0fe35fd9",
+    "jsx": {},
+    "imports": [
+      "react",
+      "@/store/store"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/store/ThemeColorReactive.tsx",
+    "sha256": "93b26fa6abc832890a20696a502aa4a336e6b807db341fab11042619b35d256a",
+    "jsx": {},
+    "imports": [
+      "react",
+      "@/theme/theme",
+      "@/utils/dynamicCSS"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/store/commandList.ts",
+    "sha256": "3b19c63e24a98d952da40707c1ce797222ee1ed214f30af8992e0cbead882266",
+    "jsx": {},
+    "imports": [
+      "reactjs-signal",
+      "@/extensions/SlashCommand/types"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/store/editor.ts",
+    "sha256": "4fe50b885a888db08166cf40e07e5e890317a15ad2541b7209d728e1df2ef00f",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/react",
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/store/store.ts",
+    "sha256": "0842670cb15d07160e9636d2e5231ea823c34c3b40f67c0f504f57a6f0bcb13d",
+    "jsx": {},
+    "imports": [
+      "reactjs-signal"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/svg64.d.ts",
+    "sha256": "dd48c8718255031005cf5dd742a8205f2989a7479fc9ead239113bc69d96da35",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/theme/theme.ts",
+    "sha256": "104c18b49e4f3c3b98f0333ec69563e3159cd35178077ae668e047069f07bef3",
+    "jsx": {},
+    "imports": [
+      "reactjs-signal"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/types.ts",
+    "sha256": "e097c8209c943def7ad61a0de29b234b9410de4cf1e977f73a57f1c4ac8f5da1",
+    "jsx": {},
+    "imports": [
+      "./components",
+      "@tiptap/core",
+      "@tiptap/react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/base64.ts",
+    "sha256": "9239d7a4e0eca6d0a9a9ff450ffe4ccaf0c70bd4541e5ecd9833047b99bfbe9d",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/checkIsVideoUrl.ts",
+    "sha256": "9a4402a8881878c89f9682de29458b67cfa2576381bb2f265d334b6d7dfb79bb",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/columns.ts",
+    "sha256": "55a2ce266d3c4932c807feae6c540e66cb4ef02f8fd981017a1c445c57037d42",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/model",
+      "@tiptap/pm/state",
+      "@/extensions/Column",
+      "@tiptap/core",
+      "@tiptap/pm/model"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/customEvents/events.constant.ts",
+    "sha256": "58a67a7f7bcf050f53255501126234e4eaa044dec3147f7d784569b4822ae943",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/delete-node.ts",
+    "sha256": "4652911f64c2c89f89686c7dde93977b780fe38eb5a6840d56e5badb49181557",
+    "jsx": {},
+    "imports": [
+      "@tiptap/pm/state",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/dom-dataset.ts",
+    "sha256": "b69dfc364b3416a53b40ee070d847f876ec549f8f88e4ae74abfd1a36be48ea9",
+    "jsx": {},
+    "imports": [
+      "@/utils/json",
+      "@tiptap/pm/model"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/download.ts",
+    "sha256": "394e37376dd462f15031f9e8061c36d9e2fa359df9f11a6d8ab98dac4428e598",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/dynamicCSS.ts",
+    "sha256": "0c7d341e057ea2f7d90d04ce671eb0a4c13a7c7754d4ae14a3b1d9ea74b3a5a0",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/editor-container-size.ts",
+    "sha256": "5bb7f28de20f8da3aef98fb61c0ceb968a8c6bb9d680bfa595bb7ed674d34ab8",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/file.ts",
+    "sha256": "642ecc0bf95d3f6775998e2480bbe3af1be02bc6708a9480b39dae6668d48afc",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/indent.ts",
+    "sha256": "8b28d023877c718537fd3bbff61ce178a16c89149b783ca9a7ee529f1575435e",
+    "jsx": {},
+    "imports": [
+      "@tiptap/core",
+      "@tiptap/pm/state",
+      "@tiptap/core",
+      "@tiptap/pm/state"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/is-mobile.ts",
+    "sha256": "ba38dd987a74a5043c18fcc8b6982f2fb82bb2e54afda08c06ac792e3438c462",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/json.ts",
+    "sha256": "56cfeff5ba6179a159b93727861b608d442f62a3e931b22f337073bc734267f3",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/mitt.ts",
+    "sha256": "a46fad8a7616cc5d25166737968706a615e3ba5fc4134c77522f59691b449b18",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/pdf.ts",
+    "sha256": "37e6c952a82dd2cbce6f574e63167811031381ded592c2f7cd3448482c637a3f",
+    "jsx": {},
+    "imports": [
+      "@/extensions/ExportPdf",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/plateform.ts",
+    "sha256": "040d49c076e501fd49df6ed5d34d339e2e734d4af1ebb7d2b855d85b1577b7ee",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/renderNodeView.ts",
+    "sha256": "716206bf0e682b02eec9d1810190c6cfc765b479311a46d35ae0d387a24e9cce",
+    "jsx": {},
+    "imports": [
+      "@tiptap/react",
+      "@/utils/updatePosition",
+      "@tiptap/suggestion",
+      "react"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/shortId.ts",
+    "sha256": "1d20e7b9aa7a7a25e940698c37fbdc9bfe93ab6454457983b7d0fe55768d486e",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  },
+  {
+    "file": "src/utils/updatePosition.ts",
+    "sha256": "a2db8ee6ae04dfa83f5329d330dffacf472938421471341a94ba803f7f7a8d25",
+    "jsx": {},
+    "imports": [
+      "@floating-ui/dom",
+      "@tiptap/react",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/utils.ts",
+    "sha256": "9e9f7d911a9a517dd29723303341de2682d6f261eb668c73205665336c9da041",
+    "jsx": {},
+    "imports": [
+      "@/types",
+      "@tiptap/core"
+    ],
+    "findings": []
+  },
+  {
+    "file": "src/utils/validateFile.ts",
+    "sha256": "a5d6d3f94f0486b4bf78f568f53e1c627542b426865e8df604ec3a820c3b9819",
+    "jsx": {},
+    "imports": [
+      "@/components/ui/toast"
+    ],
+    "findings": [
+      {
+        "kind": "legacy-ui-import",
+        "detail": "@/components/ui/toast",
+        "line": 1
+      }
+    ]
+  },
+  {
+    "file": "src/vite-env.d.ts",
+    "sha256": "1c13540116d1f825409eecb13b8a5eea64d6500e4bf9e5860805e94d70d0ce3c",
+    "jsx": {},
+    "imports": [],
+    "findings": []
+  }
+]

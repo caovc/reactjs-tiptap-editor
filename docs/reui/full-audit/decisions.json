@@ -1,0 +1,248 @@
+{
+  "src/components/ActionButton.tsx": {
+    "role": "主体/工具栏/插件共享动作",
+    "before": "业务直接 Radix Slot + ReUI Toggle 分支，原生 drag mousedown 被阻止",
+    "after": "统一真实 ReUI Toggle（含 asChild），保留 pressed/ref/选择区；拖拽允许原生 mousedown",
+    "evidence": "tests/browser/playground.spec.ts / controls.spec.ts；SAP 真拖拽75/100/125%"
+  },
+  "src/components/ActionMenuButton.tsx": {
+    "role": "主体菜单触发器",
+    "before": "业务层直接 Radix Slot",
+    "after": "ReUI Button（含 asChild），过滤业务 props，不再泄漏到 DOM；保留注入的 click/action",
+    "evidence": "tests/browser/playground.spec.ts / controls.spec.ts；插件下拉/Popover"
+  },
+  "src/components/RichTextProvider.tsx": {
+    "role": "本库公开编辑器主体/上下文/Portal",
+    "before": "旧 UI 目录的 tooltip/通知路径；Context/ProseMirror 原生",
+    "after": "直接 ReUI TooltipProvider + Sonner；保留 scoped reset、theme、event bus、EditorContext",
+    "evidence": "tests/browser/playground.spec.ts / controls.spec.ts；existing 两编辑器隔离；SAP整套回归"
+  },
+  "src/components/ColorPicker.tsx": {
+    "role": "颜色/最近色/自定义颜色",
+    "before": "react-colorful UI、直接 Radix、div/span点击色块",
+    "after": "ReUI Popover/Button + RGB Slider + 校验 hex Input；删除 react-colorful 依赖",
+    "evidence": "tests/browser/plugin-ui.spec.ts：颜色、RGB键盘、hex校验、最近色、取消"
+  },
+  "src/components/EmojiPicker.tsx": {
+    "role": "表情面板",
+    "before": "旧 ui/emoji-picker 的原生按钮、Frimousse Search输入样式适配",
+    "after": "ReUI Button（类别/表情项）、Input asChild 真实搜索控件；Frimousse 保留数据/过滤/虚拟化/导航引擎",
+    "evidence": "tests/browser/plugin-ui.spec.ts：搜索/样式、短码；existing lazy emoji"
+  },
+  "src/components/reui/input.tsx": {
+    "role": "官方输入原语适配",
+    "before": "官方 ReUI v1 Input + React18 forwardRef",
+    "after": "增加 Slot asChild，使 Frimousse Search 的实际 DOM 使用 ReUI 输入；保留官方 variants",
+    "evidence": "tests/browser/plugin-ui.spec.ts：真实emoji搜索；controls"
+  },
+  "src/extensions/AI/AIPanel.tsx": {
+    "role": "AI 预览与应用（无真实服务接入）",
+    "before": "原生 button×9、textarea、select和独立控件皮肤",
+    "after": "官方 ReUI Card/Button/Textarea/Select 组合；保留异步、取消、IME和安全文本应用",
+    "evidence": "existing AI mock预览/停止/应用/丢弃/长文本安全；未调用付费AI"
+  },
+  "src/extensions/Drawer/components/ControlDrawer/ControlDrawer.tsx": {
+    "role": "绘图工具、颜色、线宽/填充",
+    "before": "原生工具/色块按钮、2个 range、自制浮层",
+    "after": "ReUI Card/Button/Slider/Separator；easydrawer 只保留 canvas 引擎，工具条重新组合",
+    "evidence": "tests/browser/plugin-ui.spec.ts：真实画线/矩形、颜色、键盘Slider、撤销重做/保存；existing Drawer"
+  },
+  "src/extensions/Callout/components/NodeViewCallout/NodeViewCallout.tsx": {
+    "role": "提示节点编辑壳",
+    "before": "自定义提示框外观",
+    "after": "官方 ReUI Alert/Icon/Content/Title/Description + scoped severity token；保留原有 atom 属性节点，通过编辑 Bubble 改内容，不改 schema/API",
+    "evidence": "plugin-ui：真实插入/编辑警告节点；使用原有属性编辑Dialog，不假称内联正文编辑"
+  },
+  "src/extensions/Callout/components/RichTextCallout.tsx": {
+    "role": "提示节点表单",
+    "before": "旧 UI adapter 引用，Label未关联控件",
+    "after": "直接官方 ReUI Dialog/Select/Input/Textarea/Button；useId关联Label",
+    "evidence": "tests/browser/plugin-ui.spec.ts：类型选择/标题/正文/插入"
+  },
+  "src/extensions/Table/components/CreateTablePopover.tsx": {
+    "role": "表格尺寸/表头",
+    "before": "网格 div 子格、自定义指针处理",
+    "after": "ReUI Button单元格 + Checkbox表头；保留外层原生pointer capture用于拖选",
+    "evidence": "tests/browser/plugin-ui.spec.ts：键盘选尺寸/表头；SAP表格操作；原有pointer算法保留"
+  },
+  "src/extensions/Table/components/RichTextTable.tsx": {
+    "role": "表格命令入口",
+    "before": "旧路径并把表头选项错误覆写为false",
+    "after": "直接ReUI组合；修复insertTable遵从Checkbox结果",
+    "evidence": "tests/browser/plugin-ui.spec.ts：真实TH和表格行列"
+  },
+  "src/extensions/SlashCommand/components/SlashCommandNodeView.tsx": {
+    "role": "斜杠菜单",
+    "before": "原生按钮或 span+onClick，独立高亮皮肤",
+    "after": "官方 ReUI Card 表面 + ReUI Button选项，保留键盘/鼠标/active scroll与选择，不保留假按钮包装",
+    "evidence": "tests/browser/plugin-ui.spec.ts；斜杠另见 tests/browser/sap-blocks.spec.ts"
+  },
+  "src/extensions/Mention/components/NodeViewMentionList.tsx": {
+    "role": "提及建议",
+    "before": "原生按钮或 span+onClick，独立高亮皮肤",
+    "after": "官方 ReUI Card 表面 + ReUI Button选项，保留键盘/鼠标/active scroll与选择，不保留假按钮包装",
+    "evidence": "tests/browser/plugin-ui.spec.ts；斜杠另见 tests/browser/sap-blocks.spec.ts"
+  },
+  "src/extensions/Emoji/components/EmojiList/EmojiNodeView.tsx": {
+    "role": "Emoji短码建议",
+    "before": "原生按钮或 span+onClick，独立高亮皮肤",
+    "after": "官方 ReUI Card 表面 + ReUI Button选项，保留键盘/鼠标/active scroll与选择，不保留假按钮包装",
+    "evidence": "tests/browser/plugin-ui.spec.ts；斜杠另见 tests/browser/sap-blocks.spec.ts"
+  },
+  "src/extensions/ShortMessage/components/ShortMessageList.tsx": {
+    "role": "短语建议",
+    "before": "原生按钮或 span+onClick，独立高亮皮肤",
+    "after": "官方 ReUI Card 表面 + ReUI Button选项，保留键盘/鼠标/active scroll与选择，不保留假按钮包装",
+    "evidence": "tests/browser/plugin-ui.spec.ts；斜杠另见 tests/browser/sap-blocks.spec.ts"
+  },
+  "src/components/Bubble/RichTextBubbleCodeBlock.tsx": {
+    "role": "代码语言浮层",
+    "before": "div点击选项与旧UI路径",
+    "after": "官方 ReUI Card 浮层 + Popover/按钮语言项；代码语法引擎保留",
+    "evidence": "静态/类型/构建；existing lazy/toolbar部分覆盖，不声称所有语言逐一测试"
+  },
+  "src/components/Bubble/RichTextBubbleText.tsx": {
+    "role": "文本选区Bubble/段落转换",
+    "before": "段落选项div点击；受缩放容器影响的浮层",
+    "after": "ReUI Button 段落项 + Popover；默认 Card 浮层固定挂body、shift定位并参加theme/reset",
+    "evidence": "tests/browser/sap-blocks.spec.ts：75%窄屏选区加粗；原Playground格式菜单"
+  },
+  "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx": {
+    "role": "共享块级操作与真正拖拽",
+    "before": "菜单仅部分动作；hover偷focus；空段落slash位置错误；缩放时drag重新命中错误",
+    "after": "ReUI Popover/Button/Separator + 官方Tiptap DragHandle：顶层块规则使用当前文档位置，前后插入/移动/转换/重复/删除，原生drag不被preventDefault吞掉",
+    "evidence": "tests/browser/sap-blocks.spec.ts：75/100/125真拖拽与撤销、移动/转换/重复/删除、ID批注稳定；嵌套子块拖拽未开放"
+  },
+  "src/extensions/Attachment/components/NodeViewAttachment/NodeViewAttachment.tsx": {
+    "role": "附件上传/重试/删除",
+    "before": "p点击上传、被动div空点击、旧Dialog路径",
+    "after": "真实ReUI Button/Popover/Dialog；隐藏file input仅浏览器桥，移除被动空点击",
+    "evidence": "tests/browser/plugin-ui.spec.ts：潜藏fixture真实chooser/upload/delete；上传HTTP为本地模拟"
+  },
+  "src/extensions/ImageGif/components/RichTextImageGif.tsx": {
+    "role": "GIF搜索与缩略图选择",
+    "before": "img直接onClick",
+    "after": "每个候选由真实ReUI Button承载，Input搜索，保留图片数据引擎",
+    "evidence": "tests/browser/plugin-ui.spec.ts：真实搜索/插入；只mock外部GIF HTTP，非生产API可用性证明"
+  },
+  "src/extensions/TableOfContents/components/NodeViewTableOfContents.tsx": {
+    "role": "库内文档目录",
+    "before": "原生button导航",
+    "after": "ReUI Button，语义目录容器保留",
+    "evidence": "tests/browser/plugin-ui.spec.ts：未在默认Playground启用的fixture目录跳转"
+  },
+  "playground/src/App.tsx": {
+    "role": "原Playground主体/设置/输出",
+    "before": "原生设置按钮、range、textarea，样式脱离ReUI边界",
+    "after": "官方 ReUI Card/Header/Content 编辑器主体壳 + 真正 Button/Slider/Textarea；清除未作用的旧未前缀样式，HTML输出参加theme/reset",
+    "evidence": "tests/browser/playground.spec.ts / controls.spec.ts；原Playground所有现有交互回归"
+  },
+  "playground/src/sap/blocks.tsx": {
+    "role": "SAP块编辑插件装配",
+    "before": "SAP先前未装配库slash/drag/selection bubble",
+    "after": "同一公开SlashCommandList/DragHandle/Bubble + ReUI Card/Button；Chinese slash/SAP安全JSON插入、复制剥离锚定批注/章节ID",
+    "evidence": "tests/browser/sap-blocks.spec.ts全部7条（其中3种zoom原生drag）"
+  },
+  "playground/src/sap/editor.ts": {
+    "role": "SAP schema与扩展",
+    "before": "已有安全schema与编号/批注，缺少slash扩展",
+    "after": "加入公共SlashCommand，不造第二套节点模型；现有schema导入校验仍在",
+    "evidence": "SAP导入安全/ID/批注全部既有回归；tests/browser/sap-blocks.spec.ts"
+  },
+  "playground/src/sap/SapApp.tsx": {
+    "role": "Word式工作台集成",
+    "before": "公开Provider + EditorContent但未挂载块能力",
+    "after": "保留Word功能区，同时装配真正库SapBlockTools；仍使用本库公开Provider（本库没有单一RichTextEditor组件）；修复桌面缩小后两侧面板同时遮住画布（matchMedia关闭，仍可手动展开）",
+    "evidence": "sap.spec.ts 13条 + sap-blocks.spec.ts 7条；保存、目录、批注、打印"
+  },
+  "src/components/LazyContent.tsx": {
+    "role": "延迟加载/失败重试",
+    "before": "原生button重试",
+    "after": "ReUI Button，保留错误边界和重试状态",
+    "evidence": "静态/类型/构建；成功lazy路径测试；未逐一网络故障注入"
+  },
+  "src/extensions/Katex/components/KatexPreview.tsx": {
+    "role": "延迟加载/失败重试",
+    "before": "原生button重试",
+    "after": "ReUI Button，保留错误边界和重试状态",
+    "evidence": "静态/类型/构建；成功lazy路径测试；未逐一网络故障注入"
+  },
+  "src/components/notifications.ts": {
+    "role": "通知API（不是新UI系统）",
+    "before": "ui/toast.ts + use-toast.ts，最终Sonner渲染",
+    "after": "通知函数/类型原样迁入独立业务helper；渲染仍是官方ReUI Sonner",
+    "evidence": "Playground非法上传真实通知；类型导出一致"
+  },
+  "src/components/reui/card.tsx": {
+    "role": "官方浮层/面板表面原语",
+    "before": "新引入官方ReUI v1 Card",
+    "after": "固定commit官方源码；React18 forwardRef适配使建议列表的DOM ref真实可用",
+    "evidence": "slash/mention/emoji/短语滚动与键盘；主体/插件/selection bubble回归"
+  },
+  "src/components/Bubble/RichTextBubbleCallout.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleExcalidraw.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleDrawer.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleTwitter.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleMedia.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleTable.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleColumns.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleKatex.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleIframe.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleMermaid.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  },
+  "src/components/Bubble/RichTextBubbleLink.tsx": {
+    "role": "插件浮动工具条",
+    "before": "自制 border/bg/shadow 浮层 + 已有共享动作",
+    "after": "官方 ReUI Card 负责表面；内部复用 ReUI 控件/共享动作",
+    "evidence": "全源/类型/构建；仅 VALIDATION_COMPLETION.md 列明场景实际浏览器覆盖，未逐媒体/每个按钮穷举"
+  }
+}

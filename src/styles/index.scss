@@ -1,0 +1,36 @@
+@use "./global";
+@use "./editor";
+@use "./ProseMirror";
+@use "./columns";
+@use "./mention";
+@use "./codeblock";
+@use "./ai";
+@use "./details";
+@use "./toc";
+
+.richtext-selection-bubble {
+  z-index: 50;
+}
+@media print {
+  .richtext-selection-bubble,
+  .richtext-block-handle {
+    display: none !important;
+  }
+}
+
+// Bridge official ReUI v1 semantic-color variables to scoped Tailwind 3 themes.
+.reactjs-tiptap-editor,
+[data-richtext-portal] {
+  --color-success: #15803d;
+  --color-success-foreground: #fff;
+  --color-info: #7c3aed;
+  --color-info-foreground: #fff;
+  --color-warning: #b45309;
+  --color-warning-foreground: #fff;
+}
+.dark .reactjs-tiptap-editor,
+.dark [data-richtext-portal] {
+  --color-success: #4ade80;
+  --color-info: #c4b5fd;
+  --color-warning: #fbbf24;
+}

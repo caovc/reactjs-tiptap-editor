@@ -1,0 +1,1461 @@
+{
+  "upstream": "496b849",
+  "families": 15,
+  "originalShadcnHook": "src/components/ui/use-toast.ts",
+  "nonShadcnAdapter": "src/components/ui/emoji-picker.tsx (Frimousse)",
+  "playground": "No separate shadcn implementations; editor imports the linked library, demo controls are native HTML.",
+  "entries": [
+    {
+      "family": "button",
+      "original": "src/components/ui/button.tsx",
+      "replacement": "src/components/reui/button.tsx",
+      "symbols": [
+        "ButtonProps",
+        "Button",
+        "buttonVariants"
+      ],
+      "references": [
+        {
+          "file": "src/components/ActionMenuButton.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Drawer/components/DrawerCanvas.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui/button"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Iframe/components/IframeNodeView.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui/button"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/LinkEditBlock.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "Button",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Twitter/components/FormEditLinkTwitter.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/VideoUploadTab.tsx",
+          "symbol": "Button",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "checkbox",
+      "original": "src/components/ui/checkbox.tsx",
+      "replacement": "src/components/reui/checkbox.tsx",
+      "symbols": [
+        "Checkbox"
+      ],
+      "references": [
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Checkbox",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Checkbox",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/LinkEditBlock.tsx",
+          "symbol": "Checkbox",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "Checkbox",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "dialog",
+      "original": "src/components/ui/dialog.tsx",
+      "replacement": "src/components/reui/dialog.tsx",
+      "symbols": [
+        "Dialog",
+        "DialogPortal",
+        "DialogOverlay",
+        "DialogClose",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "DialogHeader",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/DrawerCanvas.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/EditDrawerBlock.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Drawer/components/RichTextDrawer.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Excalidraw/components/RichTextExcalidraw.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/ImageCropper.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "DialogFooter",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "Dialog",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "DialogContent",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "DialogTitle",
+          "module": "@/components/ui/dialog"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "DialogTrigger",
+          "module": "@/components/ui/dialog"
+        }
+      ]
+    },
+    {
+      "family": "dropdown-menu",
+      "original": "src/components/ui/dropdown-menu.tsx",
+      "replacement": "src/components/reui/dropdown-menu.tsx",
+      "symbols": [
+        "DropdownMenu",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioItem",
+        "DropdownMenuLabel",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuGroup",
+        "DropdownMenuPortal",
+        "DropdownMenuSub",
+        "DropdownMenuSubContent",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuRadioGroup"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextAIImprove.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components/ui/dropdown-menu"
+        },
+        {
+          "file": "src/components/Bubble/RichTextAIImprove.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components/ui/dropdown-menu"
+        },
+        {
+          "file": "src/components/Bubble/RichTextAIImprove.tsx",
+          "symbol": "DropdownMenuItem",
+          "module": "@/components/ui/dropdown-menu"
+        },
+        {
+          "file": "src/components/Bubble/RichTextAIImprove.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components/ui/dropdown-menu"
+        },
+        {
+          "file": "src/components/Bubble/RichTextAIImprove.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components/ui/dropdown-menu"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuPortal",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuSub",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuSubContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuSubTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMenuDragHandle.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+          "symbol": "DropdownMenuCheckboxItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontFamily/components/RichTextFontFamily.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+          "symbol": "DropdownMenuCheckboxItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/FontSize/components/RichTextFontSize.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenuCheckboxItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenuShortcut",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Heading/components/RichTextHeading.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+          "symbol": "DropdownMenuCheckboxItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+          "symbol": "DropdownMenuSeparator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/LineHeight/components/RichTextLightHeight.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/MoreMark/components/RichTextMoreMark.tsx",
+          "symbol": "DropdownMenu",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/MoreMark/components/RichTextMoreMark.tsx",
+          "symbol": "DropdownMenuCheckboxItem",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/MoreMark/components/RichTextMoreMark.tsx",
+          "symbol": "DropdownMenuContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/MoreMark/components/RichTextMoreMark.tsx",
+          "symbol": "DropdownMenuTrigger",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "input",
+      "original": "src/components/ui/input.tsx",
+      "replacement": "src/components/reui/input.tsx",
+      "symbols": [
+        "InputProps",
+        "Input"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "Input",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleIframe.tsx",
+          "symbol": "Input",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "Input",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Input",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Iframe/components/IframeNodeView.tsx",
+          "symbol": "Input",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/LinkEditBlock.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Twitter/components/FormEditLinkTwitter.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "Input",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "label",
+      "original": "src/components/ui/label.tsx",
+      "replacement": "src/components/reui/label.tsx",
+      "symbols": [
+        "Label"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "Label",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "Label",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "Label",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Label",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/LinkEditBlock.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SlashCommand/components/SlashCommandNodeView.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Twitter/components/FormEditLinkTwitter.tsx",
+          "symbol": "Label",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "popover",
+      "original": "src/components/ui/popover.tsx",
+      "replacement": "src/components/reui/popover.tsx",
+      "symbols": [
+        "Popover",
+        "PopoverTrigger",
+        "PopoverContent"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+          "symbol": "Popover",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleText.tsx",
+          "symbol": "Popover",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleText.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleText.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "Popover",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/SizeSetter/SizeSetter.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Emoji/components/RichTextEmoji.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Emoji/components/RichTextEmoji.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Emoji/components/RichTextEmoji.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/ImageGif/components/RichTextImageGif.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/RichTextLink.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/RichTextLink.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Link/components/RichTextLink.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/SearchAndReplace/components/RichTextSearchAndReplace.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Table/components/CreateTablePopover.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "Popover",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "Popover",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/Twitter/components/RichTextTwitter.tsx",
+          "symbol": "Popover",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Twitter/components/RichTextTwitter.tsx",
+          "symbol": "PopoverContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Twitter/components/RichTextTwitter.tsx",
+          "symbol": "PopoverTrigger",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "select",
+      "original": "src/components/ui/select.tsx",
+      "replacement": "src/components/reui/select.tsx",
+      "symbols": [
+        "Select",
+        "SelectGroup",
+        "SelectValue",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator",
+        "SelectScrollUpButton",
+        "SelectScrollDownButton"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "Select",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "SelectContent",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "SelectItem",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "SelectTrigger",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleCallout.tsx",
+          "symbol": "SelectValue",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Select",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "SelectContent",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "SelectItem",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "SelectTrigger",
+          "module": "@/components/ui/select"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "SelectValue",
+          "module": "@/components/ui/select"
+        }
+      ]
+    },
+    {
+      "family": "separator",
+      "original": "src/components/ui/separator.tsx",
+      "replacement": "src/components/reui/separator.tsx",
+      "symbols": [
+        "Separator"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleCodeBlock.tsx",
+          "symbol": "Separator",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleDrawer.tsx",
+          "symbol": "Separator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMedia.tsx",
+          "symbol": "Separator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleMermaid.tsx",
+          "symbol": "Separator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleTable.tsx",
+          "symbol": "Separator",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/Bubble/RichTextBubbleText.tsx",
+          "symbol": "Separator",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/components/ColorPicker.tsx",
+          "symbol": "Separator",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "switch",
+      "original": "src/components/ui/switch.tsx",
+      "replacement": "src/components/reui/switch.tsx",
+      "symbols": [
+        "Switch"
+      ],
+      "references": []
+    },
+    {
+      "family": "tabs",
+      "original": "src/components/ui/tabs.tsx",
+      "replacement": "src/components/reui/tabs.tsx",
+      "symbols": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ],
+      "references": [
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "Tabs",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "TabsContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "TabsList",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadImage.tsx",
+          "symbol": "TabsTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "Tabs",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "TabsContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "TabsList",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/SlashDialogTrigger/RenderDialogUploadVideo.tsx",
+          "symbol": "TabsTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "Tabs",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "TabsContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "TabsList",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Image/components/RichTextImage.tsx",
+          "symbol": "TabsTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "Tabs",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "TabsContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "TabsList",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/Video/components/RichTextVideo.tsx",
+          "symbol": "TabsTrigger",
+          "module": "@/components"
+        }
+      ]
+    },
+    {
+      "family": "textarea",
+      "original": "src/components/ui/textarea.tsx",
+      "replacement": "src/components/reui/textarea.tsx",
+      "symbols": [
+        "TextareaProps",
+        "Textarea"
+      ],
+      "references": [
+        {
+          "file": "src/components/Bubble/RichTextBubbleKatex.tsx",
+          "symbol": "Textarea",
+          "module": "@/components/ui/textarea"
+        },
+        {
+          "file": "src/extensions/Callout/components/RichTextCallout.tsx",
+          "symbol": "Textarea",
+          "module": "@/components/ui/textarea"
+        },
+        {
+          "file": "src/extensions/Katex/components/RichTextKatex.tsx",
+          "symbol": "Textarea",
+          "module": "@/components/ui/textarea"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/EditMermaidBlock.tsx",
+          "symbol": "Textarea",
+          "module": "@/components/ui/textarea"
+        },
+        {
+          "file": "src/extensions/Mermaid/components/RichTextMermaid.tsx",
+          "symbol": "Textarea",
+          "module": "@/components/ui/textarea"
+        }
+      ]
+    },
+    {
+      "family": "toast",
+      "original": "src/components/ui/toast.tsx",
+      "replacement": "src/components/reui/sonner.tsx",
+      "symbols": [
+        "ToastProps",
+        "ToastActionElement",
+        "ToastProvider",
+        "ToastViewport",
+        "Toast",
+        "ToastTitle",
+        "ToastDescription",
+        "ToastClose",
+        "ToastAction"
+      ],
+      "references": [
+        {
+          "file": "src/utils/validateFile.ts",
+          "symbol": "ToastProps",
+          "module": "@/components/ui/toast"
+        }
+      ]
+    },
+    {
+      "family": "toggle",
+      "original": "src/components/ui/toggle.tsx",
+      "replacement": "src/components/reui/toggle.tsx",
+      "symbols": [
+        "Toggle",
+        "toggleVariants"
+      ],
+      "references": [
+        {
+          "file": "src/components/ActionButton.tsx",
+          "symbol": "Toggle",
+          "module": "@/components"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "Toggle",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "Toggle",
+          "module": "@/components/ui"
+        }
+      ]
+    },
+    {
+      "family": "tooltip",
+      "original": "src/components/ui/tooltip.tsx",
+      "replacement": "src/components/reui/tooltip.tsx",
+      "symbols": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ],
+      "references": [
+        {
+          "file": "src/components/ActionButton.tsx",
+          "symbol": "Tooltip",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ActionButton.tsx",
+          "symbol": "TooltipContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ActionButton.tsx",
+          "symbol": "TooltipTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ActionMenuButton.tsx",
+          "symbol": "Tooltip",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ActionMenuButton.tsx",
+          "symbol": "TooltipContent",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/ActionMenuButton.tsx",
+          "symbol": "TooltipTrigger",
+          "module": "@/components"
+        },
+        {
+          "file": "src/components/RichTextProvider.tsx",
+          "symbol": "TooltipProvider",
+          "module": "@/components/ui/tooltip"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "Tooltip",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "TooltipContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextAlign/components/RichTextAlign.tsx",
+          "symbol": "TooltipTrigger",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "Tooltip",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "TooltipContent",
+          "module": "@/components/ui"
+        },
+        {
+          "file": "src/extensions/TextDirection/components/RichTextTextDirection.tsx",
+          "symbol": "TooltipTrigger",
+          "module": "@/components/ui"
+        }
+      ]
+    }
+  ]
+}

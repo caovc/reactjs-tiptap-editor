@@ -1,0 +1,864 @@
+import { Card, CardHeader, CardContent } from "@/components/reui/card";
+import { Textarea as ReuiTextarea } from "@/components/reui/textarea";
+import { Slider, SliderThumb } from "@/components/reui/slider";
+import { Button as ReuiButton } from "@/components/reui/button";
+// Base Kit
+import { Document } from "@tiptap/extension-document";
+import { HardBreak } from "@tiptap/extension-hard-break";
+import { ListItem } from "@tiptap/extension-list";
+import { Paragraph } from "@tiptap/extension-paragraph";
+import { Text } from "@tiptap/extension-text";
+import { TextStyle } from "@tiptap/extension-text-style";
+import {
+  Dropcursor,
+  Gapcursor,
+  Placeholder,
+  TrailingNode,
+} from "@tiptap/extensions";
+// import Collaboration from '@tiptap/extension-collaboration'
+// import CollaborationCaret from '@tiptap/extension-collaboration-caret'
+// import { HocuspocusProvider } from '@hocuspocus/provider'
+// import * as Y from 'yjs'
+import { EditorContent, useEditor } from "@tiptap/react";
+// const hocuspocusProvider = new HocuspocusProvider({
+//   url: 'ws://0.0.0.0:8080',
+//   name: 'github.com/hunghg255',
+//   document: ydoc,
+// })
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { RichTextProvider } from "reactjs-tiptap-editor";
+import { AI } from "reactjs-tiptap-editor/ai";
+import {
+  Attachment,
+  RichTextAttachment,
+} from "reactjs-tiptap-editor/attachment";
+import {
+  Blockquote,
+  RichTextBlockquote,
+} from "reactjs-tiptap-editor/blockquote";
+import { Bold, RichTextBold } from "reactjs-tiptap-editor/bold";
+// Bubble
+import {
+  RichTextBubbleCallout,
+  RichTextBubbleColumns,
+  RichTextBubbleDrawer,
+  RichTextBubbleExcalidraw,
+  RichTextBubbleIframe,
+  RichTextBubbleKatex,
+  RichTextBubbleLink,
+  RichTextBubbleImage,
+  RichTextBubbleVideo,
+  RichTextBubbleImageGif,
+  RichTextBubbleMermaid,
+  RichTextBubbleTable,
+  RichTextBubbleText,
+  RichTextBubbleTwitter,
+  RichTextBubbleMenuDragHandle,
+  RichTextBubbleCodeBlock,
+} from "reactjs-tiptap-editor/bubble";
+import {
+  BulletList,
+  RichTextBulletList,
+} from "reactjs-tiptap-editor/bulletlist";
+import { Callout, RichTextCallout } from "reactjs-tiptap-editor/callout";
+import { Clear, RichTextClear } from "reactjs-tiptap-editor/clear";
+import { Code, RichTextCode } from "reactjs-tiptap-editor/code";
+import { CodeBlock, RichTextCodeBlock } from "reactjs-tiptap-editor/codeblock";
+import { CodeView, RichTextCodeView } from "reactjs-tiptap-editor/codeview";
+import { Color, RichTextColor } from "reactjs-tiptap-editor/color";
+import {
+  Column,
+  ColumnNode,
+  MultipleColumnNode,
+  RichTextColumn,
+} from "reactjs-tiptap-editor/column";
+import { Details, RichTextDetails } from "reactjs-tiptap-editor/details";
+import { Drawer, RichTextDrawer } from "reactjs-tiptap-editor/drawer";
+import { Emoji, RichTextEmoji } from "reactjs-tiptap-editor/emoji";
+import {
+  Excalidraw,
+  RichTextExcalidraw,
+} from "reactjs-tiptap-editor/excalidraw";
+import {
+  ExportMarkdown,
+  RichTextExportMarkdown,
+} from "reactjs-tiptap-editor/exportmarkdown";
+import { ExportPdf, RichTextExportPdf } from "reactjs-tiptap-editor/exportpdf";
+import {
+  ExportWord,
+  RichTextExportWord,
+} from "reactjs-tiptap-editor/exportword";
+import {
+  FontFamily,
+  RichTextFontFamily,
+} from "reactjs-tiptap-editor/fontfamily";
+import { FontSize, RichTextFontSize } from "reactjs-tiptap-editor/fontsize";
+import {
+  FormatPainter,
+  RichTextFormatPainter,
+} from "reactjs-tiptap-editor/formatpainter";
+import { Heading, RichTextHeading } from "reactjs-tiptap-editor/heading";
+import { Highlight, RichTextHighlight } from "reactjs-tiptap-editor/highlight";
+// build extensions
+import {
+  History,
+  RichTextUndo,
+  RichTextRedo,
+} from "reactjs-tiptap-editor/history";
+import {
+  HorizontalRule,
+  RichTextHorizontalRule,
+} from "reactjs-tiptap-editor/horizontalrule";
+import { Iframe, RichTextIframe } from "reactjs-tiptap-editor/iframe";
+import { Image, RichTextImage } from "reactjs-tiptap-editor/image";
+import { ImageGif, RichTextImageGif } from "reactjs-tiptap-editor/imagegif";
+import {
+  ImportWord,
+  RichTextImportWord,
+} from "reactjs-tiptap-editor/importword";
+import { Indent, RichTextIndent } from "reactjs-tiptap-editor/indent";
+import { Italic, RichTextItalic } from "reactjs-tiptap-editor/italic";
+import { Katex, RichTextKatex } from "reactjs-tiptap-editor/katex";
+import {
+  LineHeight,
+  RichTextLineHeight,
+} from "reactjs-tiptap-editor/lineheight";
+import { Link, RichTextLink } from "reactjs-tiptap-editor/link";
+import { localeActions, useLocale } from "reactjs-tiptap-editor/locale-bundle";
+import { MarkdownPaste } from "reactjs-tiptap-editor/markdownpaste";
+import { Mention } from "reactjs-tiptap-editor/mention";
+import { Mermaid, RichTextMermaid } from "reactjs-tiptap-editor/mermaid";
+import { MoreMark, RichTextMoreMark } from "reactjs-tiptap-editor/moremark";
+import {
+  OrderedList,
+  RichTextOrderedList,
+} from "reactjs-tiptap-editor/orderedlist";
+import {
+  SearchAndReplace,
+  RichTextSearchAndReplace,
+} from "reactjs-tiptap-editor/searchandreplace";
+import { ShortMessage } from "reactjs-tiptap-editor/shortmessage";
+import {
+  SlashCommand,
+  SlashCommandList,
+} from "reactjs-tiptap-editor/slashcommand";
+import { Strike, RichTextStrike } from "reactjs-tiptap-editor/strike";
+import { Table, RichTextTable } from "reactjs-tiptap-editor/table";
+import {
+  TableOfContents,
+  RichTextTableOfContents,
+} from "reactjs-tiptap-editor/tableofcontents";
+import { TaskList, RichTextTaskList } from "reactjs-tiptap-editor/tasklist";
+import { TextAlign, RichTextAlign } from "reactjs-tiptap-editor/textalign";
+import {
+  TextDirection,
+  RichTextTextDirection,
+} from "reactjs-tiptap-editor/textdirection";
+import {
+  TextUnderline,
+  RichTextUnderline,
+} from "reactjs-tiptap-editor/textunderline";
+import { themeActions, useTheme } from "reactjs-tiptap-editor/theme";
+import { Twitter, RichTextTwitter } from "reactjs-tiptap-editor/twitter";
+import { Video, RichTextVideo } from "reactjs-tiptap-editor/video";
+
+import "reactjs-tiptap-editor/style.css";
+// const ydoc = new Y.Doc()
+import "katex/dist/katex.min.css";
+import "easydrawer/styles.css";
+import "@excalidraw/excalidraw/index.css";
+
+// This is only an example, all supported languages are already loaded above
+// but you can also register only specific languages to reduce bundle-size
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function convertBase64ToBlob(base64: string) {
+  const arr = base64.split(",");
+  const mime = arr[0].match(/:(.*?);/)![1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  return new Blob([u8arr], { type: mime });
+}
+
+// custom document to support columns
+const DocumentColumn = /* @__PURE__ */ Document.extend({
+  content: "(block|columns)+",
+});
+
+const MOCK_USERS = [
+  {
+    id: "0",
+    label: "hunghg255",
+    avatar: {
+      src: "https://avatars.githubusercontent.com/u/42096908?v=4",
+    },
+  },
+  {
+    id: "1",
+    label: "benjamincanac",
+    avatar: {
+      src: "https://avatars.githubusercontent.com/u/739984?v=4",
+    },
+  },
+  {
+    id: "2",
+    label: "atinux",
+    avatar: {
+      src: "https://avatars.githubusercontent.com/u/904724?v=4",
+    },
+  },
+  {
+    id: "3",
+    label: "danielroe",
+    avatar: {
+      src: "https://avatars.githubusercontent.com/u/28706372?v=4",
+    },
+  },
+  {
+    id: "4",
+    label: "pi0",
+    avatar: {
+      src: "https://avatars.githubusercontent.com/u/5158436?v=4",
+    },
+  },
+];
+
+const BaseKit = [
+  DocumentColumn,
+  Text,
+  Dropcursor.configure({
+    class: "reactjs-tiptap-editor-theme",
+    color: "hsl(var(--primary))",
+    width: 2,
+  }),
+  Gapcursor,
+  HardBreak,
+  Paragraph,
+  TrailingNode,
+  ListItem,
+  TextStyle,
+  Placeholder.configure({
+    placeholder: "Press '/' for commands",
+  }),
+];
+
+const extensions = [
+  ...BaseKit,
+
+  History,
+  SearchAndReplace,
+  Clear,
+  FontFamily,
+  Heading,
+  FontSize,
+  FormatPainter,
+  Bold,
+  Italic,
+  TextUnderline,
+  Strike,
+  MoreMark,
+  Emoji.configure({
+    suggestion: {
+      items: async ({ query }: any) => {
+        const { EMOJI_LIST } = await import("@/emojis");
+        const lowerCaseQuery = query?.toLowerCase();
+
+        return EMOJI_LIST.filter(({ name }) =>
+          name.toLowerCase().includes(lowerCaseQuery),
+        );
+      },
+    },
+  }),
+  Color,
+  Highlight,
+  BulletList,
+  OrderedList,
+  TextAlign,
+  Indent,
+  LineHeight,
+  TaskList,
+  Link,
+  Image.configure({
+    upload: (files: File) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(URL.createObjectURL(files));
+        }, 300);
+      });
+    },
+  }),
+  Video.configure({
+    upload: (files: File) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(URL.createObjectURL(files));
+        }, 300);
+      });
+    },
+  }),
+  ImageGif.configure({
+    provider: "giphy",
+    API_KEY: import.meta.env.VITE_GIPHY_API_KEY as string,
+  }),
+  Blockquote,
+  HorizontalRule,
+  Code,
+  CodeBlock,
+
+  Column,
+  ColumnNode,
+  MultipleColumnNode,
+  Table,
+  Iframe,
+  ExportPdf,
+  ImportWord,
+  ExportWord,
+  ExportMarkdown,
+  TextDirection,
+  Attachment.configure({
+    upload: (file: any) => {
+      // fake upload return base 64
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const blob = convertBase64ToBlob(reader.result as string);
+          resolve(URL.createObjectURL(blob));
+        }, 300);
+      });
+    },
+  }),
+  Katex.configure({
+    loadKatex: async () => {
+      const [{ default: katex }] = await Promise.all([
+        import("katex"),
+        import("katex/contrib/mhchem"),
+      ]);
+      return katex;
+    },
+  }),
+  Excalidraw,
+  Mermaid.configure({
+    upload: (file: any) => {
+      // fake upload return base 64
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const blob = convertBase64ToBlob(reader.result as string);
+          resolve(URL.createObjectURL(blob));
+        }, 300);
+      });
+    },
+  }),
+  Drawer.configure({
+    upload: (file: any) => {
+      // fake upload return base 64
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const blob = convertBase64ToBlob(reader.result as string);
+          resolve(URL.createObjectURL(blob));
+        }, 300);
+      });
+    },
+  }),
+  Twitter,
+  Mention.configure({
+    suggestion: {
+      char: "@",
+      items: async ({ query }: any) => {
+        console.log("query", query);
+        // const data = MOCK_USERS.map(item => item.label);
+        // return data.filter(item => item.toLowerCase().startsWith(query.toLowerCase()));
+        return MOCK_USERS.filter((item) =>
+          item.label.toLowerCase().startsWith(query.toLowerCase()),
+        );
+      },
+    },
+    // suggestions: [
+    //   {
+    //     char: '@',
+    //     items: async ({ query }: any) => {
+    //       return MOCK_USERS.filter(item => item.label.toLowerCase().startsWith(query.toLowerCase()));
+    //     },
+    //   },
+    //   {
+    //     char: '#',
+    //     items: async ({ query }: any) => {
+    //       return MOCK_USERS.filter(item => item.label.toLowerCase().startsWith(query.toLowerCase()));
+    //     },
+    //   }
+    // ]
+  }),
+  AI.configure({
+    protocol:
+      import.meta.env.VITE_AI_PROTOCOL === "anthropic" ? "anthropic" : "openai",
+    apiKey: import.meta.env.VITE_AI_API_KEY || "",
+    model: import.meta.env.VITE_AI_MODEL || "",
+    baseURL: import.meta.env.VITE_AI_BASE_URL || "",
+  }),
+  SlashCommand,
+  ShortMessage.configure({
+    shortcut: "Shift-Space",
+    messages: [
+      { short: "nsfw", long_content: "Not safe forward" },
+      { short: "brb", long_content: "Be right back" },
+      {
+        short: "ty",
+        long_content: "Thank you for your time and consideration.",
+      },
+      {
+        short: "sig",
+        long_content: "<p>Best regards,<br><strong>Hung</strong></p>",
+      },
+    ],
+  }),
+  CodeView,
+  Callout,
+  Details,
+  TableOfContents,
+  MarkdownPaste,
+  //  Collaboration.configure({
+  //   document: hocuspocusProvider.document,
+  // }),
+  // CollaborationCaret.configure({
+  //   provider: hocuspocusProvider,
+  //   user: {
+  //     color: getRandomColor(),
+  //   },
+  // }),
+];
+
+const DEFAULT = `<pre class="shj" dir="auto"><code class="language-js">const a = 2;</code></pre><div class="table-of-contents" dir="auto" data-type="table-of-contents"></div><details class="details" dir="auto" open=""><summary class="details-summary" dir="auto">tét</summary><div class="details-content" dir="auto" data-type="detailsContent"><p dir="auto">ádsad</p><p dir="auto">ád</p><p dir="auto">ád</p><p dir="auto">ád</p><p dir="auto"></p></div></details><p dir="auto"></p><p dir="auto"></p>>`;
+
+function debounce(func: any, wait: number) {
+  let timeout: NodeJS.Timeout;
+  return function (...args: any[]) {
+    clearTimeout(timeout);
+    // @ts-ignore
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+const Header = ({
+  editor,
+  theme,
+  setTheme,
+}: {
+  editor: import("@tiptap/core").Editor | null;
+  theme: string;
+  setTheme: (theme: string) => void;
+}) => {
+  const [editorEditable, setEditorEditable] = useState(false);
+  const currentLocale = useLocale();
+  const currentTheme = useTheme();
+
+  useEffect(() => {
+    localeActions.setLang("vi");
+    themeActions.setColor("red");
+    setEditorEditable(editor?.isEditable ?? true);
+  }, []);
+
+  useEffect(() => {
+    if (editor) {
+      editor.on("update", () => {
+        setEditorEditable(editor.isEditable);
+      });
+    }
+
+    return () => {
+      if (editor) {
+        editor.off("update", () => {
+          setEditorEditable(editor.isEditable);
+        });
+      }
+    };
+  }, [editor]);
+
+  return (
+    <section data-richtext-portal aria-label="Playground settings">
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "12px",
+          marginTop: "100px",
+          marginBottom: 10,
+        }}
+      >
+        {currentLocale.lang}
+        {currentTheme.color}
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            localeActions.setLang("vi");
+          }}
+        >
+          Vietnamese
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => localeActions.setLang("en")}
+        >
+          English
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => localeActions.setLang("zh_CN")}
+        >
+          Chinese
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => localeActions.setLang("pt_BR")}
+        >
+          Português
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => localeActions.setLang("hu_HU")}
+        >
+          Hungarian
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => localeActions.setLang("ja")}
+        >
+          日本語
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? "Light" : "Dark"}
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            editor?.setEditable(!editorEditable);
+          }}
+        >
+          {editorEditable ? "Editable" : "Disabled"}
+        </ReuiButton>
+      </div>
+      <div className="richtext-flex richtext-flex-wrap richtext-items-center richtext-gap-1">
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setTheme("light");
+          }}
+        >
+          Theme light
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setTheme("dark");
+          }}
+        >
+          Theme dark
+        </ReuiButton>
+      </div>
+
+      <div className="richtext-flex richtext-flex-wrap richtext-items-center richtext-gap-1">
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("default");
+          }}
+        >
+          Color default
+        </ReuiButton>
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("red");
+          }}
+        >
+          Theme red
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("blue");
+          }}
+        >
+          Theme blue
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("green");
+          }}
+        >
+          Theme green
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("orange");
+          }}
+        >
+          Theme orange
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("rose");
+          }}
+        >
+          Theme rose
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("violet");
+          }}
+        >
+          Theme violet
+        </ReuiButton>
+
+        <ReuiButton
+          variant="ghost"
+          size="sm"
+          type="button"
+          onClick={() => {
+            themeActions.setColor("yellow");
+          }}
+        >
+          Theme yellow
+        </ReuiButton>
+      </div>
+
+      <div className="richtext-flex richtext-items-center richtext-gap-2">
+        <span>Border radius</span>
+
+        <Slider
+          min={0}
+          max={3}
+          step={0.05}
+          defaultValue={[0.65]}
+          className="richtext-w-48"
+          onValueChange={([value]) =>
+            themeActions.setBorderRadius(`${value}rem`)
+          }
+        >
+          <SliderThumb aria-label="Border radius" />
+        </Slider>
+      </div>
+    </section>
+  );
+};
+
+const RichTextToolbar = () => {
+  return (
+    <CardHeader
+      role="toolbar"
+      aria-label="Editor formatting"
+      className="richtext-min-h-0 richtext-justify-start richtext-gap-1 richtext-p-1"
+    >
+      <RichTextUndo />
+      <RichTextRedo />
+      <RichTextSearchAndReplace />
+      <RichTextClear />
+      <RichTextFormatPainter />
+      <RichTextFontFamily />
+      <RichTextHeading />
+      <RichTextFontSize />
+      <RichTextBold />
+      <RichTextItalic />
+      <RichTextUnderline />
+      <RichTextStrike />
+      <RichTextMoreMark />
+      <RichTextEmoji />
+      <RichTextColor />
+      <RichTextHighlight />
+      <RichTextBulletList />
+      <RichTextOrderedList />
+      <RichTextAlign />
+      <RichTextIndent />
+      <RichTextLineHeight />
+      <RichTextTaskList />
+      <RichTextLink />
+      <RichTextImage />
+      <RichTextVideo />
+      <RichTextImageGif />
+      <RichTextBlockquote />
+      <RichTextHorizontalRule />
+      <RichTextCode />
+      <RichTextCodeBlock />
+      <RichTextColumn />
+      <RichTextTable />
+      <RichTextIframe />
+      <RichTextExportPdf />
+      <RichTextImportWord />
+      <RichTextExportWord />
+      <RichTextExportMarkdown />
+      <RichTextTextDirection />
+      <RichTextAttachment />
+      <RichTextKatex />
+      <RichTextExcalidraw />
+      <RichTextMermaid />
+      <RichTextDrawer />
+      <RichTextTwitter />
+      <RichTextCodeView />
+      <RichTextCallout />
+      <RichTextDetails />
+      <RichTextTableOfContents />
+    </CardHeader>
+  );
+};
+
+function App() {
+  const [content, setContent] = useState(DEFAULT);
+  const [theme, setTheme] = useState("light");
+
+  const onValueChange = useCallback(
+    debounce((value: any) => {
+      setContent(value);
+    }, 300),
+    [],
+  );
+
+  const editor = useEditor({
+    // shouldRerenderOnTransaction:  false,
+    textDirection: "auto", // global text direction
+    content,
+    extensions,
+    // content,
+    // immediatelyRender: false, // error duplicate plugin key
+    onUpdate: ({ editor }) => {
+      const html = editor.getHTML();
+      onValueChange(html);
+    },
+  });
+
+  useEffect(() => {
+    window["editor"] = editor;
+  }, [editor]);
+
+  return (
+    <div
+      className="richtext-p-6 richtext-flex richtext-flex-col richtext-w-full richtext-max-w-screen-lg richtext-gap-6 richtext-mx-auto richtext-my-0"
+      style={{
+        maxWidth: 1024,
+        margin: "40px auto",
+      }}
+    >
+      <Header editor={editor} setTheme={setTheme} theme={theme} />
+
+      <RichTextProvider editor={editor} dark={theme === "dark"}>
+        <Card className="richtext-min-w-0">
+          <RichTextToolbar />
+
+          <CardContent className="richtext-p-0">
+            <EditorContent editor={editor} />
+          </CardContent>
+
+          {/* Bubble */}
+          <RichTextBubbleCallout />
+          <RichTextBubbleColumns />
+          <RichTextBubbleDrawer />
+          <RichTextBubbleExcalidraw />
+          <RichTextBubbleIframe />
+          <RichTextBubbleKatex />
+          <RichTextBubbleLink />
+
+          <RichTextBubbleImage />
+          <RichTextBubbleVideo />
+          <RichTextBubbleImageGif />
+
+          <RichTextBubbleMermaid />
+          <RichTextBubbleTable />
+          <RichTextBubbleText />
+          <RichTextBubbleTwitter />
+          <RichTextBubbleCodeBlock />
+
+          <RichTextBubbleMenuDragHandle />
+
+          {/* Command List */}
+          <SlashCommandList />
+        </Card>
+      </RichTextProvider>
+
+      {typeof content === "string" && (
+        <div data-richtext-portal>
+          <ReuiTextarea
+            aria-label="Document HTML"
+            style={{
+              marginTop: 20,
+              height: 500,
+            }}
+            readOnly
+            value={content}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;

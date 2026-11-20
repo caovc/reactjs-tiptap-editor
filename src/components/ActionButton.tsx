@@ -1,0 +1,135 @@
+import React from "react";
+
+import {
+  Toggle,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  icons,
+} from "@/components";
+import { cn } from "@/lib/utils";
+import { getShortcutKeys } from "@/utils/plateform";
+
+import type { ButtonViewReturnComponentProps } from "@/types";
+type TooltipContentProps = React.ComponentProps<typeof TooltipContent>;
+
+export interface ActionButtonProps {
+  /* Icon name to display */
+  icon?: string;
+  /* Button title */
+  title?: string;
+  /* Tooltip text */
+  tooltip?: string;
+  /* Whether the button is disabled */
+  disabled?: boolean;
+  /* Keyboard shortcut keys */
+  shortcutKeys?: string[];
+  /* Custom CSS class */
+  customClass?: string;
+  /* Loading state */
+  loading?: boolean;
+  /* Tooltip options */
+  tooltipOptions?: TooltipContentProps;
+  /* Button color */
+  color?: string;
+  /* Click action handler */
+  action?: React.MouseEventHandler<HTMLButtonElement>;
+  /* Active state checker */
+  isActive?: ButtonViewReturnComponentProps["isActive"];
+  /* Child components */
+  children?: React.ReactNode;
+  /* Whether to render as child */
+  asChild?: boolean;
+  /* Whether it's an upload button */
+  upload?: boolean;
+  /* Initial displayed color */
+  initialDisplayedColor?: string;
+
+  dataState?: boolean;
+  /** Allow native drag initiation on block handles while retaining editor selection elsewhere. */
+  preserveSelection?: boolean;
+  draggable?: React.ButtonHTMLAttributes<HTMLButtonElement>["draggable"];
+}
+
+const ActionButton = React.forwardRef<
+  HTMLButtonElement,
+  Partial<ActionButtonProps>
+>((props, ref) => {
+  const {
+    icon = undefined,
+    // title = undefined,
+    tooltip = undefined,
+    disabled = false,
+    customClass = "",
+    // color = undefined,
+    loading = undefined,
+    shortcutKeys = undefined,
+    tooltipOptions = {},
+    action = undefined,
+    isActive = undefined,
+    children,
+    asChild = false,
+    upload = false,
+    initialDisplayedColor = undefined,
+    dataState = false,
+    preserveSelection = true,
+    ...rest
+  } = props;
+
+  const Icon = icons[icon as string];
+
+  const onClickHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    if (disabled) {
+      e.preventDefault();
+      return;
+    }
+    action?.(e);
+  };
+
+  // Prevent the button from taking focus on mousedown so the editor keeps
+  // its selection and caret (desktop browsers move focus to the clicked button).
+  const onMouseDownHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    (rest as React.ButtonHTMLAttributes<HTMLButtonElement>).onMouseDown?.(e);
+    if (preserveSelection) e.preventDefault();
+  };
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Toggle
+          asChild={asChild}
+          aria-label={tooltip}
+          className={cn("richtext-h-[32px] richtext-w-[32px]", customClass)}
+          pressed={dataState} // active background control
+          disabled={disabled} // disable button control
+          onClick={onClickHandler}
+          ref={ref}
+          size="sm"
+          {...(rest as Omit<typeof rest, "loading">)}
+          onMouseDown={onMouseDownHandler}
+        >
+          {Icon && <Icon className="richtext-size-4" />}
+          {children}
+        </Toggle>
+      </TooltipTrigger>
+
+      {tooltip && (
+        <TooltipContent {...tooltipOptions} className="richtext-tooltip">
+          <div className="richtext-flex richtext-max-w-24 richtext-flex-col richtext-items-center richtext-text-center">
+            <div>{tooltip}</div>
+
+            {!!shortcutKeys?.length && (
+              <span>{getShortcutKeys(shortcutKeys)}</span>
+            )}
+          </div>
+        </TooltipContent>
+      )}
+    </Tooltip>
+  );
+});
+
+export { ActionButton };

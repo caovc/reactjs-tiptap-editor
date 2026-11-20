@@ -1,0 +1,141 @@
+.richtext-ai {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  .richtext-ai-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .richtext-ai-heading,
+  .richtext-ai-heading > span,
+  .richtext-ai-compose-actions,
+  .richtext-ai-actions,
+  .richtext-ai-actions > div,
+  .richtext-ai-tone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .richtext-ai-heading,
+  .richtext-ai-actions {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .richtext-ai-heading {
+    color: hsl(var(--primary));
+    font-weight: 600;
+  }
+  textarea {
+    min-width: 0;
+    min-height: 64px;
+    max-height: 180px;
+    resize: vertical;
+  }
+  .richtext-ai-tone {
+    color: hsl(var(--muted-foreground));
+  }
+  .richtext-ai-tone [data-slot="select-trigger"] {
+    width: 140px;
+  }
+  .richtext-ai-status {
+    margin-left: auto;
+    font-size: 12px;
+    color: hsl(var(--muted-foreground));
+  }
+  .richtext-ai-preview {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: hsl(var(--primary));
+    line-height: 1.75;
+  }
+  .richtext-ai-error {
+    color: hsl(var(--destructive));
+    font-size: 13px;
+  }
+  .richtext-ai-loading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+  }
+  .richtext-ai-loading-stop {
+    margin-left: auto;
+  }
+}
+.richtext-ai-selection {
+  background: hsl(var(--primary) / 0.15);
+  border-radius: 4px;
+}
+.richtext-ai-word {
+  animation: richtext-ai-word-in 300ms ease both;
+}
+@keyframes richtext-ai-word-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.richtext-ai-loading-dots {
+  display: flex;
+  gap: 6px;
+  color: hsl(var(--primary));
+}
+.richtext-ai-loading-dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: richtext-ai-word-in 0.6s infinite alternate;
+}
+.ProseMirror .richtext-ai-mount {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 8px 0 16px;
+  white-space: normal;
+  text-align: start;
+  cursor: default;
+}
+.ProseMirror .richtext-ai-empty-anchor {
+  display: none;
+}
+.ProseMirror .richtext-ai-preview p {
+  margin: 0 0 1em;
+  font-size: inherit;
+  line-height: inherit;
+}
+.richtext-ai-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.richtext-ai-prompt-row textarea {
+  min-width: 0;
+  flex: 1;
+}
+.richtext-ai-prompt-icon {
+  flex-shrink: 0;
+  color: hsl(var(--muted-foreground));
+}
+.richtext-ai-improve-trigger {
+  gap: 6px;
+}
+.richtext-ai-improve-menu {
+  min-width: 240px;
+}
+.richtext-ai-improve-item {
+  gap: 10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .richtext-ai-word,
+  .richtext-ai-loading-dots i {
+    animation: none;
+  }
+}

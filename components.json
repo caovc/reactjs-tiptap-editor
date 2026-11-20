@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "src/styles/global.scss",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": "richtext-"
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/reui"
+  },
+  "registries": {
+    "@reui": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/{name}.json"
+  }
+}

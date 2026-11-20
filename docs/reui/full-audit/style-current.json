@@ -1,0 +1,320 @@
+[
+  {
+    "file": ".github/workflows/ci.yml",
+    "sha256": "0fa1c31a7e1fa24e33660e7a60196dde8c912be3df9d69e80f68d7989dcdbffc",
+    "role": "CI / deploy (no npm publishing)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": ".github/workflows/pages.yml",
+    "sha256": "9e4b507a927524e99e8b95907ddf31318366207b35fc2fd4bc8ad5d9d9c56611",
+    "role": "CI / deploy (no npm publishing)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "components.json",
+    "sha256": "1c702a20edd80a071a509049f83ff57a65abe623d971daf112761b6e12ab5f16",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/components/Changelog.vue",
+    "sha256": "ad3b48c8aca60cf14dfac39f205e3fc5cfea182ddb61ea63389ed86ea2690d19",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/components/Contributors.vue",
+    "sha256": "024a044349c54ec92185f24c534e47fc2085f4a270d53d709215c0d7dba06191",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/components/HomeContributors.vue",
+    "sha256": "71cc61eb69fadda41b4653376c0f72bc3bb61284c682d05915d7e3f80ee3ac3c",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/components/HomePage.vue",
+    "sha256": "5c250ffe865503188e05d64473f92520f722cf848a46c3bc7cb085c331142294",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/config.ts",
+    "sha256": "b56efd51db0bb8344758480ffa9ccd2478420d6c20231384ded62d3bca399249",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/i18n/composable.ts",
+    "sha256": "26297525ef9a61d7551656f1c9987140609365f2c35c21cee9978e10dba8713d",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/i18n/locales.ts",
+    "sha256": "0b2e02fda347762196ad04267c57eb05815e99472ba6fc1568fcb281f718001c",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/i18n/utils.ts",
+    "sha256": "49fe79b0c45162f65380ab0421f5df792ed6d39f7e4759d08e6f69fb05825086",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/locale.ts",
+    "sha256": "09a43a8fac539aec63ec8671d51ff4b2ec88e70f7638c5cccaa82b126b8ce237",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/plugins/changelog.ts",
+    "sha256": "ccceaca2e602bcc4ead1b96b4bf139e5a6344878923902f8ef2cfe23be04d034",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/plugins/contributors.ts",
+    "sha256": "dacb4b6d559a96c061a435b44e14bd9f0990d2f03442311f857c27d8bae08fcb",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/plugins/markdownTransform.ts",
+    "sha256": "dffbb88a1a68d3145026c6c83611ff9217871cd6fb691f1ffd58d4b0557b2a34",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/theme/Layout.vue",
+    "sha256": "e8aaa1914ee15ecaeccaef55e2ae3e287bc3a8ea47066994022277d1aa9afd27",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/theme/index.ts",
+    "sha256": "ebb9ebdbe473bac41ec4e8db5942822ece6012d6e7186234b8f703621696d103",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/theme/style.css",
+    "sha256": "4fce26661a59a30d292d0ec6584887bfadaf4d8c0ebb8424c65edae903ba37b3",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/theme/utils.ts",
+    "sha256": "4442ebb9e4fbd7b1130bb0eaf21058457e082ac44a9eea551270f3d1473e0033",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/.vitepress/transformHead.ts",
+    "sha256": "967311cac9f482de3ee671da43c482c05631a582e545d0bfdebac6c5f734d345",
+    "role": "retained upstream Vue/VitePress documentation host (not Pages artifact)",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/uno.config.ts",
+    "sha256": "ea6466f771d254cee60098d840df935487beeed160a5e8bd672a7ce83057fc3b",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "docs/vite.config.ts",
+    "sha256": "6b480694a6830007115462976d234824df00452b345d24c2d2f6002a413f8cac",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "index.html",
+    "sha256": "8adf0b2dea9c79b503d40851ed97f4d6974f8a6ee1b724e6ee595c80737af3fe",
+    "role": "static build entry",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "package.json",
+    "sha256": "f6296717239db86b34b3d06b050cbca24645ba6e718ddfa54d1e24896262dff1",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/index.html",
+    "sha256": "afc88221a5fdca28a45d2360d3f168f9690bbdeac1810964b68af75382523fc1",
+    "role": "static build entry",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/package.json",
+    "sha256": "78d51a0651eec6f5059451587df9e189a2f49fb4cc9fab27502722093d8c8837",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/postcss.config.js",
+    "sha256": "7fc01085f4f4c7d0a66ef41b74016f484467123c247dd34753b2de7223a2cc81",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/sap/index.html",
+    "sha256": "0baed9e3f4525ac52b9bcaae0bf57d93954a97d601b778dee0a72b6336bc08d1",
+    "role": "static build entry",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/src/global.css",
+    "sha256": "b8f7b1d30c485dc7a5c6c5cf98f23ebca72e72b398d5c21baaccbe04bce5d0fd",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/src/sap/sap.css",
+    "sha256": "6c6933da6f52f60d04466971ed68cf8ece6b958c8689cd41b14d108c974a4062",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "SAP narrow/zoom/print screenshots and browser assertions"
+  },
+  {
+    "file": "playground/tailwind.config.js",
+    "sha256": "3ad32c0fa7cb8e48a6dbca84f7c8639d444224c42ef1297dbee69c2411af34ab",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/tsconfig.json",
+    "sha256": "1ae6a0543ce23d2f878abd7fbf940440ee2a5efe35857dd8eac00f13b5c9cca1",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playground/vite.config.ts",
+    "sha256": "6ef3072d171e9c5589c232fd1b0fa9456e3ab7b560249aa988ac3d7e2413e41e",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "playwright.config.ts",
+    "sha256": "9167f60f6d0f8b342a8c129ac38f22fdb66664b074d29d1dbac4a6d6f2eeb147",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "postcss.config.js",
+    "sha256": "7fc01085f4f4c7d0a66ef41b74016f484467123c247dd34753b2de7223a2cc81",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/extensions/Attachment/components/NodeViewAttachment/index.module.scss",
+    "sha256": "2ca266250be028352dbed0967a90f4a2ac263fbeb72b03118129c7cc9bae4046",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/extensions/Drawer/components/ControlDrawer/ControlDrawer.module.scss",
+    "sha256": "8a0d7a107c8c0884de67b13cab7a7cb912cc85d6eb6b55807d560795d4c06b46",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Drawing toolbar pixel/slider tests and screenshot"
+  },
+  {
+    "file": "src/extensions/Excalidraw/components/NodeViewExcalidraw/index.module.scss",
+    "sha256": "874efce74df42e4c6b79006fd21bf71b8cc66ce8963492a0c9c7acb59a956b59",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/extensions/Iframe/components/index.module.scss",
+    "sha256": "bbcd5721f8685f38cea9e99d973def011eaafad0fc340a1750b8d4ba8289d5d1",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/ProseMirror.scss",
+    "sha256": "97f1cfdb9cc8307b5490f49ce98a392162e86f3dc20554daa2aea3cec6298709",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/ai.scss",
+    "sha256": "8db953039da4c4344f406d660ca24466dc5c9d9de28333d212fffd8f88e3f0c4",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "AI preview/apply/discard/cancel browser fixture"
+  },
+  {
+    "file": "src/styles/codeblock.scss",
+    "sha256": "52f9c8b327432324cc1b1f758e10e5defb77e2d5261f6fd6c9452919acb7b164",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/columns.scss",
+    "sha256": "8e54e4f74c38072a0221d806d13515fd096f46cb0048b88268767c712814b282",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/details.scss",
+    "sha256": "c393789e0615a86f3111bbb7fc06a1bdfc6a2350ae7ee6ae8121f1850287e293",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/editor.scss",
+    "sha256": "5655eca5aeff67a094de10470081a787968c0c1f42a3ce205f507aa76130684e",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/global.scss",
+    "sha256": "db7948a50eec9adbb64efbd9cf5b32129329bfe6caf10278904df32c4afa6efc",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/index.scss",
+    "sha256": "cec9b1d12e6db311f226fe58f6b84032017b720f8ccc048b679a6474e74c846a",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/mention.scss",
+    "sha256": "28d45721306282247a812ea41a1da7c0622d8da19a47d2bd34fbaaba41f352a2",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "src/styles/toc.scss",
+    "sha256": "4697d9bb9d77fca56e6116521adfa41cfddb3ec754265adad5dea8fad7671216",
+    "role": "scoped styles/theme/document layout",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "tailwind.config.js",
+    "sha256": "b9625a1750235fb5044f9271132092124eaa3148d959e2f3e809aa889f10c8fc",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "tests/vite.config.ts",
+    "sha256": "731ba2061e06ea8b5dd3fbdd76b7c9f8b07c0084b9b15faeec538c66a0d63a8d",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "tsconfig.json",
+    "sha256": "4e843ccb91ac361b92dfc6cedc37f705b2619e8794204764db1982482f18122b",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  },
+  {
+    "file": "vite.config.ts",
+    "sha256": "79411e69f26dcd143f73577a4ecb4f8abe5bfcf8f1fc16409117a72b6d06629b",
+    "role": "build/config/package boundary",
+    "evidence": "Static review + builds; no claim of exhaustive visual/property testing"
+  }
+]

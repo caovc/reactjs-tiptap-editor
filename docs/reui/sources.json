@@ -1,0 +1,128 @@
+[
+  {
+    "component": "button",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/button.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/button.json",
+    "sha256": "b1823d2380bfe4f379472ec17474acd3feff2e5d93970a007f36572e2fcb4b7d"
+  },
+  {
+    "component": "checkbox",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/checkbox.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/checkbox.json",
+    "sha256": "8dc05aed2039f5239186ef1ee100634bac8ebd2803af09c628e7b9f99ec995aa"
+  },
+  {
+    "component": "dialog",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/dialog.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/dialog.json",
+    "sha256": "61ca20de3fd0fc73b8cce6a2a10a4ac9ba9280b77c4245872174ea142c6c9623"
+  },
+  {
+    "component": "dropdown-menu",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/dropdown-menu.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/dropdown-menu.json",
+    "sha256": "cc66396da0fd241b0020fa8ffc8bbf7735f466b129ff34b40ae2800727451807"
+  },
+  {
+    "component": "input",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/input.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/input.json",
+    "sha256": "b8c55f28e59bc3e56b9e6337967bbb784d060b02b6f19460f7bd13e07fd533c0"
+  },
+  {
+    "component": "label",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/label.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/label.json",
+    "sha256": "bfe7d1d0fdeb25cd3661a9cc85bfe382bee1074a4376c05ffd1f340eb56869a4"
+  },
+  {
+    "component": "popover",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/popover.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/popover.json",
+    "sha256": "45e4c7aec5ccf37d9595dd2e8b769e99695dc384c6855edc9a75f56be3d72b2c"
+  },
+  {
+    "component": "select",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/select.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/select.json",
+    "sha256": "224f44635f0d7ea9846a08401564c504bce5493301ead126eb5f1fd6c7797667"
+  },
+  {
+    "component": "separator",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/separator.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/separator.json",
+    "sha256": "a9609dc60d01233ac40dba2c7af4829249374c85a54bc961d73379a3ed8091cd"
+  },
+  {
+    "component": "switch",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/switch.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/switch.json",
+    "sha256": "3f3843a784170b632984ddb7d2fb407b29dfde99d8c0032bc273e2885cac653d"
+  },
+  {
+    "component": "tabs",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/tabs.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/tabs.json",
+    "sha256": "1b92639e2626acdd40a5d1ee0043f03cf2104c685f9058bd50853c1cd2a89090"
+  },
+  {
+    "component": "textarea",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/textarea.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/textarea.json",
+    "sha256": "8990c451b323a32c20dd670e4b3cfb778b4fae135f660d72c92692583b46b81f"
+  },
+  {
+    "component": "toggle",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/toggle.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/toggle.json",
+    "sha256": "761405b0c92c379555d771577b8aed7da75f9abb898cd62af94ec5416eeca931"
+  },
+  {
+    "component": "tooltip",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/tooltip.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/tooltip.json",
+    "sha256": "01e702f00a24c05d6315d4a92e7ea43e1564555a6fdb78b4e31f90b595c28976"
+  },
+  {
+    "component": "sonner",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/sonner.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/sonner.json",
+    "sha256": "98c3de283e15cd58ab329091e94ab8df93f6b3b7aa87668f87e3318c89390e89"
+  },
+  {
+    "component": "slider",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/slider.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/slider.json",
+    "sha256": "7a7611db211ddde7996479fea0c9a18de3f7dd477c09f4f5608598de422a1109"
+  },
+  {
+    "component": "alert",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/alert.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/alert.json",
+    "sha256": "c8fab0833cc2b082b02f917d27bcc1f247329b7bf9372a79ed1b37b60c879138"
+  },
+  {
+    "component": "card",
+    "revision": "a98dda1432a74c2e3d6680887325f859eaa32cdf",
+    "source": "registry/default/ui/card.tsx",
+    "registry": "https://raw.githubusercontent.com/keenthemes/reui/a98dda1432a74c2e3d6680887325f859eaa32cdf/public/r/card.json",
+    "sha256": "b4cfd98ea7ce63e693420443a4f78954a8d554d44ac321e4836940daee5060d5"
+  }
+]

@@ -1,0 +1,58 @@
+.wrapper {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+.pen {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tool {
+  flex-shrink: 0;
+}
+.active {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+.line {
+  width: 1px;
+  height: 24px;
+  background: hsl(var(--border));
+  margin: 0 4px;
+}
+.optionsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.options > div:last-child {
+  min-width: 110px;
+}
+.colorWrap {
+  display: flex;
+  gap: 4px;
+}
+.color {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+.colorActive {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
